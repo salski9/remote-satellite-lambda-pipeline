@@ -1,0 +1,1 @@
+{"class":"org.apache.spark.ml.feature.StringIndexerModel","timestamp":1765711705501,"sparkVersion":"4.0.1","uid":"StringIndexer_c5a18e6d53af","paramMap":{"inputCol":"vegetation_index","handleInvalid":"keep","outputCol":"vegetation_index_indexed"},"defaultParamMap":{"stringOrderType":"frequencyDesc","handleInvalid":"error","outputCol":"StringIndexer_c5a18e6d53af__output"}}

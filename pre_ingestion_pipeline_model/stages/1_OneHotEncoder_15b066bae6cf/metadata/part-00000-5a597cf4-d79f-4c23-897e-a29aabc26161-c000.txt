@@ -1,0 +1,1 @@
+{"class":"org.apache.spark.ml.feature.OneHotEncoderModel","timestamp":1765711705658,"sparkVersion":"4.0.1","uid":"OneHotEncoder_15b066bae6cf","paramMap":{"inputCol":"vegetation_index_indexed","outputCol":"vegetation_index_encoded"},"defaultParamMap":{"dropLast":true,"outputCol":"OneHotEncoder_15b066bae6cf__output","handleInvalid":"error"}}
