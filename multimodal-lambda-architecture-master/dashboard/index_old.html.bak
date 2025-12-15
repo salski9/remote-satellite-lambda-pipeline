@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Landcover Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { font-family: sans-serif; margin: 20px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    canvas { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 8px; }
+  </style>
+</head>
+<body>
+  <h1>Landcover Monitoring</h1>
+  <div class="grid">
+    <canvas id="ndviChart" height="200"></canvas>
+    <canvas id="distChart" height="200"></canvas>
+  </div>
+  <h2>Anomaly Alerts</h2>
+  <ul id="alerts"></ul>
+  <script>
+    const API_BASE = 'http://127.0.0.1:5000';
+    const ndviCtx = document.getElementById('ndviChart').getContext('2d');
+    const distCtx = document.getElementById('distChart').getContext('2d');
+
+    const ndviChart = new Chart(ndviCtx, { 
+      type: 'bar', 
+      data: { labels: [], datasets: [{ label: 'Real-time NDVI Avg', data: [], backgroundColor: 'rgba(75, 192, 192, 0.6)' }] },
+      options: { responsive: true, maintainAspectRatio: false }
+    });
+    const distChart = new Chart(distCtx, { 
+      type: 'bar', 
+      data: { labels: [], datasets: [{ label: 'Image Count (Batch)', data: [], backgroundColor: 'rgba(153, 102, 255, 0.6)' }] },
+      options: { responsive: true, maintainAspectRatio: false }
+    });
+
+    async function refresh() {
+      try {
+        const rt = await fetch(`${API_BASE}/api/realtime/ndvi`).then(r => r.json());
+        ndviChart.data.labels = rt.map(r => r.class_name);
+        ndviChart.data.datasets[0].data = rt.map(r => r.ndvi_avg);
+        ndviChart.update();
+
+        const batch = await fetch(`${API_BASE}/api/batch/class-stats`).then(r => r.json());
+        distChart.data.labels = batch.map(r => r.class_name);
+        distChart.data.datasets[0].data = batch.map(r => r.count);
+        distChart.update();
+
+        const anomalies = await fetch(`${API_BASE}/api/anomalies`).then(r => r.json());
+        const ul = document.getElementById('alerts');
+        ul.innerHTML = '';
+        anomalies.slice(0, 20).forEach(a => {
+          const li = document.createElement('li');
+          li.textContent = `${a.timestamp} | ${a.class_name} | Image: ${a.image_id} | NDVI: ${a.ndvi_mean.toFixed(4)} [${a.ndvi_min.toFixed(4)}, ${a.ndvi_max.toFixed(4)}]`;
+          ul.appendChild(li);
+        });
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    }
+
+    setInterval(refresh, 3000);
+    refresh();
+  </script>
+</body>
+</html>

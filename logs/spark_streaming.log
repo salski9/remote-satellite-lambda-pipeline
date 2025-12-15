@@ -1,0 +1,211 @@
+25/12/15 08:54:43 WARN Utils: Your hostname, top-IdeaPad-Gaming-3-15IAH7 resolves to a loopback address: 127.0.1.1; using 192.168.1.164 instead (on interface wlp47s0)
+25/12/15 08:54:43 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+25/12/15 08:54:44 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+
+================================================================================
+ENHANCED SPARK STREAMING JOB
+Processing: Pre-computed CSV + ML vectors + Texture features
+================================================================================
+
+25/12/15 08:54:44 INFO SparkContext: Running Spark version 3.5.1
+25/12/15 08:54:44 INFO SparkContext: OS info Linux, 6.8.0-88-generic, amd64
+25/12/15 08:54:44 INFO SparkContext: Java version 21.0.9
+25/12/15 08:54:44 INFO ResourceUtils: ==============================================================
+25/12/15 08:54:44 INFO ResourceUtils: No custom resources configured for spark.driver.
+25/12/15 08:54:44 INFO ResourceUtils: ==============================================================
+25/12/15 08:54:44 INFO SparkContext: Submitted application: EnhancedMultimodalStreaming
+25/12/15 08:54:44 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+25/12/15 08:54:44 INFO ResourceProfile: Limiting resource is cpu
+25/12/15 08:54:44 INFO ResourceProfileManager: Added ResourceProfile id: 0
+25/12/15 08:54:44 INFO SecurityManager: Changing view acls to: top
+25/12/15 08:54:44 INFO SecurityManager: Changing modify acls to: top
+25/12/15 08:54:44 INFO SecurityManager: Changing view acls groups to: 
+25/12/15 08:54:44 INFO SecurityManager: Changing modify acls groups to: 
+25/12/15 08:54:44 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: top; groups with view permissions: EMPTY; users with modify permissions: top; groups with modify permissions: EMPTY
+25/12/15 08:54:44 INFO Utils: Successfully started service 'sparkDriver' on port 33371.
+25/12/15 08:54:44 INFO SparkEnv: Registering MapOutputTracker
+25/12/15 08:54:44 INFO SparkEnv: Registering BlockManagerMaster
+25/12/15 08:54:44 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+25/12/15 08:54:44 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+25/12/15 08:54:44 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+25/12/15 08:54:44 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-996f950d-e42a-4d1a-8029-917f155d38c5
+25/12/15 08:54:44 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+25/12/15 08:54:44 INFO SparkEnv: Registering OutputCommitCoordinator
+25/12/15 08:54:44 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+25/12/15 08:54:44 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+25/12/15 08:54:45 INFO SparkContext: Added JAR file:///home/top/bigData/remote-satellite-lambda-pipeline/spark_jars/commons-lang3-3.10.jar at spark://192.168.1.164:33371/jars/commons-lang3-3.10.jar with timestamp 1765785284595
+25/12/15 08:54:45 INFO SparkContext: Added JAR file:///home/top/bigData/remote-satellite-lambda-pipeline/spark_jars/commons-pool2-2.11.1.jar at spark://192.168.1.164:33371/jars/commons-pool2-2.11.1.jar with timestamp 1765785284595
+25/12/15 08:54:45 INFO SparkContext: Added JAR file:///home/top/bigData/remote-satellite-lambda-pipeline/spark_jars/config-1.4.1.jar at spark://192.168.1.164:33371/jars/config-1.4.1.jar with timestamp 1765785284595
+25/12/15 08:54:45 INFO SparkContext: Added JAR file:///home/top/bigData/remote-satellite-lambda-pipeline/spark_jars/java-driver-core-4.13.0.jar at spark://192.168.1.164:33371/jars/java-driver-core-4.13.0.jar with timestamp 1765785284595
+25/12/15 08:54:45 INFO SparkContext: Added JAR file:///home/top/bigData/remote-satellite-lambda-pipeline/spark_jars/java-driver-query-builder-4.13.0.jar at spark://192.168.1.164:33371/jars/java-driver-query-builder-4.13.0.jar with timestamp 1765785284595
+25/12/15 08:54:45 INFO SparkContext: Added JAR file:///home/top/bigData/remote-satellite-lambda-pipeline/spark_jars/java-driver-shaded-guava-25.1-jre-graal-sub-1.jar at spark://192.168.1.164:33371/jars/java-driver-shaded-guava-25.1-jre-graal-sub-1.jar with timestamp 1765785284595
+25/12/15 08:54:45 INFO SparkContext: Added JAR file:///home/top/bigData/remote-satellite-lambda-pipeline/spark_jars/jsr305-3.0.2.jar at spark://192.168.1.164:33371/jars/jsr305-3.0.2.jar with timestamp 1765785284595
+25/12/15 08:54:45 INFO SparkContext: Added JAR file:///home/top/bigData/remote-satellite-lambda-pipeline/spark_jars/kafka-clients-3.4.1.jar at spark://192.168.1.164:33371/jars/kafka-clients-3.4.1.jar with timestamp 1765785284595
+25/12/15 08:54:45 INFO SparkContext: Added JAR file:///home/top/bigData/remote-satellite-lambda-pipeline/spark_jars/metrics-core-4.1.18.jar at spark://192.168.1.164:33371/jars/metrics-core-4.1.18.jar with timestamp 1765785284595
+25/12/15 08:54:45 INFO SparkContext: Added JAR file:///home/top/bigData/remote-satellite-lambda-pipeline/spark_jars/native-protocol-1.5.1.jar at spark://192.168.1.164:33371/jars/native-protocol-1.5.1.jar with timestamp 1765785284595
+25/12/15 08:54:45 INFO SparkContext: Added JAR file:///home/top/bigData/remote-satellite-lambda-pipeline/spark_jars/reactive-streams-1.0.4.jar at spark://192.168.1.164:33371/jars/reactive-streams-1.0.4.jar with timestamp 1765785284595
+25/12/15 08:54:45 INFO SparkContext: Added JAR file:///home/top/bigData/remote-satellite-lambda-pipeline/spark_jars/scala-reflect-2.12.11.jar at spark://192.168.1.164:33371/jars/scala-reflect-2.12.11.jar with timestamp 1765785284595
+25/12/15 08:54:45 INFO SparkContext: Added JAR file:///home/top/bigData/remote-satellite-lambda-pipeline/spark_jars/slf4j-api-2.0.7.jar at spark://192.168.1.164:33371/jars/slf4j-api-2.0.7.jar with timestamp 1765785284595
+25/12/15 08:54:45 INFO SparkContext: Added JAR file:///home/top/bigData/remote-satellite-lambda-pipeline/spark_jars/spark-cassandra-connector_2.12-3.4.1.jar at spark://192.168.1.164:33371/jars/spark-cassandra-connector_2.12-3.4.1.jar with timestamp 1765785284595
+25/12/15 08:54:45 INFO SparkContext: Added JAR file:///home/top/bigData/remote-satellite-lambda-pipeline/spark_jars/spark-cassandra-connector-driver_2.12-3.4.1.jar at spark://192.168.1.164:33371/jars/spark-cassandra-connector-driver_2.12-3.4.1.jar with timestamp 1765785284595
+25/12/15 08:54:45 INFO SparkContext: Added JAR file:///home/top/bigData/remote-satellite-lambda-pipeline/spark_jars/spark-sql-kafka-0-10_2.12-3.5.1.jar at spark://192.168.1.164:33371/jars/spark-sql-kafka-0-10_2.12-3.5.1.jar with timestamp 1765785284595
+25/12/15 08:54:45 INFO SparkContext: Added JAR file:///home/top/bigData/remote-satellite-lambda-pipeline/spark_jars/spark-token-provider-kafka-0-10_2.12-3.5.1.jar at spark://192.168.1.164:33371/jars/spark-token-provider-kafka-0-10_2.12-3.5.1.jar with timestamp 1765785284595
+25/12/15 08:54:45 INFO Executor: Starting executor ID driver on host 192.168.1.164
+25/12/15 08:54:45 INFO Executor: OS info Linux, 6.8.0-88-generic, amd64
+25/12/15 08:54:45 INFO Executor: Java version 21.0.9
+25/12/15 08:54:45 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+25/12/15 08:54:45 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@1ad49a8 for default.
+25/12/15 08:54:45 INFO Executor: Fetching spark://192.168.1.164:33371/jars/config-1.4.1.jar with timestamp 1765785284595
+25/12/15 08:54:45 INFO TransportClientFactory: Successfully created connection to /192.168.1.164:33371 after 13 ms (0 ms spent in bootstraps)
+25/12/15 08:54:45 INFO Utils: Fetching spark://192.168.1.164:33371/jars/config-1.4.1.jar to /tmp/spark-29d62b77-b33b-40de-9b50-dace32835ce1/userFiles-7c5b9233-56df-4a40-a8ae-ce415a64dbe8/fetchFileTemp2830555761738533328.tmp
+25/12/15 08:54:45 INFO Executor: Adding file:/tmp/spark-29d62b77-b33b-40de-9b50-dace32835ce1/userFiles-7c5b9233-56df-4a40-a8ae-ce415a64dbe8/config-1.4.1.jar to class loader default
+25/12/15 08:54:45 INFO Executor: Fetching spark://192.168.1.164:33371/jars/kafka-clients-3.4.1.jar with timestamp 1765785284595
+25/12/15 08:54:45 INFO Utils: Fetching spark://192.168.1.164:33371/jars/kafka-clients-3.4.1.jar to /tmp/spark-29d62b77-b33b-40de-9b50-dace32835ce1/userFiles-7c5b9233-56df-4a40-a8ae-ce415a64dbe8/fetchFileTemp13837431003497597119.tmp
+25/12/15 08:54:45 INFO Executor: Adding file:/tmp/spark-29d62b77-b33b-40de-9b50-dace32835ce1/userFiles-7c5b9233-56df-4a40-a8ae-ce415a64dbe8/kafka-clients-3.4.1.jar to class loader default
+25/12/15 08:54:45 INFO Executor: Fetching spark://192.168.1.164:33371/jars/jsr305-3.0.2.jar with timestamp 1765785284595
+25/12/15 08:54:45 INFO Utils: Fetching spark://192.168.1.164:33371/jars/jsr305-3.0.2.jar to /tmp/spark-29d62b77-b33b-40de-9b50-dace32835ce1/userFiles-7c5b9233-56df-4a40-a8ae-ce415a64dbe8/fetchFileTemp2929730706119847406.tmp
+25/12/15 08:54:45 INFO Executor: Adding file:/tmp/spark-29d62b77-b33b-40de-9b50-dace32835ce1/userFiles-7c5b9233-56df-4a40-a8ae-ce415a64dbe8/jsr305-3.0.2.jar to class loader default
+25/12/15 08:54:45 INFO Executor: Fetching spark://192.168.1.164:33371/jars/java-driver-shaded-guava-25.1-jre-graal-sub-1.jar with timestamp 1765785284595
+25/12/15 08:54:45 INFO Utils: Fetching spark://192.168.1.164:33371/jars/java-driver-shaded-guava-25.1-jre-graal-sub-1.jar to /tmp/spark-29d62b77-b33b-40de-9b50-dace32835ce1/userFiles-7c5b9233-56df-4a40-a8ae-ce415a64dbe8/fetchFileTemp12987426275524786787.tmp
+25/12/15 08:54:45 INFO Executor: Adding file:/tmp/spark-29d62b77-b33b-40de-9b50-dace32835ce1/userFiles-7c5b9233-56df-4a40-a8ae-ce415a64dbe8/java-driver-shaded-guava-25.1-jre-graal-sub-1.jar to class loader default
+25/12/15 08:54:45 INFO Executor: Fetching spark://192.168.1.164:33371/jars/spark-token-provider-kafka-0-10_2.12-3.5.1.jar with timestamp 1765785284595
+25/12/15 08:54:45 INFO Utils: Fetching spark://192.168.1.164:33371/jars/spark-token-provider-kafka-0-10_2.12-3.5.1.jar to /tmp/spark-29d62b77-b33b-40de-9b50-dace32835ce1/userFiles-7c5b9233-56df-4a40-a8ae-ce415a64dbe8/fetchFileTemp8836503440393767276.tmp
+25/12/15 08:54:45 INFO Executor: Adding file:/tmp/spark-29d62b77-b33b-40de-9b50-dace32835ce1/userFiles-7c5b9233-56df-4a40-a8ae-ce415a64dbe8/spark-token-provider-kafka-0-10_2.12-3.5.1.jar to class loader default
+25/12/15 08:54:45 INFO Executor: Fetching spark://192.168.1.164:33371/jars/metrics-core-4.1.18.jar with timestamp 1765785284595
+25/12/15 08:54:45 INFO Utils: Fetching spark://192.168.1.164:33371/jars/metrics-core-4.1.18.jar to /tmp/spark-29d62b77-b33b-40de-9b50-dace32835ce1/userFiles-7c5b9233-56df-4a40-a8ae-ce415a64dbe8/fetchFileTemp3549784767125917742.tmp
+25/12/15 08:54:45 INFO Executor: Adding file:/tmp/spark-29d62b77-b33b-40de-9b50-dace32835ce1/userFiles-7c5b9233-56df-4a40-a8ae-ce415a64dbe8/metrics-core-4.1.18.jar to class loader default
+25/12/15 08:54:45 INFO Executor: Fetching spark://192.168.1.164:33371/jars/commons-lang3-3.10.jar with timestamp 1765785284595
+25/12/15 08:54:45 INFO Utils: Fetching spark://192.168.1.164:33371/jars/commons-lang3-3.10.jar to /tmp/spark-29d62b77-b33b-40de-9b50-dace32835ce1/userFiles-7c5b9233-56df-4a40-a8ae-ce415a64dbe8/fetchFileTemp10173019448635186183.tmp
+25/12/15 08:54:45 INFO Executor: Adding file:/tmp/spark-29d62b77-b33b-40de-9b50-dace32835ce1/userFiles-7c5b9233-56df-4a40-a8ae-ce415a64dbe8/commons-lang3-3.10.jar to class loader default
+25/12/15 08:54:45 INFO Executor: Fetching spark://192.168.1.164:33371/jars/commons-pool2-2.11.1.jar with timestamp 1765785284595
+25/12/15 08:54:45 INFO Utils: Fetching spark://192.168.1.164:33371/jars/commons-pool2-2.11.1.jar to /tmp/spark-29d62b77-b33b-40de-9b50-dace32835ce1/userFiles-7c5b9233-56df-4a40-a8ae-ce415a64dbe8/fetchFileTemp6618234252635405573.tmp
+25/12/15 08:54:45 INFO Executor: Adding file:/tmp/spark-29d62b77-b33b-40de-9b50-dace32835ce1/userFiles-7c5b9233-56df-4a40-a8ae-ce415a64dbe8/commons-pool2-2.11.1.jar to class loader default
+25/12/15 08:54:45 INFO Executor: Fetching spark://192.168.1.164:33371/jars/java-driver-core-4.13.0.jar with timestamp 1765785284595
+25/12/15 08:54:45 INFO Utils: Fetching spark://192.168.1.164:33371/jars/java-driver-core-4.13.0.jar to /tmp/spark-29d62b77-b33b-40de-9b50-dace32835ce1/userFiles-7c5b9233-56df-4a40-a8ae-ce415a64dbe8/fetchFileTemp3714041799957733918.tmp
+25/12/15 08:54:45 INFO Executor: Adding file:/tmp/spark-29d62b77-b33b-40de-9b50-dace32835ce1/userFiles-7c5b9233-56df-4a40-a8ae-ce415a64dbe8/java-driver-core-4.13.0.jar to class loader default
+25/12/15 08:54:45 INFO Executor: Fetching spark://192.168.1.164:33371/jars/spark-cassandra-connector_2.12-3.4.1.jar with timestamp 1765785284595
+25/12/15 08:54:45 INFO Utils: Fetching spark://192.168.1.164:33371/jars/spark-cassandra-connector_2.12-3.4.1.jar to /tmp/spark-29d62b77-b33b-40de-9b50-dace32835ce1/userFiles-7c5b9233-56df-4a40-a8ae-ce415a64dbe8/fetchFileTemp6865142769250359704.tmp
+25/12/15 08:54:45 INFO Executor: Adding file:/tmp/spark-29d62b77-b33b-40de-9b50-dace32835ce1/userFiles-7c5b9233-56df-4a40-a8ae-ce415a64dbe8/spark-cassandra-connector_2.12-3.4.1.jar to class loader default
+25/12/15 08:54:45 INFO Executor: Fetching spark://192.168.1.164:33371/jars/spark-cassandra-connector-driver_2.12-3.4.1.jar with timestamp 1765785284595
+25/12/15 08:54:45 INFO Utils: Fetching spark://192.168.1.164:33371/jars/spark-cassandra-connector-driver_2.12-3.4.1.jar to /tmp/spark-29d62b77-b33b-40de-9b50-dace32835ce1/userFiles-7c5b9233-56df-4a40-a8ae-ce415a64dbe8/fetchFileTemp13274792483323687482.tmp
+25/12/15 08:54:45 INFO Executor: Adding file:/tmp/spark-29d62b77-b33b-40de-9b50-dace32835ce1/userFiles-7c5b9233-56df-4a40-a8ae-ce415a64dbe8/spark-cassandra-connector-driver_2.12-3.4.1.jar to class loader default
+25/12/15 08:54:45 INFO Executor: Fetching spark://192.168.1.164:33371/jars/native-protocol-1.5.1.jar with timestamp 1765785284595
+25/12/15 08:54:45 INFO Utils: Fetching spark://192.168.1.164:33371/jars/native-protocol-1.5.1.jar to /tmp/spark-29d62b77-b33b-40de-9b50-dace32835ce1/userFiles-7c5b9233-56df-4a40-a8ae-ce415a64dbe8/fetchFileTemp16978387024462111904.tmp
+25/12/15 08:54:45 INFO Executor: Adding file:/tmp/spark-29d62b77-b33b-40de-9b50-dace32835ce1/userFiles-7c5b9233-56df-4a40-a8ae-ce415a64dbe8/native-protocol-1.5.1.jar to class loader default
+25/12/15 08:54:45 INFO Executor: Fetching spark://192.168.1.164:33371/jars/reactive-streams-1.0.4.jar with timestamp 1765785284595
+25/12/15 08:54:45 INFO Utils: Fetching spark://192.168.1.164:33371/jars/reactive-streams-1.0.4.jar to /tmp/spark-29d62b77-b33b-40de-9b50-dace32835ce1/userFiles-7c5b9233-56df-4a40-a8ae-ce415a64dbe8/fetchFileTemp8193094171050787630.tmp
+25/12/15 08:54:45 INFO Executor: Adding file:/tmp/spark-29d62b77-b33b-40de-9b50-dace32835ce1/userFiles-7c5b9233-56df-4a40-a8ae-ce415a64dbe8/reactive-streams-1.0.4.jar to class loader default
+25/12/15 08:54:45 INFO Executor: Fetching spark://192.168.1.164:33371/jars/java-driver-query-builder-4.13.0.jar with timestamp 1765785284595
+25/12/15 08:54:45 INFO Utils: Fetching spark://192.168.1.164:33371/jars/java-driver-query-builder-4.13.0.jar to /tmp/spark-29d62b77-b33b-40de-9b50-dace32835ce1/userFiles-7c5b9233-56df-4a40-a8ae-ce415a64dbe8/fetchFileTemp993282740675650364.tmp
+25/12/15 08:54:45 INFO Executor: Adding file:/tmp/spark-29d62b77-b33b-40de-9b50-dace32835ce1/userFiles-7c5b9233-56df-4a40-a8ae-ce415a64dbe8/java-driver-query-builder-4.13.0.jar to class loader default
+25/12/15 08:54:45 INFO Executor: Fetching spark://192.168.1.164:33371/jars/spark-sql-kafka-0-10_2.12-3.5.1.jar with timestamp 1765785284595
+25/12/15 08:54:45 INFO Utils: Fetching spark://192.168.1.164:33371/jars/spark-sql-kafka-0-10_2.12-3.5.1.jar to /tmp/spark-29d62b77-b33b-40de-9b50-dace32835ce1/userFiles-7c5b9233-56df-4a40-a8ae-ce415a64dbe8/fetchFileTemp11698631490097102097.tmp
+25/12/15 08:54:45 INFO Executor: Adding file:/tmp/spark-29d62b77-b33b-40de-9b50-dace32835ce1/userFiles-7c5b9233-56df-4a40-a8ae-ce415a64dbe8/spark-sql-kafka-0-10_2.12-3.5.1.jar to class loader default
+25/12/15 08:54:45 INFO Executor: Fetching spark://192.168.1.164:33371/jars/slf4j-api-2.0.7.jar with timestamp 1765785284595
+25/12/15 08:54:45 INFO Utils: Fetching spark://192.168.1.164:33371/jars/slf4j-api-2.0.7.jar to /tmp/spark-29d62b77-b33b-40de-9b50-dace32835ce1/userFiles-7c5b9233-56df-4a40-a8ae-ce415a64dbe8/fetchFileTemp6640294529602906439.tmp
+25/12/15 08:54:45 INFO Executor: Adding file:/tmp/spark-29d62b77-b33b-40de-9b50-dace32835ce1/userFiles-7c5b9233-56df-4a40-a8ae-ce415a64dbe8/slf4j-api-2.0.7.jar to class loader default
+25/12/15 08:54:45 INFO Executor: Fetching spark://192.168.1.164:33371/jars/scala-reflect-2.12.11.jar with timestamp 1765785284595
+25/12/15 08:54:45 INFO Utils: Fetching spark://192.168.1.164:33371/jars/scala-reflect-2.12.11.jar to /tmp/spark-29d62b77-b33b-40de-9b50-dace32835ce1/userFiles-7c5b9233-56df-4a40-a8ae-ce415a64dbe8/fetchFileTemp11970390355268195930.tmp
+25/12/15 08:54:45 INFO Executor: Adding file:/tmp/spark-29d62b77-b33b-40de-9b50-dace32835ce1/userFiles-7c5b9233-56df-4a40-a8ae-ce415a64dbe8/scala-reflect-2.12.11.jar to class loader default
+25/12/15 08:54:45 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 43259.
+25/12/15 08:54:45 INFO NettyBlockTransferService: Server created on 192.168.1.164:43259
+25/12/15 08:54:45 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+25/12/15 08:54:45 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 192.168.1.164, 43259, None)
+25/12/15 08:54:45 INFO BlockManagerMasterEndpoint: Registering block manager 192.168.1.164:43259 with 434.4 MiB RAM, BlockManagerId(driver, 192.168.1.164, 43259, None)
+25/12/15 08:54:45 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 192.168.1.164, 43259, None)
+25/12/15 08:54:45 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 192.168.1.164, 43259, None)
+25/12/15 08:54:46 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+25/12/15 08:54:46 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+✓ Enhanced streaming job started
+  - Listening to topic: enhanced-multimodal-events
+  - Processing: CSV + ML vectors + Texture features
+  - Writing to 5 Cassandra tables:
+    • multimodal_tabular_stats
+    • multimodal_ml_features (NEW)
+    • multimodal_texture_stats (NEW)
+    • multimodal_image_stats
+    • multimodal_anomalies
+
+Press Ctrl+C to stop...
+25/12/15 08:54:46 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+25/12/15 08:55:01 WARN GarbageCollectionMetrics: To enable non-built-in garbage collector(s) List(G1 Concurrent GC), users should configure it(them) to spark.eventLog.gcMetrics.youngGenerationGarbageCollectors or spark.eventLog.gcMetrics.oldGenerationGarbageCollectors
+
+================================================================================
+Processing Enhanced Batch 1
+================================================================================
+✓ Tabular features aggregated (4 classes)
+✓ Cumulative totals updated (10 classes)
+✓ ML features aggregated (4 classes, dim=12)
+✓ Enhanced anomalies detected: 672
+================================================================================
+
+25/12/15 08:55:37 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 5000 milliseconds, but spent 12709 milliseconds
+
+================================================================================
+Processing Enhanced Batch 2
+================================================================================
+✓ Tabular features aggregated (7 classes)
+✓ Cumulative totals updated (10 classes)
+✓ ML features aggregated (7 classes, dim=12)
+✓ Enhanced anomalies detected: 1514
+================================================================================
+
+25/12/15 08:55:55 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 5000 milliseconds, but spent 18037 milliseconds
+ERROR:root:Exception while sending command.
+Traceback (most recent call last):
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+                          ^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: reentrant call inside <_io.BufferedReader name=3>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 539, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+ERROR:root:Exception while sending command.
+Traceback (most recent call last):
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+                          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 707, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/pyspark.zip/pyspark/context.py", line 381, in signal_handler
+    self.cancelAllJobs()
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/pyspark.zip/pyspark/context.py", line 2446, in cancelAllJobs
+    self._jsc.sc().cancelAllJobs()
+    ^^^^^^^^^^^^^^
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+                   ^^^^^^^^^^^^^^^^^
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 179, in deco
+    return f(*a, **kw)
+           ^^^^^^^^^^^
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/protocol.py", line 334, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling o21.sc
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/clientserver.py", line 539, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+Traceback (most recent call last):
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/src/speed_layer/spark_streaming_enhanced.py", line 330, in <module>
+    main()
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/src/speed_layer/spark_streaming_enhanced.py", line 327, in main
+    query.awaitTermination()
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/pyspark.zip/pyspark/sql/streaming/query.py", line 221, in awaitTermination
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1322, in __call__
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 179, in deco
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/protocol.py", line 334, in get_return_value
+py4j.protocol.Py4JError: An error occurred while calling o57.awaitTermination

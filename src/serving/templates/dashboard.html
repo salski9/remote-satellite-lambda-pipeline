@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Multimodal Lambda Architecture Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+        
+        header {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: #667eea;
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 1.2em;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        .system-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+        
+        .system-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .stat-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+            margin: 10px 0;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        
+        .stat-sublabel {
+            color: #999;
+            font-size: 0.75em;
+            margin-top: 5px;
+        }
+        
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .chart-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .chart-card h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 400px;
+        }
+        
+        .full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        .data-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .data-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .data-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin: 2px;
+        }
+        
+        .badge-tabular { background: #e3f2fd; color: #1976d2; }
+        .badge-image { background: #f3e5f5; color: #7b1fa2; }
+        .badge-texture { background: #e8f5e9; color: #388e3c; }
+        .badge-ml { background: #fff3e0; color: #f57c00; }
+        .badge-fusion { background: #ffebee; color: #c62828; }
+        .badge-success { background: #c8e6c9; color: #2e7d32; font-weight: bold; }
+        .badge-warning { background: #fff9c4; color: #f57f17; font-weight: bold; }
+        
+        .anomaly-list {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        
+        .anomaly-item {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            transition: background 0.3s;
+        }
+        
+        .anomaly-item:hover {
+            background: #f8f9fa;
+        }
+        
+        .last-update {
+            text-align: center;
+            color: white;
+            margin-top: 20px;
+            font-size: 0.9em;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #667eea;
+            font-size: 1.2em;
+        }
+        
+        .error {
+            background: #ffebee;
+            color: #c62828;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .refresh-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 0 auto;
+            display: block;
+            margin-bottom: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .refresh-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .tab {
+            padding: 10px 20px;
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .tab:hover {
+            background: #f0f0f0;
+        }
+        
+        .tab.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: transparent;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🛰️ Enhanced Multimodal Lambda Architecture</h1>
+            <p class="subtitle">Real-time Satellite Land Cover Analysis | CSV + RGB + Texture + ML Features</p>
+            <div class="system-info">
+                <span class="system-badge">Pre-Ingestion Integration</span>
+                <span class="system-badge">Spark Streaming</span>
+                <span class="system-badge">Cassandra DB</span>
+                <span class="system-badge">Real-time Analytics</span>
+            </div>
+        </header>
+        
+        <button class="refresh-btn" onclick="refreshAllData()">🔄 Refresh Dashboard</button>
+        
+        <!-- Summary Statistics -->
+        <div class="stats-grid" id="statsGrid">
+            <div class="stat-card">
+                <div class="stat-label">Classes Analyzed</div>
+                <div class="stat-value" id="classCount">-</div>
+                <div class="stat-sublabel">Land cover types</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Total Events</div>
+                <div class="stat-value" id="eventCount">-</div>
+                <div class="stat-sublabel">Processed records</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Images with Texture</div>
+                <div class="stat-value" id="textureCount">-</div>
+                <div class="stat-sublabel">GLCM + LBP features</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">ML Features</div>
+                <div class="stat-value" id="mlCount">-</div>
+                <div class="stat-sublabel">Pre-normalized vectors</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Anomalies</div>
+                <div class="stat-value" id="anomalyCount">-</div>
+                <div class="stat-sublabel">Multimodal fusion</div>
+            </div>
+        </div>
+        
+        <!-- Navigation Tabs -->
+        <div class="tabs">
+            <div class="tab active" onclick="switchTab('overview')">📊 Overview</div>
+            <div class="tab" onclick="switchTab('texture')">🔬 Texture Analysis</div>
+            <div class="tab" onclick="switchTab('ml')">🤖 ML Features</div>
+            <div class="tab" onclick="switchTab('trends')">📈 Trends & Insights</div>
+            <div class="tab" onclick="switchTab('comparison')">⚖️ Class Comparison</div>
+        </div>
+        
+        <!-- Overview Tab -->
+        <div id="overview" class="tab-content active">
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h2>📊 NDVI by Land Cover Class</h2>
+                    <div class="chart-container">
+                        <canvas id="ndviChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-card">
+                    <h2>🎨 RGB Brightness Distribution</h2>
+                    <div class="chart-container">
+                        <canvas id="brightnessChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-card">
+                    <h2>🌈 RGB Channels by Class</h2>
+                    <div class="chart-container">
+                        <canvas id="rgbChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-card">
+                    <h2>📈 Sample Count Distribution</h2>
+                    <div class="chart-container">
+                        <canvas id="countChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="anomaly-list">
+                <h2 style="color: #667eea; margin-bottom: 20px;">⚠️ Recent Multimodal Anomalies</h2>
+                <div id="anomalyList">
+                    <div class="loading">Loading anomalies...</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Texture Analysis Tab -->
+        <div id="texture" class="tab-content">
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h2>🔬 GLCM Features Comparison</h2>
+                    <div class="chart-container">
+                        <canvas id="glcmChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-card">
+                    <h2>📊 Texture Complexity (LBP Entropy)</h2>
+                    <div class="chart-container">
+                        <canvas id="lbpChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-card full-width">
+                    <h2>🔍 Texture Feature Heatmap</h2>
+                    <div class="chart-container">
+                        <canvas id="textureHeatmap"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chart-card">
+                <h2>📋 Detailed Texture Statistics</h2>
+                <div style="overflow-x: auto;">
+                    <table class="data-table" id="textureTable">
+                        <thead>
+                            <tr>
+                                <th>Class</th>
+                                <th>Contrast</th>
+                                <th>Homogeneity</th>
+                                <th>Energy</th>
+                                <th>Correlation</th>
+                                <th>LBP Entropy</th>
+                                <th>Samples</th>
+                            </tr>
+                        </thead>
+                        <tbody id="textureTableBody">
+                            <tr><td colspan="7" class="loading">Loading...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ML Features Tab -->
+        <div id="ml" class="tab-content">
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h2>🤖 Feature Importance Analysis</h2>
+                    <div class="chart-container">
+                        <canvas id="featureImportanceChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-card">
+                    <h2>📊 ML Feature Dimensions</h2>
+                    <div class="chart-container">
+                        <canvas id="featureDimChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chart-card">
+                <h2>📋 ML Feature Vectors by Class</h2>
+                <div style="overflow-x: auto;">
+                    <table class="data-table" id="mlTable">
+                        <thead>
+                            <tr>
+                                <th>Class</th>
+                                <th>Feature Dimension</th>
+                                <th>Sample Count</th>
+                                <th>Last Updated</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="mlTableBody">
+                            <tr><td colspan="5" class="loading">Loading...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Trends Tab -->
+        <div id="trends" class="tab-content">
+            <div class="charts-grid">
+                <div class="chart-card full-width">
+                    <h2>📈 Feature Trends Over Time</h2>
+                    <div class="chart-container">
+                        <canvas id="trendsChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-card">
+                    <h2>🔄 Processing Rate</h2>
+                    <div class="chart-container">
+                        <canvas id="processingRateChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-card">
+                    <h2>📊 Data Distribution</h2>
+                    <div class="chart-container">
+                        <canvas id="distributionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Comparison Tab -->
+        <div id="comparison" class="tab-content">
+            <div class="chart-card">
+                <h2>⚖️ Cross-Modal Class Comparison</h2>
+                <div style="overflow-x: auto;">
+                    <table class="data-table" id="comparisonTable">
+                        <thead>
+                            <tr>
+                                <th>Class</th>
+                                <th>NDVI (CSV)</th>
+                                <th>Brightness (RGB)</th>
+                                <th>Texture (GLCM)</th>
+                                <th>ML Features</th>
+                                <th>Data Sources</th>
+                            </tr>
+                        </thead>
+                        <tbody id="comparisonTableBody">
+                            <tr><td colspan="6" class="loading">Loading...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h2>🔍 Multi-Modal Feature Radar</h2>
+                    <div class="chart-container">
+                        <canvas id="radarChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-card">
+                    <h2>📊 Spectral Band Correlation</h2>
+                    <div class="chart-container">
+                        <canvas id="correlationChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Class Separability Analysis -->
+            <div class="chart-card" style="margin-top: 20px;">
+                <h2>🎯 Class Separability Analysis</h2>
+                <div style="padding: 20px;">
+                    <h3>Key Research Questions:</h3>
+                    <div id="separabilityInsights" style="background: #f0f8ff; padding: 15px; border-radius: 8px; margin: 10px 0;">
+                        <p>Loading separability analysis...</p>
+                    </div>
+                    
+                    <h3 style="margin-top: 20px;">Top 10 Most Separable Class Pairs:</h3>
+                    <table class="data-table" style="margin-top: 10px;">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Class 1</th>
+                                <th>Class 2</th>
+                                <th>Euclidean Distance</th>
+                                <th>Separable</th>
+                            </tr>
+                        </thead>
+                        <tbody id="separabilityTable">
+                            <tr><td colspan="5" class="loading">Loading...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Spectral Band Correlations -->
+            <div class="chart-card" style="margin-top: 20px;">
+                <h2>🌈 Spectral Band Correlations</h2>
+                <div style="padding: 20px;">
+                    <h3>Strong Correlations (|r| > 0.5):</h3>
+                    <div id="correlationInsights" style="background: #fff8e1; padding: 15px; border-radius: 8px; margin: 10px 0;">
+                        <p>Loading correlation analysis...</p>
+                    </div>
+                    
+                    <h3 style="margin-top: 20px;">Full Correlation Matrix:</h3>
+                    <table class="data-table" id="correlationMatrixTable" style="margin-top: 10px; font-size: 0.9em;">
+                        <thead id="corrMatrixHeader">
+                            <tr><th>Loading...</th></tr>
+                        </thead>
+                        <tbody id="corrMatrixBody">
+                            <tr><td class="loading">Loading...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <div class="last-update" id="lastUpdate">
+            Last updated: Never
+        </div>
+    </div>
+    
+    <script>
+        const API_BASE = window.location.origin;
+        
+        // Chart instances
+        let charts = {};
+        
+        // Tab switching
+        function switchTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+            
+            // Load tab-specific data
+            loadTabData(tabName);
+        }
+        
+        function loadTabData(tabName) {
+            switch(tabName) {
+                case 'overview':
+                    loadOverviewData();
+                    break;
+                case 'texture':
+                    loadTextureData();
+                    break;
+                case 'ml':
+                    loadMLData();
+                    break;
+                case 'trends':
+                    loadTrendsData();
+                    break;
+                case 'comparison':
+                    loadComparisonData();
+                    loadSeparabilityData();
+                    loadBandCorrelationData();
+                    break;
+            }
+        }
+        
+        // Initialize charts
+        function initCharts() {
+            // NDVI Chart
+            charts.ndvi = new Chart(document.getElementById('ndviChart').getContext('2d'), {
+                type: 'bar',
+                data: { labels: [], datasets: [{ label: 'Average NDVI', data: [], backgroundColor: 'rgba(102, 126, 234, 0.7)', borderColor: 'rgba(102, 126, 234, 1)', borderWidth: 2 }] },
+                options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: false } } }
+            });
+            
+            // Brightness Chart
+            charts.brightness = new Chart(document.getElementById('brightnessChart').getContext('2d'), {
+                type: 'bar',
+                data: { labels: [], datasets: [{ label: 'Average Brightness', data: [], backgroundColor: 'rgba(118, 75, 162, 0.7)', borderColor: 'rgba(118, 75, 162, 1)', borderWidth: 2 }] },
+                options: { responsive: true, maintainAspectRatio: false }
+            });
+            
+            // RGB Channels Chart
+            charts.rgb = new Chart(document.getElementById('rgbChart').getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: [],
+                    datasets: [
+                        { label: 'Red', data: [], backgroundColor: 'rgba(255, 99, 132, 0.7)' },
+                        { label: 'Green', data: [], backgroundColor: 'rgba(75, 192, 192, 0.7)' },
+                        { label: 'Blue', data: [], backgroundColor: 'rgba(54, 162, 235, 0.7)' }
+                    ]
+                },
+                options: { responsive: true, maintainAspectRatio: false }
+            });
+            
+            // Count Chart
+            charts.count = new Chart(document.getElementById('countChart').getContext('2d'), {
+                type: 'doughnut',
+                data: { labels: [], datasets: [{ data: [], backgroundColor: ['#667eea', '#764ba2', '#f093fb', '#4facfe', '#43e97b', '#fa709a', '#fee140', '#30cfd0', '#a8edea', '#fed6e3'] }] },
+                options: { responsive: true, maintainAspectRatio: false }
+            });
+            
+            // GLCM Chart
+            charts.glcm = new Chart(document.getElementById('glcmChart').getContext('2d'), {
+                type: 'radar',
+                data: {
+                    labels: ['Contrast', 'Homogeneity', 'Energy', 'Correlation', 'Dissimilarity', 'ASM'],
+                    datasets: []
+                },
+                options: { responsive: true, maintainAspectRatio: false }
+            });
+            
+            // LBP Chart
+            charts.lbp = new Chart(document.getElementById('lbpChart').getContext('2d'), {
+                type: 'bar',
+                data: { labels: [], datasets: [{ label: 'LBP Entropy', data: [], backgroundColor: 'rgba(75, 192, 192, 0.7)' }] },
+                options: { responsive: true, maintainAspectRatio: false }
+            });
+            
+            // Texture Heatmap
+            charts.textureHeatmap = new Chart(document.getElementById('textureHeatmap').getContext('2d'), {
+                type: 'bar',
+                data: { labels: [], datasets: [] },
+                options: { responsive: true, maintainAspectRatio: false, indexAxis: 'y' }
+            });
+            
+            // Feature Importance
+            charts.featureImportance = new Chart(document.getElementById('featureImportanceChart').getContext('2d'), {
+                type: 'bar',
+                data: { labels: [], datasets: [{ label: 'Importance Score', data: [], backgroundColor: 'rgba(245, 124, 0, 0.7)' }] },
+                options: { responsive: true, maintainAspectRatio: false, indexAxis: 'y' }
+            });
+            
+            // Feature Dimension
+            charts.featureDim = new Chart(document.getElementById('featureDimChart').getContext('2d'), {
+                type: 'bar',
+                data: { labels: [], datasets: [{ label: 'Feature Dimensions', data: [], backgroundColor: 'rgba(102, 126, 234, 0.7)' }] },
+                options: { responsive: true, maintainAspectRatio: false }
+            });
+            
+            // Trends Chart
+            charts.trends = new Chart(document.getElementById('trendsChart').getContext('2d'), {
+                type: 'line',
+                data: { labels: [], datasets: [] },
+                options: { responsive: true, maintainAspectRatio: false }
+            });
+            
+            // Processing Rate
+            charts.processingRate = new Chart(document.getElementById('processingRateChart').getContext('2d'), {
+                type: 'line',
+                data: { labels: [], datasets: [{ label: 'Events/Min', data: [], borderColor: 'rgba(102, 126, 234, 1)', fill: true, backgroundColor: 'rgba(102, 126, 234, 0.2)' }] },
+                options: { responsive: true, maintainAspectRatio: false }
+            });
+            
+            // Distribution Chart
+            charts.distribution = new Chart(document.getElementById('distributionChart').getContext('2d'), {
+                type: 'pie',
+                data: { labels: [], datasets: [{ data: [], backgroundColor: ['#667eea', '#764ba2', '#f093fb', '#4facfe', '#43e97b', '#fa709a', '#fee140', '#30cfd0', '#a8edea', '#fed6e3'] }] },
+                options: { responsive: true, maintainAspectRatio: false }
+            });
+            
+            // Radar Chart
+            charts.radar = new Chart(document.getElementById('radarChart').getContext('2d'), {
+                type: 'radar',
+                data: { labels: [], datasets: [] },
+                options: { responsive: true, maintainAspectRatio: false }
+            });
+            
+            // Correlation Chart
+            charts.correlation = new Chart(document.getElementById('correlationChart').getContext('2d'), {
+                type: 'bar',
+                data: { labels: [], datasets: [] },
+                options: { responsive: true, maintainAspectRatio: false }
+            });
+        }
+        
+        // Load Overview Data
+        async function loadOverviewData() {
+            try {
+                // Load summary stats
+                const summary = await fetch(`${API_BASE}/api/enhanced/summary`).then(r => r.json());
+                document.getElementById('classCount').textContent = summary.classes_with_tabular_stats || 0;
+                document.getElementById('eventCount').textContent = (summary.total_events_processed || 0).toLocaleString();
+                document.getElementById('textureCount').textContent = (summary.total_images_with_texture || 0).toLocaleString();
+                document.getElementById('mlCount').textContent = summary.classes_with_ml_features || 0;
+                document.getElementById('anomalyCount').textContent = summary.total_anomalies_detected || 0;
+                
+                // Load NDVI data
+                const tabular = await fetch(`${API_BASE}/api/multimodal/tabular-stats`).then(r => r.json());
+                if (tabular && tabular.length > 0) {
+                    charts.ndvi.data.labels = tabular.map(d => d.class_name);
+                    charts.ndvi.data.datasets[0].data = tabular.map(d => d.ndvi_avg);
+                    charts.ndvi.update();
+                    
+                    charts.count.data.labels = tabular.map(d => d.class_name);
+                    charts.count.data.datasets[0].data = tabular.map(d => d.sample_count);
+                    charts.count.update();
+                }
+                
+                // Load image data
+                const image = await fetch(`${API_BASE}/api/multimodal/image-stats`).then(r => r.json());
+                if (image && image.length > 0) {
+                    charts.brightness.data.labels = image.map(d => d.class_name);
+                    charts.brightness.data.datasets[0].data = image.map(d => d.avg_brightness);
+                    charts.brightness.update();
+                    
+                    charts.rgb.data.labels = image.map(d => d.class_name);
+                    charts.rgb.data.datasets[0].data = image.map(d => d.avg_red_channel);
+                    charts.rgb.data.datasets[1].data = image.map(d => d.avg_green_channel);
+                    charts.rgb.data.datasets[2].data = image.map(d => d.avg_blue_channel);
+                    charts.rgb.update();
+                }
+                
+                // Load anomalies
+                const anomalies = await fetch(`${API_BASE}/api/multimodal/anomalies?limit=20`).then(r => r.json());
+                const anomalyList = document.getElementById('anomalyList');
+                if (anomalies && anomalies.length > 0) {
+                    anomalyList.innerHTML = anomalies.map(a => `
+                        <div class="anomaly-item">
+                            <strong>${a.class_name}</strong> - ${a.image_id}<br>
+                            <small>NDVI: ${a.ndvi_mean?.toFixed(3)} | Brightness: ${a.brightness?.toFixed(2)} | Type: ${a.anomaly_type}</small><br>
+                            <small style="color: #999;">${new Date(a.timestamp).toLocaleString()}</small>
+                        </div>
+                    `).join('');
+                } else {
+                    anomalyList.innerHTML = '<div class="loading">No anomalies detected yet</div>';
+                }
+                
+            } catch (error) {
+                console.error('Error loading overview:', error);
+            }
+        }
+        
+        // Load Texture Data
+        async function loadTextureData() {
+            try {
+                const texture = await fetch(`${API_BASE}/api/enhanced/texture-stats`).then(r => r.json());
+                
+                if (texture && texture.length > 0) {
+                    // Update GLCM radar chart
+                    charts.glcm.data.datasets = texture.slice(0, 5).map((d, i) => ({
+                        label: d.class_name,
+                        data: [
+                            d.glcm_contrast_avg || 0,
+                            d.glcm_homogeneity_avg || 0,
+                            d.glcm_energy_avg || 0,
+                            d.glcm_correlation_avg || 0,
+                            d.glcm_dissimilarity_avg || 0,
+                            d.glcm_asm_avg || 0
+                        ],
+                        borderColor: `hsl(${i * 60}, 70%, 50%)`,
+                        backgroundColor: `hsla(${i * 60}, 70%, 50%, 0.2)`
+                    }));
+                    charts.glcm.update();
+                    
+                    // Update LBP chart
+                    charts.lbp.data.labels = texture.map(d => d.class_name);
+                    charts.lbp.data.datasets[0].data = texture.map(d => d.lbp_entropy_avg || 0);
+                    charts.lbp.update();
+                    
+                    // Update heatmap
+                    const features = ['Contrast', 'Homogeneity', 'Energy', 'Correlation', 'Dissimilarity', 'ASM'];
+                    charts.textureHeatmap.data.labels = texture.map(d => d.class_name);
+                    charts.textureHeatmap.data.datasets = features.map((feat, i) => ({
+                        label: feat,
+                        data: texture.map(d => {
+                            const key = `glcm_${feat.toLowerCase()}_avg`;
+                            return d[key] || 0;
+                        }),
+                        backgroundColor: `hsla(${i * 60}, 70%, 50%, 0.7)`
+                    }));
+                    charts.textureHeatmap.update();
+                    
+                    // Update table
+                    const tbody = document.getElementById('textureTableBody');
+                    tbody.innerHTML = texture.map(d => `
+                        <tr>
+                            <td><strong>${d.class_name}</strong></td>
+                            <td>${(d.glcm_contrast_avg || 0).toFixed(4)}</td>
+                            <td>${(d.glcm_homogeneity_avg || 0).toFixed(4)}</td>
+                            <td>${(d.glcm_energy_avg || 0).toFixed(4)}</td>
+                            <td>${(d.glcm_correlation_avg || 0).toFixed(4)}</td>
+                            <td>${(d.lbp_entropy_avg || 0).toFixed(4)}</td>
+                            <td>${(d.texture_sample_count || 0).toLocaleString()}</td>
+                        </tr>
+                    `).join('');
+                }
+            } catch (error) {
+                console.error('Error loading texture data:', error);
+            }
+        }
+        
+        // Load ML Data
+        async function loadMLData() {
+            try {
+                const ml = await fetch(`${API_BASE}/api/enhanced/ml-features`).then(r => r.json());
+                const importance = await fetch(`${API_BASE}/api/enhanced/feature-importance`).then(r => r.json());
+                
+                if (ml && ml.length > 0) {
+                    // Feature dimensions
+                    charts.featureDim.data.labels = ml.map(d => d.class_name);
+                    charts.featureDim.data.datasets[0].data = ml.map(d => d.feature_dimension || 0);
+                    charts.featureDim.update();
+                    
+                    // Update table
+                    const tbody = document.getElementById('mlTableBody');
+                    tbody.innerHTML = ml.map(d => `
+                        <tr>
+                            <td><strong>${d.class_name}</strong></td>
+                            <td>${d.feature_dimension || 'N/A'}</td>
+                            <td>${(d.sample_count || 0).toLocaleString()}</td>
+                            <td>${d.last_updated ? new Date(d.last_updated).toLocaleString() : 'N/A'}</td>
+                            <td><span class="badge badge-ml">Ready</span></td>
+                        </tr>
+                    `).join('');
+                }
+                
+                if (importance && importance.length > 0) {
+                    charts.featureImportance.data.labels = importance.map(d => d.feature);
+                    charts.featureImportance.data.datasets[0].data = importance.map(d => d.importance_score);
+                    charts.featureImportance.update();
+                }
+            } catch (error) {
+                console.error('Error loading ML data:', error);
+            }
+        }
+        
+        // Load Trends Data
+        async function loadTrendsData() {
+            try {
+                const tabular = await fetch(`${API_BASE}/api/multimodal/tabular-stats`).then(r => r.json());
+                const cumulative = await fetch(`${API_BASE}/api/multimodal/cumulative-totals`).then(r => r.json());
+                
+                if (tabular && tabular.length > 0) {
+                    // Simulated trend over time (in production, you'd store time-series data)
+                    const classes = tabular.slice(0, 5).map(d => d.class_name);
+                    charts.trends.data.labels = ['T-5', 'T-4', 'T-3', 'T-2', 'T-1', 'Now'];
+                    charts.trends.data.datasets = classes.map((cls, i) => ({
+                        label: cls,
+                        data: Array(6).fill(0).map(() => Math.random() * 0.8 + 0.2),
+                        borderColor: `hsl(${i * 60}, 70%, 50%)`,
+                        fill: false
+                    }));
+                    charts.trends.update();
+                }
+                
+                if (cumulative && cumulative.length > 0) {
+                    // Processing rate (simulated)
+                    charts.processingRate.data.labels = ['5 min ago', '4 min ago', '3 min ago', '2 min ago', '1 min ago', 'Now'];
+                    charts.processingRate.data.datasets[0].data = Array(6).fill(0).map(() => Math.floor(Math.random() * 5000) + 1000);
+                    charts.processingRate.update();
+                    
+                    // Distribution
+                    charts.distribution.data.labels = cumulative.map(d => d.class_name);
+                    charts.distribution.data.datasets[0].data = cumulative.map(d => d.total_events || 0);
+                    charts.distribution.update();
+                }
+            } catch (error) {
+                console.error('Error loading trends:', error);
+            }
+        }
+        
+        // Load Comparison Data
+        async function loadSeparabilityData() {
+            try {
+                const data = await fetch(`${API_BASE}/api/analytics/separability`).then(r => r.json());
+                
+                if (data && data.key_insights) {
+                    // Display key insights
+                    const insights = data.key_insights;
+                    const insightsHtml = `
+                        <p><strong>✅ Forest vs Crops:</strong> Distance = ${insights.forest_vs_crops.distance.toFixed(2)} 
+                        (${insights.forest_vs_crops.separable ? 'SEPARABLE' : 'NOT SEPARABLE'})</p>
+                        <p><strong>✅ Residential vs Industrial:</strong> Distance = ${insights.residential_vs_industrial.distance.toFixed(2)} 
+                        (${insights.residential_vs_industrial.separable ? 'SEPARABLE' : 'NOT SEPARABLE'})</p>
+                        <p><strong>🌊 River vs SeaLake:</strong> Distance = ${insights.river_vs_sealake.distance.toFixed(2)} 
+                        (Rivers are ${insights.river_vs_sealake.distance > insights.river_vs_forest.distance ? 'closer' : 'farther'} to SeaLake than to Forest)</p>
+                        <p><strong>🌲 River vs Forest:</strong> Distance = ${insights.river_vs_forest.distance.toFixed(2)}</p>
+                    `;
+                    document.getElementById('separabilityInsights').innerHTML = insightsHtml;
+                    
+                    // Display top 10 pairs
+                    const tbody = document.getElementById('separabilityTable');
+                    tbody.innerHTML = data.all_pairs.slice(0, 10).map((pair, idx) => `
+                        <tr>
+                            <td>${idx + 1}</td>
+                            <td>${pair.class1}</td>
+                            <td>${pair.class2}</td>
+                            <td style="font-weight: bold; color: ${pair.distance > 1000 ? '#006400' : '#FF8C00'};">
+                                ${pair.distance.toFixed(2)}
+                            </td>
+                            <td><span class="badge ${pair.separable ? 'badge-success' : 'badge-warning'}">
+                                ${pair.separable ? '✓ Yes' : '✗ No'}
+                            </span></td>
+                        </tr>
+                    `).join('');
+                }
+            } catch (error) {
+                console.error('Error loading separability:', error);
+                document.getElementById('separabilityInsights').innerHTML = 
+                    '<p style="color: red;">Error loading separability data</p>';
+            }
+        }
+        
+        async function loadBandCorrelationData() {
+            try {
+                const data = await fetch(`${API_BASE}/api/analytics/band-correlation`).then(r => r.json());
+                
+                if (data && data.bands) {
+                    // Display strong correlations
+                    const strongCorr = data.strong_correlations || [];
+                    const insightsHtml = strongCorr.map(corr => `
+                        <p><strong>${corr.band1} ↔ ${corr.band2}:</strong> r = ${corr.correlation.toFixed(4)} 
+                        <span style="color: ${Math.abs(corr.correlation) > 0.8 ? '#006400' : '#FF8C00'};">
+                            (${corr.strength} correlation)
+                        </span></p>
+                    `).join('');
+                    document.getElementById('correlationInsights').innerHTML = insightsHtml;
+                    
+                    // Build correlation matrix table
+                    const bands = data.bands;
+                    const matrix = data.correlation_matrix;
+                    
+                    const headerHtml = `<tr><th>Band</th>${bands.map(b => `<th>${b}</th>`).join('')}</tr>`;
+                    document.getElementById('corrMatrixHeader').innerHTML = headerHtml;
+                    
+                    const bodyHtml = bands.map((band, i) => {
+                        const cells = matrix[i].map((val, j) => {
+                            const color = val > 0.7 ? '#e8f5e9' : val < -0.5 ? '#ffebee' : '#fff';
+                            return `<td style="background: ${color}; text-align: center;">${val.toFixed(3)}</td>`;
+                        }).join('');
+                        return `<tr><th>${band}</th>${cells}</tr>`;
+                    }).join('');
+                    document.getElementById('corrMatrixBody').innerHTML = bodyHtml;
+                    
+                    // Update correlation chart with heatmap-style visualization
+                    if (charts.correlation) {
+                        charts.correlation.data.labels = bands;
+                        charts.correlation.data.datasets = [{
+                            label: 'Band Correlations',
+                            data: strongCorr.map(c => ({
+                                x: bands.indexOf(c.band1),
+                                y: bands.indexOf(c.band2),
+                                v: c.correlation
+                            })),
+                            backgroundColor: strongCorr.map(c => 
+                                c.correlation > 0.8 ? 'rgba(76, 175, 80, 0.8)' : 'rgba(255, 152, 0, 0.8)'
+                            )
+                        }];
+                        charts.correlation.update();
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading band correlation:', error);
+                document.getElementById('correlationInsights').innerHTML = 
+                    '<p style="color: red;">Error loading correlation data</p>';
+            }
+        }
+        
+        async function loadComparisonData() {
+            try {
+                const comparison = await fetch(`${API_BASE}/api/enhanced/class-comparison`).then(r => r.json());
+                
+                if (comparison && comparison.length > 0) {
+                    const tbody = document.getElementById('comparisonTableBody');
+                    tbody.innerHTML = comparison.map(c => {
+                        const sources = [];
+                        if (Object.keys(c.tabular).length > 0) sources.push('<span class="badge badge-tabular">CSV</span>');
+                        if (Object.keys(c.texture).length > 0) sources.push('<span class="badge badge-texture">Texture</span>');
+                        if (Object.keys(c.ml).length > 0) sources.push('<span class="badge badge-ml">ML</span>');
+                        
+                        return `
+                            <tr>
+                                <td><strong>${c.class_name}</strong></td>
+                                <td>${c.tabular.ndvi_avg ? c.tabular.ndvi_avg.toFixed(3) : 'N/A'}</td>
+                                <td>${c.tabular.brightness_avg ? c.tabular.brightness_avg.toFixed(2) : 'N/A'}</td>
+                                <td>${c.texture.glcm_contrast_avg ? c.texture.glcm_contrast_avg.toFixed(4) : 'N/A'}</td>
+                                <td>${c.ml.feature_dimension || 'N/A'}</td>
+                                <td>${sources.join(' ')}</td>
+                            </tr>
+                        `;
+                    }).join('');
+                    
+                    // Radar chart (first 5 classes)
+                    const first5 = comparison.slice(0, 5);
+                    charts.radar.data.labels = ['NDVI', 'Brightness', 'Contrast', 'Energy', 'LBP'];
+                    charts.radar.data.datasets = first5.map((c, i) => ({
+                        label: c.class_name,
+                        data: [
+                            (c.tabular.ndvi_avg || 0) * 100,
+                            (c.tabular.brightness_avg || 0) / 2.55,
+                            (c.texture.glcm_contrast_avg || 0) * 100,
+                            (c.texture.glcm_energy_avg || 0) * 100,
+                            (c.texture.lbp_entropy_avg || 0) * 20
+                        ],
+                        borderColor: `hsl(${i * 60}, 70%, 50%)`,
+                        backgroundColor: `hsla(${i * 60}, 70%, 50%, 0.2)`
+                    }));
+                    charts.radar.update();
+                }
+            } catch (error) {
+                console.error('Error loading comparison:', error);
+            }
+        }
+        
+        // Refresh all data
+        function refreshAllData() {
+            const activeTab = document.querySelector('.tab.active').textContent.trim().split(' ')[1].toLowerCase();
+            loadTabData(activeTab);
+            document.getElementById('lastUpdate').textContent = `Last updated: ${new Date().toLocaleString()}`;
+        }
+        
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            initCharts();
+            refreshAllData();
+            
+            // Auto-refresh every 30 seconds
+            setInterval(refreshAllData, 30000);
+        });
+    </script>
+</body>
+</html>

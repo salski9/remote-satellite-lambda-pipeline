@@ -1,0 +1,64 @@
+import json
+import time
+import pandas as pd
+from kafka import KafkaProducer
+import argparse
+
+import os
+DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "data")
+
+def load_joined_events():
+    images = pd.read_csv(f"{DATA_DIR}/images.csv")
+    classes = pd.read_csv(f"{DATA_DIR}/classes.csv")
+    ndvi = pd.read_csv(f"{DATA_DIR}/ndvi_stats.csv")
+    spectral = pd.read_csv(f"{DATA_DIR}/spectral_data.csv")
+
+    df = images.merge(classes, on="class_id", how="left") \
+               .merge(ndvi, on="image_id", how="left") \
+               .merge(spectral, on="image_id", how="left")
+
+    df["timestamp"] = pd.Timestamp.utcnow().isoformat()
+
+    # minimal schema selection
+    cols = [
+        "image_id", "class_name", "ndvi_mean", "ndvi_std", "ndvi_min", "ndvi_max",
+        "vegetation_index", "red_mean", "green_mean", "blue_mean", "nir_mean",
+        "brightness_mean", "timestamp"
+    ]
+    return df[cols]
+
+
+def get_producer():
+    return KafkaProducer(
+        bootstrap_servers=["localhost:29092"],
+        value_serializer=lambda v: json.dumps(v).encode("utf-8")
+    )
+
+
+def stream_events(topic: str = "image-events", delay_sec: float = 0.05, limit: int | None = None):
+    df = load_joined_events()
+    if limit is not None:
+        df = df.head(limit)
+    producer = get_producer()
+    for _, row in df.iterrows():
+        event = {}
+        for k in df.columns:
+            val = row[k]
+            if pd.isna(val):
+                event[k] = None
+            elif isinstance(val, pd.Timestamp):
+                event[k] = val.isoformat()
+            else:
+                event[k] = val
+        producer.send(topic, event)
+        time.sleep(delay_sec)
+    producer.flush()
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--topic", default="image-events")
+    parser.add_argument("--delay", type=float, default=0.005)
+    parser.add_argument("--limit", type=int, default=500)
+    args = parser.parse_args()
+    stream_events(topic=args.topic, delay_sec=args.delay, limit=args.limit)

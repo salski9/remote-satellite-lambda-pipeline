@@ -1,8 +1,26 @@
-data
+# Data
+data/
+sample_data/
+
+# Notes
 notes.txt
-hdfs
-sample_data
-venv
+
+# HDFS
+hdfs/
+
+# Virtual environments
+venv/
+.venv/
+
+# Spark
+spark_jars/
+
+# Python
 __pycache__/
 *.pyc
-.DS_Store   
+
+# OS
+.DS_Store
+
+# Project-specific
+multimodal-lamda-architecture-master/

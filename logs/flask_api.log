@@ -1,0 +1,35 @@
+
+================================================================================
+ENHANCED MULTIMODAL API SERVER
+================================================================================
+Integration: Pre-Ingestion Layer + Lambda Architecture
+Port: 5000
+Documentation: http://localhost:5000/
+================================================================================
+
+ * Serving Flask app 'app_enhanced'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.164:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 141-097-810
+/home/top/bigData/remote-satellite-lambda-pipeline/src/serving/app_enhanced.py:316: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  'timestamp': datetime.utcnow().isoformat(),
+127.0.0.1 - - [15/Dec/2025 08:55:42] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 08:55:42] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 08:56:12] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 08:56:42] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 08:57:12] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 08:57:42] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 08:58:12] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 08:58:42] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 08:59:12] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 08:59:42] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 09:00:12] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 09:00:42] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 09:01:12] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 09:01:42] "GET /api/health HTTP/1.1" 200 -

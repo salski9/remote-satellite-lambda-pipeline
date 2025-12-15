@@ -1,10 +1,14 @@
 version: "3.8"
+
 services:
+  # ========================
+  # HDFS - Existing (keeping your data)
+  # ========================
   namenode:
     image: bde2020/hadoop-namenode:2.0.0-hadoop3.1.3-java8
     container_name: namenode
     environment:
-      - CLUSTER_NAME=test
+      - CLUSTER_NAME=landcover
       - CORE_CONF_fs_defaultFS=hdfs://namenode:8020
     ports:
       - "9870:9870"   # Web UI
@@ -28,5 +32,96 @@ services:
     networks:
       - bigdata
 
+  # ========================
+  # KAFKA STREAMING PLATFORM
+  # ========================
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.5.1
+    container_name: zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - "2181:2181"
+    networks:
+      - bigdata
+
+  kafka:
+    image: confluentinc/cp-kafka:7.5.1
+    container_name: kafka
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:29092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+    ports:
+      - "9092:9092"
+      - "29092:29092"
+    networks:
+      - bigdata
+
+  # ========================
+  # CASSANDRA DATABASE
+  # ========================
+  cassandra:
+    image: cassandra:4.1
+    container_name: cassandra
+    environment:
+      - CASSANDRA_CLUSTER_NAME=landcover
+      - CASSANDRA_SEEDS=cassandra
+      - CASSANDRA_DC=datacenter1
+      - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
+    ports:
+      - "9042:9042"
+    volumes:
+      - cassandra_data:/var/lib/cassandra
+    networks:
+      - bigdata
+    healthcheck:
+      test: ["CMD-SHELL", "cqlsh -e 'describe cluster'"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # ========================
+  # SPARK CLUSTER
+  # ========================
+  spark-master:
+    image: apache/spark:3.5.1
+    container_name: spark-master
+    command: "/opt/spark/bin/spark-class org.apache.spark.deploy.master.Master"
+    environment:
+      - SPARK_MASTER_HOST=spark-master
+      - SPARK_MASTER_PORT=7077
+      - SPARK_MASTER_WEBUI_PORT=8080
+    ports:
+      - "7077:7077"
+      - "8080:8080"
+    networks:
+      - bigdata
+
+  spark-worker:
+    image: apache/spark:3.5.1
+    container_name: spark-worker
+    command: "/opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077"
+    depends_on:
+      - spark-master
+    environment:
+      - SPARK_WORKER_CORES=2
+      - SPARK_WORKER_MEMORY=2g
+      - SPARK_MASTER=spark://spark-master:7077
+    ports:
+      - "8081:8081"
+    networks:
+      - bigdata
+
 networks:
   bigdata:
+    driver: bridge
+
+volumes:
+  cassandra_data:

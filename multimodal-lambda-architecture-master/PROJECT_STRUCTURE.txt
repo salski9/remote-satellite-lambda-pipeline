@@ -1,0 +1,194 @@
+┌─────────────────────────────────────────────────────────────────────┐
+│                                                                     │
+│    🌍 MULTIMODAL LAMBDA ARCHITECTURE - PROJECT STRUCTURE 🌍         │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
+
+ProjectBigData/
+│
+├── 🚀 MAIN SCRIPTS (Start Here!)
+│   ├── setup.sh                  ⭐ RUN THIS FIRST! Complete automated setup
+│   ├── run_full_pipeline.sh      📊 Process all 27,000 events
+│   ├── test_multimodal.sh        🧪 Quick test (default: 500 events)
+│   └── cleanup.sh                🧹 Clean and reset project
+│
+├── 📚 DOCUMENTATION
+│   ├── README.md                 📖 MAIN DOCUMENTATION (read this!)
+│   ├── QUICK_REFERENCE.md        ⚡ Quick commands cheat sheet
+│   ├── QUICKSTART.md             🎓 Detailed setup guide
+│   ├── MULTIMODAL_README.md      🔬 Technical architecture
+│   └── docs/                     📁 Additional documentation
+│
+├── 🔧 SOURCE CODE
+│   ├── producer/
+│   │   ├── kafka_producer_multimodal.py  🎯 Main producer (CSV + RGB)
+│   │   └── continuous_producer.py        ♾️  Continuous streaming mode
+│   │
+│   ├── speed_layer/
+│   │   └── spark_streaming_multimodal.py ⚡ Real-time Spark processing
+│   │
+│   ├── serving/
+│   │   └── app.py                        🔌 Flask REST API
+│   │
+│   └── batch_layer/
+│       └── spark_batch.py                📊 Batch processing (Hive)
+│
+├── 🎨 DASHBOARD
+│   └── multimodal.html          🌐 MAIN DASHBOARD (open in browser!)
+│
+├── 📊 DATA
+│   ├── *.csv                    📄 Metadata files (27K rows)
+│   └── EuroSAT_RGB/             🖼️  RGB images (27K JPEGs, 10 classes)
+│
+├── 🐳 INFRASTRUCTURE
+│   ├── docker-compose.yml       🐋 All services (Kafka, Spark, Cassandra)
+│   └── init_hdfs.sh             💾 HDFS initialization
+│
+├── 📝 LOGS
+│   ├── api.log                  🔌 API server logs
+│   └── dashboard.log            🌐 Dashboard server logs
+│
+└── 🔧 CONFIG
+    ├── requirements.txt         📦 Python dependencies
+    └── .venv/                   🐍 Virtual environment
+
+
+┌─────────────────────────────────────────────────────────────────────┐
+│                         🚀 GETTING STARTED                          │
+└─────────────────────────────────────────────────────────────────────┘
+
+FOR FIRST-TIME USERS:
+
+1️⃣  Install Dependencies:
+    python3 -m venv .venv
+    source .venv/bin/activate
+    pip install -r requirements.txt
+
+2️⃣  Run Complete Setup:
+    ./setup.sh
+
+    This single command will:
+    ✓ Start all Docker services
+    ✓ Initialize database
+    ✓ Deploy streaming job
+    ✓ Start API & dashboard
+    ✓ Run initial test
+
+3️⃣  Open Dashboard:
+    http://localhost:8000/multimodal.html
+
+    You'll see:
+    ✓ Real-time statistics for 10 land cover classes
+    ✓ Interactive charts (NDVI, RGB, brightness)
+    ✓ Live anomaly feed
+    ✓ Auto-refresh every 5 seconds
+
+
+┌─────────────────────────────────────────────────────────────────────┐
+│                        📊 WHAT YOU'LL SEE                           │
+└─────────────────────────────────────────────────────────────────────┘
+
+The dashboard shows data for 10 land cover classes:
+
+1. AnnualCrop          - Agricultural crops
+2. Forest              - Dense tree coverage
+3. HerbaceousVegetation - Grasslands
+4. Highway             - Roads and paved areas
+5. Industrial          - Factories and warehouses
+6. Pasture             - Grazing land
+7. PermanentCrop       - Orchards and vineyards
+8. Residential         - Urban housing
+9. River               - Flowing water
+10. SeaLake            - Lakes and seas
+
+Each class shows:
+✓ CSV features: NDVI, spectral bands
+✓ Image features: RGB statistics, brightness, contrast
+✓ Multimodal anomalies: Fusion-based detection
+
+
+┌─────────────────────────────────────────────────────────────────────┐
+│                      🎯 USAGE SCENARIOS                             │
+└─────────────────────────────────────────────────────────────────────┘
+
+QUICK TEST (1 minute):
+  ./test_multimodal.sh 500
+
+FULL PIPELINE (20-30 minutes):
+  ./run_full_pipeline.sh
+
+CONTINUOUS STREAMING:
+  source .venv/bin/activate
+  python src/producer/continuous_producer.py
+
+MONITOR LOGS:
+  docker exec spark-master tail -f /tmp/multimodal_streaming.log
+  tail -f logs/api.log
+
+CHECK DATA:
+  curl http://127.0.0.1:5000/api/multimodal/summary | jq
+
+DIRECT CASSANDRA QUERY:
+  docker exec cassandra cqlsh -e \
+    "SELECT * FROM landcover.multimodal_tabular_stats;"
+
+
+┌─────────────────────────────────────────────────────────────────────┐
+│                      🔗 ACCESS POINTS                               │
+└─────────────────────────────────────────────────────────────────────┘
+
+🌐 Dashboard:     http://localhost:8000/multimodal.html
+🔌 API:           http://127.0.0.1:5000/api/multimodal/summary
+⚡ Spark UI:      http://localhost:8080
+💾 HDFS UI:       http://localhost:9870
+
+
+┌─────────────────────────────────────────────────────────────────────┐
+│                    ⚠️  TROUBLESHOOTING                              │
+└─────────────────────────────────────────────────────────────────────┘
+
+PROBLEM: Services won't start
+SOLUTION: docker-compose down && ./setup.sh
+
+PROBLEM: Dashboard shows no data
+SOLUTION: Check API → curl http://127.0.0.1:5000/api/multimodal/summary
+
+PROBLEM: Streaming not processing
+SOLUTION: See README.md → Troubleshooting section
+
+PROBLEM: Want to start fresh
+SOLUTION: ./cleanup.sh && ./setup.sh
+
+
+┌─────────────────────────────────────────────────────────────────────┐
+│                      📚 LEARN MORE                                  │
+└─────────────────────────────────────────────────────────────────────┘
+
+READ:
+  README.md              - Complete project overview
+  QUICK_REFERENCE.md     - Command cheat sheet
+  QUICKSTART.md          - Detailed setup guide
+  MULTIMODAL_README.md   - Technical architecture
+
+UNDERSTAND:
+  • Lambda Architecture (batch + speed + serving)
+  • Real-time stream processing
+  • Multimodal data fusion
+  • Distributed systems
+
+
+┌─────────────────────────────────────────────────────────────────────┐
+│                   ✨ PROJECT HIGHLIGHTS                             │
+└─────────────────────────────────────────────────────────────────────┘
+
+✓ 27,000 satellite images processed
+✓ 10 land cover classes analyzed
+✓ CSV + RGB multimodal fusion
+✓ Real-time anomaly detection
+✓ Interactive dashboard
+✓ Distributed processing (Kafka + Spark + Cassandra)
+✓ 100-200 events/second throughput
+✓ Fully automated setup
+
+
+🚀 Ready? Run: ./setup.sh
