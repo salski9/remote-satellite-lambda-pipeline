@@ -24,3 +24,8 @@ __pycache__/
 
 # Project-specific
 multimodal-lamda-architecture-master/
+
+#logs
+logs/
+
+scripts/logs/

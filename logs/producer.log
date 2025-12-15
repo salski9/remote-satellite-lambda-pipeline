@@ -1,60 +1,60 @@
-2025-12-15 08:55:13,235 - INFO - Initializing Spark session...
-25/12/15 08:55:13 WARN Utils: Your hostname, top-IdeaPad-Gaming-3-15IAH7 resolves to a loopback address: 127.0.1.1; using 192.168.1.164 instead (on interface wlp47s0)
-25/12/15 08:55:13 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+2025-12-15 22:41:35,099 - INFO - Initializing Spark session...
+25/12/15 22:41:35 WARN Utils: Your hostname, top-IdeaPad-Gaming-3-15IAH7 resolves to a loopback address: 127.0.1.1; using 192.168.1.10 instead (on interface wlp47s0)
+25/12/15 22:41:35 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
 Setting default log level to "WARN".
 To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
-25/12/15 08:55:14 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
-25/12/15 08:55:14 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
-2025-12-15 08:55:15,091 - INFO - Spark session created successfully
-2025-12-15 08:55:15,091 - INFO - Reading Parquet files from HDFS...
-2025-12-15 08:55:15,091 - INFO - Reading: hdfs://localhost:8020/data/processed/processed_images.parquet
-2025-12-15 08:55:17,423 - INFO - Loaded 27000 processed images
-2025-12-15 08:55:17,423 - INFO - Reading: hdfs://localhost:8020/data/processed/texture/texture_features.parquet
-[Stage 5:======================>                                 (11 + 13) / 27][Stage 5:========================>                               (12 + 12) / 27][Stage 5:==================================================>      (24 + 3) / 27]                                                                                2025-12-15 08:55:18,809 - INFO - Loaded 27000 texture feature records
-2025-12-15 08:55:18,810 - INFO - Joining DataFrames on image_id...
-[Stage 8:==============>                                          (7 + 12) / 27][Stage 8:========================>                               (12 + 12) / 27][Stage 8:====================================================>    (25 + 2) / 27]                                                                                2025-12-15 08:55:20,494 - INFO - Joined DataFrame contains 27000 records
-2025-12-15 08:55:20,494 - INFO - Connecting to Kafka at localhost:29092...
-2025-12-15 08:55:20,498 - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:29092 <connecting> [IPv4 ('127.0.0.1', 29092)]>: connecting to localhost:29092 [('127.0.0.1', 29092) IPv4]
-2025-12-15 08:55:20,504 - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:29092 <checking_api_versions_recv> [IPv4 ('127.0.0.1', 29092)]>: Broker version identified as 2.6
-2025-12-15 08:55:20,504 - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:29092 <connected> [IPv4 ('127.0.0.1', 29092)]>: Connection complete.
-2025-12-15 08:55:20,504 - INFO - Streaming events to Kafka topic: enhanced-multimodal-events
-25/12/15 08:55:20 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
-[Stage 12:========================>                              (12 + 12) / 27][Stage 12:============================>                          (14 + 12) / 27][Stage 12:===================================================>    (25 + 2) / 27]                                                                                /home/top/bigData/remote-satellite-lambda-pipeline/src/producer/kafka_producer_from_parquet.py:112: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+25/12/15 22:41:36 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/12/15 22:41:36 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+2025-12-15 22:41:37,003 - INFO - Spark session created successfully
+2025-12-15 22:41:37,003 - INFO - Reading Parquet files from HDFS...
+2025-12-15 22:41:37,004 - INFO - Reading: hdfs://localhost:8020/data/processed/processed_images.parquet
+2025-12-15 22:41:39,318 - INFO - Loaded 27000 processed images
+2025-12-15 22:41:39,318 - INFO - Reading: hdfs://localhost:8020/data/processed/texture/texture_features.parquet
+[Stage 5:==========>                                              (5 + 12) / 27][Stage 5:========================>                               (12 + 12) / 27][Stage 5:===================================>                    (17 + 10) / 27]                                                                                2025-12-15 22:41:40,764 - INFO - Loaded 27000 texture feature records
+2025-12-15 22:41:40,764 - INFO - Joining DataFrames on image_id...
+[Stage 8:>                                                        (0 + 12) / 27][Stage 8:========================>                               (12 + 12) / 27][Stage 8:========================================>                (19 + 8) / 27]                                                                                2025-12-15 22:41:42,503 - INFO - Joined DataFrame contains 27000 records
+2025-12-15 22:41:42,503 - INFO - Connecting to Kafka at localhost:29092...
+2025-12-15 22:41:42,507 - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:29092 <connecting> [IPv4 ('127.0.0.1', 29092)]>: connecting to localhost:29092 [('127.0.0.1', 29092) IPv4]
+2025-12-15 22:41:42,510 - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:29092 <checking_api_versions_recv> [IPv4 ('127.0.0.1', 29092)]>: Broker version identified as 2.6
+2025-12-15 22:41:42,511 - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:29092 <connected> [IPv4 ('127.0.0.1', 29092)]>: Connection complete.
+2025-12-15 22:41:42,512 - INFO - Streaming events to Kafka topic: enhanced-multimodal-events
+25/12/15 22:41:42 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+[Stage 12:======>                                                 (3 + 12) / 27][Stage 12:========================>                              (12 + 12) / 27][Stage 12:=================================================>      (24 + 3) / 27]                                                                                /home/top/bigData/remote-satellite-lambda-pipeline/src/producer/kafka_producer_from_parquet.py:112: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
   'timestamp': datetime.utcnow().isoformat(),
-2025-12-15 08:55:23,129 - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=localhost:29092 <connecting> [IPv4 ('127.0.0.1', 29092)]>: connecting to localhost:29092 [('127.0.0.1', 29092) IPv4]
-2025-12-15 08:55:23,129 - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=localhost:29092 <connected> [IPv4 ('127.0.0.1', 29092)]>: Connection complete.
-2025-12-15 08:55:23,129 - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:29092 <connected> [IPv4 ('127.0.0.1', 29092)]>: Closing connection. 
-2025-12-15 08:55:23,177 - INFO - Progress: 1000/27000 events sent (3.7%)
-2025-12-15 08:55:23,225 - INFO - Progress: 2000/27000 events sent (7.4%)
-2025-12-15 08:55:23,289 - INFO - Progress: 3000/27000 events sent (11.1%)
-2025-12-15 08:55:23,337 - INFO - Progress: 4000/27000 events sent (14.8%)
-2025-12-15 08:55:23,438 - INFO - Progress: 5000/27000 events sent (18.5%)
-2025-12-15 08:55:23,480 - INFO - Progress: 6000/27000 events sent (22.2%)
-2025-12-15 08:55:23,525 - INFO - Progress: 7000/27000 events sent (25.9%)
-2025-12-15 08:55:23,568 - INFO - Progress: 8000/27000 events sent (29.6%)
-2025-12-15 08:55:23,620 - INFO - Progress: 9000/27000 events sent (33.3%)
-2025-12-15 08:55:23,663 - INFO - Progress: 10000/27000 events sent (37.0%)
-2025-12-15 08:55:23,708 - INFO - Progress: 11000/27000 events sent (40.7%)
-2025-12-15 08:55:23,756 - INFO - Progress: 12000/27000 events sent (44.4%)
-2025-12-15 08:55:23,800 - INFO - Progress: 13000/27000 events sent (48.1%)
-2025-12-15 08:55:23,844 - INFO - Progress: 14000/27000 events sent (51.9%)
-2025-12-15 08:55:23,889 - INFO - Progress: 15000/27000 events sent (55.6%)
-2025-12-15 08:55:23,932 - INFO - Progress: 16000/27000 events sent (59.3%)
-2025-12-15 08:55:24,044 - INFO - Progress: 17000/27000 events sent (63.0%)
-2025-12-15 08:55:24,096 - INFO - Progress: 18000/27000 events sent (66.7%)
-2025-12-15 08:55:24,143 - INFO - Progress: 19000/27000 events sent (70.4%)
-2025-12-15 08:55:24,185 - INFO - Progress: 20000/27000 events sent (74.1%)
-2025-12-15 08:55:24,246 - INFO - Progress: 21000/27000 events sent (77.8%)
-2025-12-15 08:55:24,291 - INFO - Progress: 22000/27000 events sent (81.5%)
-2025-12-15 08:55:24,335 - INFO - Progress: 23000/27000 events sent (85.2%)
-2025-12-15 08:55:24,381 - INFO - Progress: 24000/27000 events sent (88.9%)
-2025-12-15 08:55:24,423 - INFO - Progress: 25000/27000 events sent (92.6%)
-2025-12-15 08:55:24,471 - INFO - Progress: 26000/27000 events sent (96.3%)
-2025-12-15 08:55:24,515 - INFO - Progress: 27000/27000 events sent (100.0%)
-2025-12-15 08:55:24,515 - INFO - Flushing remaining messages...
-2025-12-15 08:55:26,175 - INFO - <KafkaProducer client_id=kafka-python-producer-1 transactional_id=None>: Closing the Kafka producer with 9223372036.0 secs timeout.
-2025-12-15 08:55:26,175 - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=localhost:29092 <connected> [IPv4 ('127.0.0.1', 29092)]>: Closing connection. 
-2025-12-15 08:55:26,175 - INFO - 
+2025-12-15 22:41:45,315 - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=localhost:29092 <connecting> [IPv4 ('127.0.0.1', 29092)]>: connecting to localhost:29092 [('127.0.0.1', 29092) IPv4]
+2025-12-15 22:41:45,315 - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=localhost:29092 <connected> [IPv4 ('127.0.0.1', 29092)]>: Connection complete.
+2025-12-15 22:41:45,315 - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:29092 <connected> [IPv4 ('127.0.0.1', 29092)]>: Closing connection. 
+2025-12-15 22:41:45,368 - INFO - Progress: 1000/27000 events sent (3.7%)
+2025-12-15 22:41:45,417 - INFO - Progress: 2000/27000 events sent (7.4%)
+2025-12-15 22:41:45,464 - INFO - Progress: 3000/27000 events sent (11.1%)
+2025-12-15 22:41:45,510 - INFO - Progress: 4000/27000 events sent (14.8%)
+2025-12-15 22:41:45,613 - INFO - Progress: 5000/27000 events sent (18.5%)
+2025-12-15 22:41:45,668 - INFO - Progress: 6000/27000 events sent (22.2%)
+2025-12-15 22:41:45,717 - INFO - Progress: 7000/27000 events sent (25.9%)
+2025-12-15 22:41:45,765 - INFO - Progress: 8000/27000 events sent (29.6%)
+2025-12-15 22:41:45,813 - INFO - Progress: 9000/27000 events sent (33.3%)
+2025-12-15 22:41:45,862 - INFO - Progress: 10000/27000 events sent (37.0%)
+2025-12-15 22:41:45,909 - INFO - Progress: 11000/27000 events sent (40.7%)
+2025-12-15 22:41:45,960 - INFO - Progress: 12000/27000 events sent (44.4%)
+2025-12-15 22:41:46,012 - INFO - Progress: 13000/27000 events sent (48.1%)
+2025-12-15 22:41:46,062 - INFO - Progress: 14000/27000 events sent (51.9%)
+2025-12-15 22:41:46,125 - INFO - Progress: 15000/27000 events sent (55.6%)
+2025-12-15 22:41:46,170 - INFO - Progress: 16000/27000 events sent (59.3%)
+2025-12-15 22:41:46,273 - INFO - Progress: 17000/27000 events sent (63.0%)
+2025-12-15 22:41:46,323 - INFO - Progress: 18000/27000 events sent (66.7%)
+2025-12-15 22:41:46,369 - INFO - Progress: 19000/27000 events sent (70.4%)
+2025-12-15 22:41:46,415 - INFO - Progress: 20000/27000 events sent (74.1%)
+2025-12-15 22:41:46,459 - INFO - Progress: 21000/27000 events sent (77.8%)
+2025-12-15 22:41:46,508 - INFO - Progress: 22000/27000 events sent (81.5%)
+2025-12-15 22:41:46,555 - INFO - Progress: 23000/27000 events sent (85.2%)
+2025-12-15 22:41:46,600 - INFO - Progress: 24000/27000 events sent (88.9%)
+2025-12-15 22:41:46,644 - INFO - Progress: 25000/27000 events sent (92.6%)
+2025-12-15 22:41:46,689 - INFO - Progress: 26000/27000 events sent (96.3%)
+2025-12-15 22:41:46,735 - INFO - Progress: 27000/27000 events sent (100.0%)
+2025-12-15 22:41:46,735 - INFO - Flushing remaining messages...
+2025-12-15 22:41:48,244 - INFO - <KafkaProducer client_id=kafka-python-producer-1 transactional_id=None>: Closing the Kafka producer with 9223372036.0 secs timeout.
+2025-12-15 22:41:48,244 - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=localhost:29092 <connected> [IPv4 ('127.0.0.1', 29092)]>: Closing connection. 
+2025-12-15 22:41:48,244 - INFO - 
     ========================================
     STREAMING COMPLETE
     ========================================
@@ -64,5 +64,5 @@ To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLeve
     Success rate: 100.0%
     ========================================
     
-2025-12-15 08:55:26,584 - INFO - Spark session stopped. Producer finished successfully!
-2025-12-15 08:55:26,585 - INFO - Closing down clientserver connection
+2025-12-15 22:41:48,529 - INFO - Spark session stopped. Producer finished successfully!
+2025-12-15 22:41:48,530 - INFO - Closing down clientserver connection

@@ -269,6 +269,28 @@ def enhanced_summary():
     summary['timestamp'] = datetime.utcnow().isoformat()
     summary['integration'] = 'pre-ingestion-enhanced'
     
+    # Add batch processing information
+    now = datetime.utcnow()
+    current_hour = now.hour
+    next_hour = ((current_hour // 2) + 1) * 2
+    if next_hour >= 24:
+        next_batch = now.replace(hour=0, minute=0, second=0, microsecond=0)
+        from datetime import timedelta
+        next_batch = next_batch + timedelta(days=1)
+    else:
+        next_batch = now.replace(hour=next_hour, minute=0, second=0, microsecond=0)
+    
+    time_until_batch = (next_batch - now).total_seconds()
+    hours_until = int(time_until_batch // 3600)
+    minutes_until = int((time_until_batch % 3600) // 60)
+    
+    summary['batch_processing'] = {
+        'enabled': True,
+        'schedule': 'Every 2 hours',
+        'next_run': next_batch.isoformat(),
+        'time_until_next': f"{hours_until}h {minutes_until}m"
+    }
+    
     return jsonify(summary)
 
 @app.route('/api/enhanced/class-comparison')
@@ -309,12 +331,73 @@ def enhanced_class_comparison():
 
 @app.route('/api/health')
 def health_check():
-    """Health check endpoint"""
+    """Health check endpoint with batch processing info"""
+    now = datetime.utcnow()
+    current_hour = now.hour
+    
+    # Calculate next batch run (every 2 hours at :00)
+    next_hour = ((current_hour // 2) + 1) * 2
+    if next_hour >= 24:
+        next_batch = now.replace(hour=0, minute=0, second=0, microsecond=0)
+        next_batch = next_batch.replace(day=now.day + 1)
+    else:
+        next_batch = now.replace(hour=next_hour, minute=0, second=0, microsecond=0)
+    
+    time_until_batch = (next_batch - now).total_seconds()
+    hours_until = int(time_until_batch // 3600)
+    minutes_until = int((time_until_batch % 3600) // 60)
+    
     return jsonify({
         'status': 'healthy',
         'service': 'enhanced-multimodal-api',
-        'timestamp': datetime.utcnow().isoformat(),
-        'cassandra_connected': True
+        'timestamp': now.isoformat(),
+        'cassandra_connected': True,
+        'batch_processing': {
+            'schedule': 'Every 2 hours',
+            'run_times': '00:00, 02:00, 04:00, 06:00, 08:00, 10:00, 12:00, 14:00, 16:00, 18:00, 20:00, 22:00',
+            'next_run': next_batch.isoformat(),
+            'time_until_next': f"{hours_until}h {minutes_until}m"
+        }
+    })
+
+@app.route('/api/batch/status')
+def batch_status():
+    """Batch processing status and schedule information"""
+    now = datetime.utcnow()
+    current_hour = now.hour
+    
+    # Calculate next batch run (every 2 hours at :00)
+    next_hour = ((current_hour // 2) + 1) * 2
+    if next_hour >= 24:
+        next_batch = now.replace(hour=0, minute=0, second=0, microsecond=0)
+        from datetime import timedelta
+        next_batch = next_batch + timedelta(days=1)
+    else:
+        next_batch = now.replace(hour=next_hour, minute=0, second=0, microsecond=0)
+    
+    time_until_batch = (next_batch - now).total_seconds()
+    hours_until = int(time_until_batch // 3600)
+    minutes_until = int((time_until_batch % 3600) // 60)
+    
+    # Check if batch is currently running (within 5 minutes of a batch hour)
+    is_running = (current_hour % 2 == 0) and (now.minute < 5)
+    
+    return jsonify({
+        'schedule': {
+            'frequency': 'Every 2 hours',
+            'interval': '2 hours',
+            'times': ['00:00', '02:00', '04:00', '06:00', '08:00', '10:00', 
+                     '12:00', '14:00', '16:00', '18:00', '20:00', '22:00']
+        },
+        'next_run': {
+            'timestamp': next_batch.isoformat(),
+            'time_until': f"{hours_until}h {minutes_until}m",
+            'hours': hours_until,
+            'minutes': minutes_until
+        },
+        'current_status': 'running' if is_running else 'idle',
+        'last_updated': now.isoformat(),
+        'description': 'Batch layer recomputes accurate views from HDFS using Hive and Spark'
     })
 
 @app.route('/api/analytics/separability')

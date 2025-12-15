@@ -70,7 +70,7 @@ if [ "${SKIP_BATCH}" != "1" ]; then
     print_info "Computing batch views from historical data..."
     
     cd /home/top/bigData/remote-satellite-lambda-pipeline
-    ./run_batch_job.sh
+    ./scripts/run_batch_job.sh
     
     BATCH_EXIT=$?
     if [ $BATCH_EXIT -eq 0 ]; then

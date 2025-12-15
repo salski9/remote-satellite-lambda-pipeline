@@ -541,3 +541,1175 @@ only showing top 5 rows
 2025-12-15 08:54:36,859 - INFO - ================================================================================
 2025-12-15 08:54:37,854 - INFO - ✓ Batch processing finished successfully!
 2025-12-15 08:54:37,854 - INFO - Closing down clientserver connection
+25/12/15 17:28:49 WARN Utils: Your hostname, top-IdeaPad-Gaming-3-15IAH7 resolves to a loopback address: 127.0.1.1; using 10.110.50.201 instead (on interface wlp47s0)
+25/12/15 17:28:49 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+2025-12-15 17:28:50,835 - INFO - Initializing Spark session with Hive support...
+25/12/15 17:28:50 INFO SparkContext: Running Spark version 3.5.1
+25/12/15 17:28:50 INFO SparkContext: OS info Linux, 6.8.0-88-generic, amd64
+25/12/15 17:28:50 INFO SparkContext: Java version 21.0.9
+25/12/15 17:28:50 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/12/15 17:28:51 INFO ResourceUtils: ==============================================================
+25/12/15 17:28:51 INFO ResourceUtils: No custom resources configured for spark.driver.
+25/12/15 17:31:53 WARN Utils: Your hostname, top-IdeaPad-Gaming-3-15IAH7 resolves to a loopback address: 127.0.1.1; using 10.110.50.201 instead (on interface wlp47s0)
+25/12/15 17:31:53 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+2025-12-15 17:31:54,215 - INFO - Initializing Spark session with Hive support...
+25/12/15 17:31:54 INFO SparkContext: Running Spark version 3.5.1
+25/12/15 17:31:54 INFO SparkContext: OS info Linux, 6.8.0-88-generic, amd64
+25/12/15 17:31:54 INFO SparkContext: Java version 21.0.9
+25/12/15 17:31:54 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/12/15 17:31:54 INFO ResourceUtils: ==============================================================
+25/12/15 17:31:54 INFO ResourceUtils: No custom resources configured for spark.driver.
+25/12/15 17:31:54 INFO ResourceUtils: ==============================================================
+25/12/15 17:31:54 INFO SparkContext: Submitted application: BatchProcessingLayer
+25/12/15 17:31:54 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 4096, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+25/12/15 17:31:54 INFO ResourceProfile: Limiting resource is cpu
+25/12/15 17:31:54 INFO ResourceProfileManager: Added ResourceProfile id: 0
+25/12/15 17:31:54 INFO SecurityManager: Changing view acls to: top
+25/12/15 17:31:54 INFO SecurityManager: Changing modify acls to: top
+25/12/15 17:31:54 INFO SecurityManager: Changing view acls groups to: 
+25/12/15 17:31:54 INFO SecurityManager: Changing modify acls groups to: 
+25/12/15 17:31:54 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: top; groups with view permissions: EMPTY; users with modify permissions: top; groups with modify permissions: EMPTY
+25/12/15 17:31:54 INFO Utils: Successfully started service 'sparkDriver' on port 35851.
+25/12/15 17:31:54 INFO SparkEnv: Registering MapOutputTracker
+25/12/15 17:31:54 INFO SparkEnv: Registering BlockManagerMaster
+25/12/15 17:31:54 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+25/12/15 17:31:54 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+25/12/15 17:31:54 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+25/12/15 17:31:54 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-bda170b7-47db-4584-9e26-ae422f062c1d
+25/12/15 17:31:54 INFO MemoryStore: MemoryStore started with capacity 2.2 GiB
+25/12/15 17:31:54 INFO SparkEnv: Registering OutputCommitCoordinator
+25/12/15 17:31:54 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+25/12/15 17:31:54 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+25/12/15 17:31:54 INFO Executor: Starting executor ID driver on host 10.110.50.201
+25/12/15 17:31:54 INFO Executor: OS info Linux, 6.8.0-88-generic, amd64
+25/12/15 17:31:54 INFO Executor: Java version 21.0.9
+25/12/15 17:31:54 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+25/12/15 17:31:54 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@2405cae8 for default.
+25/12/15 17:31:54 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 36293.
+25/12/15 17:31:54 INFO NettyBlockTransferService: Server created on 10.110.50.201:36293
+25/12/15 17:31:54 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+25/12/15 17:31:54 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 10.110.50.201, 36293, None)
+25/12/15 17:31:54 INFO BlockManagerMasterEndpoint: Registering block manager 10.110.50.201:36293 with 2.2 GiB RAM, BlockManagerId(driver, 10.110.50.201, 36293, None)
+25/12/15 17:31:54 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 10.110.50.201, 36293, None)
+25/12/15 17:31:54 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 10.110.50.201, 36293, None)
+2025-12-15 17:31:55,109 - INFO - ✓ Spark session with Hive support created
+2025-12-15 17:31:55,110 - INFO - Creating Hive database for batch views...
+25/12/15 17:31:56 WARN HiveConf: HiveConf of name hive.stats.jdbc.timeout does not exist
+25/12/15 17:31:56 WARN HiveConf: HiveConf of name hive.stats.retries.wait does not exist
+Mon Dec 15 17:31:56 CET 2025 Thread[#38,Thread-4,5,main] java.io.FileNotFoundException: derby.log (Permission non accordée)
+----------------------------------------------------------------
+Mon Dec 15 17:31:56 CET 2025:
+Booting Derby (version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579)) instance a816c00e-019b-22da-b2e3-000001800a50 
+on database directory /home/top/bigData/remote-satellite-lambda-pipeline/metastore_db in READ ONLY mode with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@c387f44. 
+Loaded from file:/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/jars/derby-10.14.2.0.jar.
+java.vendor=Ubuntu
+java.runtime.version=21.0.9+10-Ubuntu-124.04
+user.dir=/home/top/bigData/remote-satellite-lambda-pipeline
+os.name=Linux
+os.arch=amd64
+os.version=6.8.0-88-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+25/12/15 17:31:56 ERROR PoolWatchThread: Error in trying to obtain a connection. Retrying in 7000ms
+java.sql.SQLException: A read-only user or a user in a read-only database is not permitted to disable read-only mode on a connection.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.wrapInSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.setReadOnly(Unknown Source)
+	at com.jolbox.bonecp.ConnectionHandle.setReadOnly(ConnectionHandle.java:1324)
+	at com.jolbox.bonecp.ConnectionHandle.<init>(ConnectionHandle.java:262)
+	at com.jolbox.bonecp.PoolWatchThread.fillConnections(PoolWatchThread.java:115)
+	at com.jolbox.bonecp.PoolWatchThread.run(PoolWatchThread.java:82)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: ERROR 25505: A read-only user or a user in a read-only database is not permitted to disable read-only mode on a connection.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.sql.conn.GenericAuthorizer.setReadOnlyConnection(Unknown Source)
+	at org.apache.derby.impl.sql.conn.GenericLanguageConnectionContext.setReadOnly(Unknown Source)
+	... 8 more
+25/12/15 17:32:03 ERROR PoolWatchThread: Error in trying to obtain a connection. Retrying in 7000ms
+java.sql.SQLException: A read-only user or a user in a read-only database is not permitted to disable read-only mode on a connection.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.wrapInSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.setReadOnly(Unknown Source)
+	at com.jolbox.bonecp.ConnectionHandle.setReadOnly(ConnectionHandle.java:1324)
+	at com.jolbox.bonecp.ConnectionHandle.<init>(ConnectionHandle.java:262)
+	at com.jolbox.bonecp.PoolWatchThread.fillConnections(PoolWatchThread.java:115)
+	at com.jolbox.bonecp.PoolWatchThread.run(PoolWatchThread.java:82)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: ERROR 25505: A read-only user or a user in a read-only database is not permitted to disable read-only mode on a connection.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.sql.conn.GenericAuthorizer.setReadOnlyConnection(Unknown Source)
+	at org.apache.derby.impl.sql.conn.GenericLanguageConnectionContext.setReadOnly(Unknown Source)
+	... 8 more
+25/12/15 17:32:05 WARN GarbageCollectionMetrics: To enable non-built-in garbage collector(s) List(G1 Concurrent GC), users should configure it(them) to spark.eventLog.gcMetrics.youngGenerationGarbageCollectors or spark.eventLog.gcMetrics.oldGenerationGarbageCollectors
+25/12/15 17:32:10 ERROR PoolWatchThread: Error in trying to obtain a connection. Retrying in 7000ms
+java.sql.SQLException: A read-only user or a user in a read-only database is not permitted to disable read-only mode on a connection.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.wrapInSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.setReadOnly(Unknown Source)
+	at com.jolbox.bonecp.ConnectionHandle.setReadOnly(ConnectionHandle.java:1324)
+	at com.jolbox.bonecp.ConnectionHandle.<init>(ConnectionHandle.java:262)
+	at com.jolbox.bonecp.PoolWatchThread.fillConnections(PoolWatchThread.java:115)
+	at com.jolbox.bonecp.PoolWatchThread.run(PoolWatchThread.java:82)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: ERROR 25505: A read-only user or a user in a read-only database is not permitted to disable read-only mode on a connection.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.sql.conn.GenericAuthorizer.setReadOnlyConnection(Unknown Source)
+	at org.apache.derby.impl.sql.conn.GenericLanguageConnectionContext.setReadOnly(Unknown Source)
+	... 8 more
+25/12/15 17:32:17 ERROR PoolWatchThread: Error in trying to obtain a connection. Retrying in 7000ms
+java.sql.SQLException: A read-only user or a user in a read-only database is not permitted to disable read-only mode on a connection.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.wrapInSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.setReadOnly(Unknown Source)
+	at com.jolbox.bonecp.ConnectionHandle.setReadOnly(ConnectionHandle.java:1324)
+	at com.jolbox.bonecp.ConnectionHandle.<init>(ConnectionHandle.java:262)
+	at com.jolbox.bonecp.PoolWatchThread.fillConnections(PoolWatchThread.java:115)
+	at com.jolbox.bonecp.PoolWatchThread.run(PoolWatchThread.java:82)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: ERROR 25505: A read-only user or a user in a read-only database is not permitted to disable read-only mode on a connection.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.sql.conn.GenericAuthorizer.setReadOnlyConnection(Unknown Source)
+	at org.apache.derby.impl.sql.conn.GenericLanguageConnectionContext.setReadOnly(Unknown Source)
+	... 8 more
+25/12/15 17:32:24 ERROR PoolWatchThread: Error in trying to obtain a connection. Retrying in 7000ms
+java.sql.SQLException: A read-only user or a user in a read-only database is not permitted to disable read-only mode on a connection.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.wrapInSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.setReadOnly(Unknown Source)
+	at com.jolbox.bonecp.ConnectionHandle.setReadOnly(ConnectionHandle.java:1324)
+	at com.jolbox.bonecp.ConnectionHandle.<init>(ConnectionHandle.java:262)
+	at com.jolbox.bonecp.PoolWatchThread.fillConnections(PoolWatchThread.java:115)
+	at com.jolbox.bonecp.PoolWatchThread.run(PoolWatchThread.java:82)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: ERROR 25505: A read-only user or a user in a read-only database is not permitted to disable read-only mode on a connection.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.sql.conn.GenericAuthorizer.setReadOnlyConnection(Unknown Source)
+	at org.apache.derby.impl.sql.conn.GenericLanguageConnectionContext.setReadOnly(Unknown Source)
+	... 8 more
+25/12/15 17:32:31 ERROR PoolWatchThread: Error in trying to obtain a connection. Retrying in 7000ms
+java.sql.SQLException: A read-only user or a user in a read-only database is not permitted to disable read-only mode on a connection.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.wrapInSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.setReadOnly(Unknown Source)
+	at com.jolbox.bonecp.ConnectionHandle.setReadOnly(ConnectionHandle.java:1324)
+	at com.jolbox.bonecp.ConnectionHandle.<init>(ConnectionHandle.java:262)
+	at com.jolbox.bonecp.PoolWatchThread.fillConnections(PoolWatchThread.java:115)
+	at com.jolbox.bonecp.PoolWatchThread.run(PoolWatchThread.java:82)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: ERROR 25505: A read-only user or a user in a read-only database is not permitted to disable read-only mode on a connection.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.sql.conn.GenericAuthorizer.setReadOnlyConnection(Unknown Source)
+	at org.apache.derby.impl.sql.conn.GenericLanguageConnectionContext.setReadOnly(Unknown Source)
+	... 8 more
+25/12/15 17:32:38 ERROR PoolWatchThread: Error in trying to obtain a connection. Retrying in 7000ms
+java.sql.SQLException: A read-only user or a user in a read-only database is not permitted to disable read-only mode on a connection.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.wrapInSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.setReadOnly(Unknown Source)
+	at com.jolbox.bonecp.ConnectionHandle.setReadOnly(ConnectionHandle.java:1324)
+	at com.jolbox.bonecp.ConnectionHandle.<init>(ConnectionHandle.java:262)
+	at com.jolbox.bonecp.PoolWatchThread.fillConnections(PoolWatchThread.java:115)
+	at com.jolbox.bonecp.PoolWatchThread.run(PoolWatchThread.java:82)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: ERROR 25505: A read-only user or a user in a read-only database is not permitted to disable read-only mode on a connection.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.sql.conn.GenericAuthorizer.setReadOnlyConnection(Unknown Source)
+	at org.apache.derby.impl.sql.conn.GenericLanguageConnectionContext.setReadOnly(Unknown Source)
+	... 8 more
+25/12/15 17:32:45 ERROR PoolWatchThread: Error in trying to obtain a connection. Retrying in 7000ms
+java.sql.SQLException: A read-only user or a user in a read-only database is not permitted to disable read-only mode on a connection.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.wrapInSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.setReadOnly(Unknown Source)
+	at com.jolbox.bonecp.ConnectionHandle.setReadOnly(ConnectionHandle.java:1324)
+	at com.jolbox.bonecp.ConnectionHandle.<init>(ConnectionHandle.java:262)
+	at com.jolbox.bonecp.PoolWatchThread.fillConnections(PoolWatchThread.java:115)
+	at com.jolbox.bonecp.PoolWatchThread.run(PoolWatchThread.java:82)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: ERROR 25505: A read-only user or a user in a read-only database is not permitted to disable read-only mode on a connection.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.sql.conn.GenericAuthorizer.setReadOnlyConnection(Unknown Source)
+	at org.apache.derby.impl.sql.conn.GenericLanguageConnectionContext.setReadOnly(Unknown Source)
+	... 8 more
+25/12/15 17:33:58 WARN Utils: Your hostname, top-IdeaPad-Gaming-3-15IAH7 resolves to a loopback address: 127.0.1.1; using 10.110.50.201 instead (on interface wlp47s0)
+25/12/15 17:33:58 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+2025-12-15 17:33:59,782 - INFO - Initializing Spark session with Hive support...
+25/12/15 17:33:59 INFO SparkContext: Running Spark version 3.5.1
+25/12/15 17:33:59 INFO SparkContext: OS info Linux, 6.8.0-88-generic, amd64
+25/12/15 17:33:59 INFO SparkContext: Java version 21.0.9
+25/12/15 17:33:59 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/12/15 17:33:59 INFO ResourceUtils: ==============================================================
+25/12/15 17:33:59 INFO ResourceUtils: No custom resources configured for spark.driver.
+25/12/15 17:33:59 INFO ResourceUtils: ==============================================================
+25/12/15 17:33:59 INFO SparkContext: Submitted application: BatchProcessingLayer
+25/12/15 17:33:59 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 4096, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+25/12/15 17:33:59 INFO ResourceProfile: Limiting resource is cpu
+25/12/15 17:33:59 INFO ResourceProfileManager: Added ResourceProfile id: 0
+25/12/15 17:34:00 INFO SecurityManager: Changing view acls to: top
+25/12/15 17:34:00 INFO SecurityManager: Changing modify acls to: top
+25/12/15 17:34:00 INFO SecurityManager: Changing view acls groups to: 
+25/12/15 17:34:00 INFO SecurityManager: Changing modify acls groups to: 
+25/12/15 17:34:00 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: top; groups with view permissions: EMPTY; users with modify permissions: top; groups with modify permissions: EMPTY
+25/12/15 17:34:00 INFO Utils: Successfully started service 'sparkDriver' on port 44705.
+25/12/15 17:34:00 INFO SparkEnv: Registering MapOutputTracker
+25/12/15 17:34:00 INFO SparkEnv: Registering BlockManagerMaster
+25/12/15 17:34:00 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+25/12/15 17:34:00 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+25/12/15 17:34:00 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+25/12/15 17:34:00 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-b99b209c-bf81-4895-a536-d03598c8d021
+25/12/15 17:34:00 INFO MemoryStore: MemoryStore started with capacity 2.2 GiB
+25/12/15 17:34:00 INFO SparkEnv: Registering OutputCommitCoordinator
+25/12/15 17:34:00 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+25/12/15 17:34:00 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+25/12/15 17:34:00 INFO Executor: Starting executor ID driver on host 10.110.50.201
+25/12/15 17:34:00 INFO Executor: OS info Linux, 6.8.0-88-generic, amd64
+25/12/15 17:34:00 INFO Executor: Java version 21.0.9
+25/12/15 17:34:00 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+25/12/15 17:34:00 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@71d1a4d for default.
+25/12/15 17:34:00 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 39845.
+25/12/15 17:34:00 INFO NettyBlockTransferService: Server created on 10.110.50.201:39845
+25/12/15 17:34:00 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+25/12/15 17:34:00 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 10.110.50.201, 39845, None)
+25/12/15 17:34:00 INFO BlockManagerMasterEndpoint: Registering block manager 10.110.50.201:39845 with 2.2 GiB RAM, BlockManagerId(driver, 10.110.50.201, 39845, None)
+25/12/15 17:34:00 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 10.110.50.201, 39845, None)
+25/12/15 17:34:00 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 10.110.50.201, 39845, None)
+2025-12-15 17:34:01,035 - INFO - ✓ Spark session with Hive support created
+2025-12-15 17:34:01,035 - INFO - Creating Hive database for batch views...
+25/12/15 17:34:03 WARN HiveConf: HiveConf of name hive.stats.jdbc.timeout does not exist
+25/12/15 17:34:03 WARN HiveConf: HiveConf of name hive.stats.retries.wait does not exist
+Mon Dec 15 17:34:03 CET 2025 Thread[#38,Thread-4,5,main] java.io.FileNotFoundException: derby.log (Permission non accordée)
+----------------------------------------------------------------
+Mon Dec 15 17:34:03 CET 2025:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-019b-22dc-a2fb-000001727850 
+on database directory /home/top/bigData/remote-satellite-lambda-pipeline/metastore_db with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@c387f44 
+Loaded from file:/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/jars/derby-10.14.2.0.jar
+java.vendor=Ubuntu
+java.runtime.version=21.0.9+10-Ubuntu-124.04
+user.dir=/home/top/bigData/remote-satellite-lambda-pipeline
+os.name=Linux
+os.arch=amd64
+os.version=6.8.0-88-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+25/12/15 17:34:04 WARN ObjectStore: Version information not found in metastore. hive.metastore.schema.verification is not enabled so recording the schema version 2.3.0
+25/12/15 17:34:04 WARN ObjectStore: setMetaStoreSchemaVersion called but recording version is disabled: version = 2.3.0, comment = Set by MetaStore top@127.0.1.1
+25/12/15 17:34:05 WARN ObjectStore: Failed to get database global_temp, returning NoSuchObjectException
+2025-12-15 17:34:05,088 - INFO - ✓ Hive database 'batch_views' ready
+2025-12-15 17:34:05,088 - INFO - ================================================================================
+2025-12-15 17:34:05,088 - INFO - READING SOURCE DATA FROM HDFS
+2025-12-15 17:34:05,088 - INFO - ================================================================================
+2025-12-15 17:34:05,088 - INFO - Reading: hdfs://localhost:8020/data/processed/processed_images.parquet
+2025-12-15 17:34:07,326 - INFO - ✓ Loaded 27000 processed images
+2025-12-15 17:34:07,326 - INFO - Reading: hdfs://localhost:8020/data/processed/texture/texture_features.parquet
+2025-12-15 17:34:10,488 - INFO - ✓ Loaded 27000 texture features
+2025-12-15 17:34:10,489 - INFO - Joining datasets...
+2025-12-15 17:34:15,111 - INFO - ✓ Enriched dataset: 27000 records
+2025-12-15 17:34:15,111 - INFO - ================================================================================
+2025-12-15 17:34:15,112 - INFO - COMPUTING CLASS STATISTICS (Batch View)
+2025-12-15 17:34:15,112 - INFO - ================================================================================
+25/12/15 17:34:15 WARN GarbageCollectionMetrics: To enable non-built-in garbage collector(s) List(G1 Concurrent GC), users should configure it(them) to spark.eventLog.gcMetrics.youngGenerationGarbageCollectors or spark.eventLog.gcMetrics.oldGenerationGarbageCollectors
+2025-12-15 17:34:16,807 - INFO - ✓ Computed statistics for 10 classes
+2025-12-15 17:34:16,807 - INFO - Saving to Hive table: batch_views.class_statistics
+25/12/15 17:34:17 ERROR log: Got exception: org.apache.hadoop.security.AccessControlException Permission denied: user=top, access=ALL, inode="/user/hive/warehouse/batch_views.db/class_statistics":root:supergroup:drwxr-xr-x
+	at org.apache.hadoop.hdfs.server.namenode.FSPermissionChecker.checkSubAccess(FSPermissionChecker.java:348)
+	at org.apache.hadoop.hdfs.server.namenode.FSPermissionChecker.checkPermission(FSPermissionChecker.java:265)
+	at org.apache.hadoop.hdfs.server.namenode.FSPermissionChecker.checkPermission(FSPermissionChecker.java:193)
+	at org.apache.hadoop.hdfs.server.namenode.FSDirectory.checkPermission(FSDirectory.java:1855)
+	at org.apache.hadoop.hdfs.server.namenode.FSDirDeleteOp.delete(FSDirDeleteOp.java:110)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.delete(FSNamesystem.java:3027)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.delete(NameNodeRpcServer.java:1114)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.delete(ClientNamenodeProtocolServerSideTranslatorPB.java:699)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:527)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1036)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:1000)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:928)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2916)
+
+org.apache.hadoop.security.AccessControlException: Permission denied: user=top, access=ALL, inode="/user/hive/warehouse/batch_views.db/class_statistics":root:supergroup:drwxr-xr-x
+	at org.apache.hadoop.hdfs.server.namenode.FSPermissionChecker.checkSubAccess(FSPermissionChecker.java:348)
+	at org.apache.hadoop.hdfs.server.namenode.FSPermissionChecker.checkPermission(FSPermissionChecker.java:265)
+	at org.apache.hadoop.hdfs.server.namenode.FSPermissionChecker.checkPermission(FSPermissionChecker.java:193)
+	at org.apache.hadoop.hdfs.server.namenode.FSDirectory.checkPermission(FSDirectory.java:1855)
+	at org.apache.hadoop.hdfs.server.namenode.FSDirDeleteOp.delete(FSDirDeleteOp.java:110)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.delete(FSNamesystem.java:3027)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.delete(NameNodeRpcServer.java:1114)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.delete(ClientNamenodeProtocolServerSideTranslatorPB.java:699)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:527)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1036)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:1000)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:928)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2916)
+
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:75)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:53)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.apache.hadoop.ipc.RemoteException.instantiateException(RemoteException.java:121)
+	at org.apache.hadoop.ipc.RemoteException.unwrapRemoteException(RemoteException.java:88)
+	at org.apache.hadoop.hdfs.DFSClient.delete(DFSClient.java:1664)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$19.doCall(DistributedFileSystem.java:992)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$19.doCall(DistributedFileSystem.java:989)
+	at org.apache.hadoop.fs.FileSystemLinkResolver.resolve(FileSystemLinkResolver.java:81)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.delete(DistributedFileSystem.java:999)
+	at org.apache.hadoop.hive.common.FileUtils.moveToTrash(FileUtils.java:639)
+	at org.apache.hadoop.hive.metastore.HiveMetaStoreFsImpl.deleteDir(HiveMetaStoreFsImpl.java:40)
+	at org.apache.hadoop.hive.metastore.Warehouse.deleteDir(Warehouse.java:222)
+	at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.deleteTableData(HiveMetaStore.java:1795)
+	at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.drop_table_core(HiveMetaStore.java:1720)
+	at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.drop_table_with_environment_context(HiveMetaStore.java:1925)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:75)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:52)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.apache.hadoop.hive.metastore.RetryingHMSHandler.invokeInternal(RetryingHMSHandler.java:148)
+	at org.apache.hadoop.hive.metastore.RetryingHMSHandler.invoke(RetryingHMSHandler.java:107)
+	at jdk.proxy2/jdk.proxy2.$Proxy41.drop_table_with_environment_context(Unknown Source)
+	at org.apache.hadoop.hive.metastore.HiveMetaStoreClient.drop_table_with_environment_context(HiveMetaStoreClient.java:2402)
+	at org.apache.hadoop.hive.ql.metadata.SessionHiveMetaStoreClient.drop_table_with_environment_context(SessionHiveMetaStoreClient.java:114)
+	at org.apache.hadoop.hive.metastore.HiveMetaStoreClient.dropTable(HiveMetaStoreClient.java:1093)
+	at org.apache.hadoop.hive.metastore.HiveMetaStoreClient.dropTable(HiveMetaStoreClient.java:1029)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:75)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:52)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.apache.hadoop.hive.metastore.RetryingMetaStoreClient.invoke(RetryingMetaStoreClient.java:173)
+	at jdk.proxy2/jdk.proxy2.$Proxy42.dropTable(Unknown Source)
+	at org.apache.hadoop.hive.ql.metadata.Hive.dropTable(Hive.java:1201)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:75)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:52)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.apache.spark.sql.hive.client.Shim_v0_14.dropTable(HiveShim.scala:1332)
+	at org.apache.spark.sql.hive.client.HiveClientImpl.$anonfun$dropTable$1(HiveClientImpl.scala:581)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.hive.client.HiveClientImpl.$anonfun$withHiveState$1(HiveClientImpl.scala:303)
+	at org.apache.spark.sql.hive.client.HiveClientImpl.liftedTree1$1(HiveClientImpl.scala:234)
+	at org.apache.spark.sql.hive.client.HiveClientImpl.retryLocked(HiveClientImpl.scala:233)
+	at org.apache.spark.sql.hive.client.HiveClientImpl.withHiveState(HiveClientImpl.scala:283)
+	at org.apache.spark.sql.hive.client.HiveClientImpl.dropTable(HiveClientImpl.scala:581)
+	at org.apache.spark.sql.hive.HiveExternalCatalog.$anonfun$dropTable$1(HiveExternalCatalog.scala:536)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.hive.HiveExternalCatalog.withClient(HiveExternalCatalog.scala:99)
+	at org.apache.spark.sql.hive.HiveExternalCatalog.dropTable(HiveExternalCatalog.scala:534)
+	at org.apache.spark.sql.catalyst.catalog.ExternalCatalogWithListener.dropTable(ExternalCatalogWithListener.scala:104)
+	at org.apache.spark.sql.catalyst.catalog.SessionCatalog.dropTable(SessionCatalog.scala:844)
+	at org.apache.spark.sql.DataFrameWriter.saveAsTable(DataFrameWriter.scala:673)
+	at org.apache.spark.sql.DataFrameWriter.saveAsTable(DataFrameWriter.scala:571)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:75)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:52)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.security.AccessControlException): Permission denied: user=top, access=ALL, inode="/user/hive/warehouse/batch_views.db/class_statistics":root:supergroup:drwxr-xr-x
+	at org.apache.hadoop.hdfs.server.namenode.FSPermissionChecker.checkSubAccess(FSPermissionChecker.java:348)
+	at org.apache.hadoop.hdfs.server.namenode.FSPermissionChecker.checkPermission(FSPermissionChecker.java:265)
+	at org.apache.hadoop.hdfs.server.namenode.FSPermissionChecker.checkPermission(FSPermissionChecker.java:193)
+	at org.apache.hadoop.hdfs.server.namenode.FSDirectory.checkPermission(FSDirectory.java:1855)
+	at org.apache.hadoop.hdfs.server.namenode.FSDirDeleteOp.delete(FSDirDeleteOp.java:110)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.delete(FSNamesystem.java:3027)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.delete(NameNodeRpcServer.java:1114)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.delete(ClientNamenodeProtocolServerSideTranslatorPB.java:699)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:527)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1036)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:1000)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:928)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2916)
+
+	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1612)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1558)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1455)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Invoker.invoke(ProtobufRpcEngine2.java:242)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine2$Invoker.invoke(ProtobufRpcEngine2.java:129)
+	at jdk.proxy2/jdk.proxy2.$Proxy33.delete(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolTranslatorPB.delete(ClientNamenodeProtocolTranslatorPB.java:655)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:75)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:52)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:422)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeMethod(RetryInvocationHandler.java:165)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invoke(RetryInvocationHandler.java:157)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeOnce(RetryInvocationHandler.java:95)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:359)
+	at jdk.proxy2/jdk.proxy2.$Proxy34.delete(Unknown Source)
+	at org.apache.hadoop.hdfs.DFSClient.delete(DFSClient.java:1662)
+	... 60 more
+25/12/15 17:34:17 ERROR log: Converting exception to MetaException
+25/12/15 17:34:17 ERROR HiveMetaStore: Failed to delete table directory: hdfs://localhost:8020/user/hive/warehouse/batch_views.db/class_statistics Got exception: org.apache.hadoop.security.AccessControlException Permission denied: user=top, access=ALL, inode="/user/hive/warehouse/batch_views.db/class_statistics":root:supergroup:drwxr-xr-x
+	at org.apache.hadoop.hdfs.server.namenode.FSPermissionChecker.checkSubAccess(FSPermissionChecker.java:348)
+	at org.apache.hadoop.hdfs.server.namenode.FSPermissionChecker.checkPermission(FSPermissionChecker.java:265)
+	at org.apache.hadoop.hdfs.server.namenode.FSPermissionChecker.checkPermission(FSPermissionChecker.java:193)
+	at org.apache.hadoop.hdfs.server.namenode.FSDirectory.checkPermission(FSDirectory.java:1855)
+	at org.apache.hadoop.hdfs.server.namenode.FSDirDeleteOp.delete(FSDirDeleteOp.java:110)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.delete(FSNamesystem.java:3027)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.delete(NameNodeRpcServer.java:1114)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.delete(ClientNamenodeProtocolServerSideTranslatorPB.java:699)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:527)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1036)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:1000)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:928)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2916)
+
+25/12/15 17:34:17 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+2025-12-15 17:34:18,034 - ERROR - Batch processing failed: [LOCATION_ALREADY_EXISTS] Cannot name the managed table as `spark_catalog`.`batch_views`.`class_statistics`, as its associated location 'hdfs://localhost:8020/user/hive/warehouse/batch_views.db/class_statistics' already exists. Please pick a different table name, or remove the existing location first.
+Traceback (most recent call last):
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/src/batch_layer/spark_batch_processor.py", line 308, in main
+    class_stats = compute_class_statistics(spark, enriched_df)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/src/batch_layer/spark_batch_processor.py", line 128, in compute_class_statistics
+    .saveAsTable("batch_views.class_statistics")
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 1586, in saveAsTable
+    self._jwrite.saveAsTable(name)
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+                   ^^^^^^^^^^^^^^^^^
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 185, in deco
+    raise converted from None
+pyspark.errors.exceptions.captured.SparkRuntimeException: [LOCATION_ALREADY_EXISTS] Cannot name the managed table as `spark_catalog`.`batch_views`.`class_statistics`, as its associated location 'hdfs://localhost:8020/user/hive/warehouse/batch_views.db/class_statistics' already exists. Please pick a different table name, or remove the existing location first.
+Traceback (most recent call last):
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/src/batch_layer/spark_batch_processor.py", line 325, in <module>
+    main()
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/src/batch_layer/spark_batch_processor.py", line 308, in main
+    class_stats = compute_class_statistics(spark, enriched_df)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/src/batch_layer/spark_batch_processor.py", line 128, in compute_class_statistics
+    .saveAsTable("batch_views.class_statistics")
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 1586, in saveAsTable
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1322, in __call__
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 185, in deco
+pyspark.errors.exceptions.captured.SparkRuntimeException: [LOCATION_ALREADY_EXISTS] Cannot name the managed table as `spark_catalog`.`batch_views`.`class_statistics`, as its associated location 'hdfs://localhost:8020/user/hive/warehouse/batch_views.db/class_statistics' already exists. Please pick a different table name, or remove the existing location first.
+2025-12-15 17:34:18,048 - INFO - Closing down clientserver connection
+25/12/15 17:34:43 WARN Utils: Your hostname, top-IdeaPad-Gaming-3-15IAH7 resolves to a loopback address: 127.0.1.1; using 10.110.50.201 instead (on interface wlp47s0)
+25/12/15 17:34:43 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+2025-12-15 17:34:44,559 - INFO - Initializing Spark session with Hive support...
+25/12/15 17:34:44 INFO SparkContext: Running Spark version 3.5.1
+25/12/15 17:34:44 INFO SparkContext: OS info Linux, 6.8.0-88-generic, amd64
+25/12/15 17:34:44 INFO SparkContext: Java version 21.0.9
+25/12/15 17:34:44 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/12/15 17:34:44 INFO ResourceUtils: ==============================================================
+25/12/15 17:34:44 INFO ResourceUtils: No custom resources configured for spark.driver.
+25/12/15 17:34:44 INFO ResourceUtils: ==============================================================
+25/12/15 17:34:44 INFO SparkContext: Submitted application: BatchProcessingLayer
+25/12/15 17:34:44 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 4096, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+25/12/15 17:34:44 INFO ResourceProfile: Limiting resource is cpu
+25/12/15 17:34:44 INFO ResourceProfileManager: Added ResourceProfile id: 0
+25/12/15 17:34:44 INFO SecurityManager: Changing view acls to: top
+25/12/15 17:34:44 INFO SecurityManager: Changing modify acls to: top
+25/12/15 17:34:44 INFO SecurityManager: Changing view acls groups to: 
+25/12/15 17:34:44 INFO SecurityManager: Changing modify acls groups to: 
+25/12/15 17:34:44 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: top; groups with view permissions: EMPTY; users with modify permissions: top; groups with modify permissions: EMPTY
+25/12/15 17:34:45 INFO Utils: Successfully started service 'sparkDriver' on port 42453.
+25/12/15 17:34:45 INFO SparkEnv: Registering MapOutputTracker
+25/12/15 17:34:45 INFO SparkEnv: Registering BlockManagerMaster
+25/12/15 17:34:45 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+25/12/15 17:34:45 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+25/12/15 17:34:45 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+25/12/15 17:34:45 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-2a68f784-eab5-4ae0-bf8e-dfcb663cabbc
+25/12/15 17:34:45 INFO MemoryStore: MemoryStore started with capacity 2.2 GiB
+25/12/15 17:34:45 INFO SparkEnv: Registering OutputCommitCoordinator
+25/12/15 17:34:45 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+25/12/15 17:34:45 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+25/12/15 17:34:45 INFO Executor: Starting executor ID driver on host 10.110.50.201
+25/12/15 17:34:45 INFO Executor: OS info Linux, 6.8.0-88-generic, amd64
+25/12/15 17:34:45 INFO Executor: Java version 21.0.9
+25/12/15 17:34:45 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+25/12/15 17:34:45 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@71d1a4d for default.
+25/12/15 17:34:45 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 33743.
+25/12/15 17:34:45 INFO NettyBlockTransferService: Server created on 10.110.50.201:33743
+25/12/15 17:34:45 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+25/12/15 17:34:45 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 10.110.50.201, 33743, None)
+25/12/15 17:34:45 INFO BlockManagerMasterEndpoint: Registering block manager 10.110.50.201:33743 with 2.2 GiB RAM, BlockManagerId(driver, 10.110.50.201, 33743, None)
+25/12/15 17:34:45 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 10.110.50.201, 33743, None)
+25/12/15 17:34:45 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 10.110.50.201, 33743, None)
+2025-12-15 17:34:46,300 - INFO - ✓ Spark session with Hive support created
+2025-12-15 17:34:46,300 - INFO - Creating Hive database for batch views...
+25/12/15 17:34:50 WARN HiveConf: HiveConf of name hive.stats.jdbc.timeout does not exist
+25/12/15 17:34:50 WARN HiveConf: HiveConf of name hive.stats.retries.wait does not exist
+Mon Dec 15 17:34:50 CET 2025 Thread[#38,Thread-4,5,main] java.io.FileNotFoundException: derby.log (Permission non accordée)
+----------------------------------------------------------------
+Mon Dec 15 17:34:50 CET 2025:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-019b-22dd-5a0a-00000455fce8 
+on database directory /home/top/bigData/remote-satellite-lambda-pipeline/metastore_db with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@c387f44 
+Loaded from file:/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/jars/derby-10.14.2.0.jar
+java.vendor=Ubuntu
+java.runtime.version=21.0.9+10-Ubuntu-124.04
+user.dir=/home/top/bigData/remote-satellite-lambda-pipeline
+os.name=Linux
+os.arch=amd64
+os.version=6.8.0-88-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+25/12/15 17:34:52 WARN ObjectStore: Version information not found in metastore. hive.metastore.schema.verification is not enabled so recording the schema version 2.3.0
+25/12/15 17:34:52 WARN ObjectStore: setMetaStoreSchemaVersion called but recording version is disabled: version = 2.3.0, comment = Set by MetaStore top@127.0.1.1
+25/12/15 17:34:52 WARN ObjectStore: Failed to get database global_temp, returning NoSuchObjectException
+2025-12-15 17:34:52,555 - INFO - ✓ Hive database 'batch_views' ready
+2025-12-15 17:34:52,556 - INFO - ================================================================================
+2025-12-15 17:34:52,556 - INFO - READING SOURCE DATA FROM HDFS
+2025-12-15 17:34:52,556 - INFO - ================================================================================
+2025-12-15 17:34:52,556 - INFO - Reading: hdfs://localhost:8020/data/processed/processed_images.parquet
+2025-12-15 17:34:55,307 - INFO - ✓ Loaded 27000 processed images
+2025-12-15 17:34:55,307 - INFO - Reading: hdfs://localhost:8020/data/processed/texture/texture_features.parquet
+25/12/15 17:34:56 WARN GarbageCollectionMetrics: To enable non-built-in garbage collector(s) List(G1 Concurrent GC), users should configure it(them) to spark.eventLog.gcMetrics.youngGenerationGarbageCollectors or spark.eventLog.gcMetrics.oldGenerationGarbageCollectors
+2025-12-15 17:34:59,331 - INFO - ✓ Loaded 27000 texture features
+2025-12-15 17:34:59,331 - INFO - Joining datasets...
+2025-12-15 17:35:03,793 - INFO - ✓ Enriched dataset: 27000 records
+2025-12-15 17:35:03,793 - INFO - ================================================================================
+2025-12-15 17:35:03,793 - INFO - COMPUTING CLASS STATISTICS (Batch View)
+2025-12-15 17:35:03,793 - INFO - ================================================================================
+2025-12-15 17:35:05,363 - INFO - ✓ Computed statistics for 10 classes
+2025-12-15 17:35:05,363 - INFO - Saving to Hive table: batch_views.class_statistics
+25/12/15 17:35:05 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+2025-12-15 17:35:05,508 - ERROR - Batch processing failed: [LOCATION_ALREADY_EXISTS] Cannot name the managed table as `spark_catalog`.`batch_views`.`class_statistics`, as its associated location 'hdfs://localhost:8020/user/hive/warehouse/batch_views.db/class_statistics' already exists. Please pick a different table name, or remove the existing location first.
+Traceback (most recent call last):
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/src/batch_layer/spark_batch_processor.py", line 308, in main
+    class_stats = compute_class_statistics(spark, enriched_df)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/src/batch_layer/spark_batch_processor.py", line 128, in compute_class_statistics
+    .saveAsTable("batch_views.class_statistics")
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 1586, in saveAsTable
+    self._jwrite.saveAsTable(name)
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+                   ^^^^^^^^^^^^^^^^^
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 185, in deco
+    raise converted from None
+pyspark.errors.exceptions.captured.SparkRuntimeException: [LOCATION_ALREADY_EXISTS] Cannot name the managed table as `spark_catalog`.`batch_views`.`class_statistics`, as its associated location 'hdfs://localhost:8020/user/hive/warehouse/batch_views.db/class_statistics' already exists. Please pick a different table name, or remove the existing location first.
+Traceback (most recent call last):
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/src/batch_layer/spark_batch_processor.py", line 325, in <module>
+    main()
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/src/batch_layer/spark_batch_processor.py", line 308, in main
+    class_stats = compute_class_statistics(spark, enriched_df)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/src/batch_layer/spark_batch_processor.py", line 128, in compute_class_statistics
+    .saveAsTable("batch_views.class_statistics")
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 1586, in saveAsTable
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1322, in __call__
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 185, in deco
+pyspark.errors.exceptions.captured.SparkRuntimeException: [LOCATION_ALREADY_EXISTS] Cannot name the managed table as `spark_catalog`.`batch_views`.`class_statistics`, as its associated location 'hdfs://localhost:8020/user/hive/warehouse/batch_views.db/class_statistics' already exists. Please pick a different table name, or remove the existing location first.
+2025-12-15 17:35:05,516 - INFO - Closing down clientserver connection
+25/12/15 17:35:58 WARN Utils: Your hostname, top-IdeaPad-Gaming-3-15IAH7 resolves to a loopback address: 127.0.1.1; using 10.110.50.201 instead (on interface wlp47s0)
+25/12/15 17:35:58 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+2025-12-15 17:36:00,217 - INFO - Initializing Spark session with Hive support...
+25/12/15 17:36:00 INFO SparkContext: Running Spark version 3.5.1
+25/12/15 17:36:00 INFO SparkContext: OS info Linux, 6.8.0-88-generic, amd64
+25/12/15 17:36:00 INFO SparkContext: Java version 21.0.9
+25/12/15 17:36:00 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/12/15 17:36:00 INFO ResourceUtils: ==============================================================
+25/12/15 17:36:00 INFO ResourceUtils: No custom resources configured for spark.driver.
+25/12/15 17:36:00 INFO ResourceUtils: ==============================================================
+25/12/15 17:36:00 INFO SparkContext: Submitted application: BatchProcessingLayer
+25/12/15 17:36:00 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 4096, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+25/12/15 17:36:00 INFO ResourceProfile: Limiting resource is cpu
+25/12/15 17:36:00 INFO ResourceProfileManager: Added ResourceProfile id: 0
+25/12/15 17:36:00 INFO SecurityManager: Changing view acls to: top
+25/12/15 17:36:00 INFO SecurityManager: Changing modify acls to: top
+25/12/15 17:36:00 INFO SecurityManager: Changing view acls groups to: 
+25/12/15 17:36:00 INFO SecurityManager: Changing modify acls groups to: 
+25/12/15 17:36:00 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: top; groups with view permissions: EMPTY; users with modify permissions: top; groups with modify permissions: EMPTY
+25/12/15 17:36:00 INFO Utils: Successfully started service 'sparkDriver' on port 35107.
+25/12/15 17:36:00 INFO SparkEnv: Registering MapOutputTracker
+25/12/15 17:36:00 INFO SparkEnv: Registering BlockManagerMaster
+25/12/15 17:36:00 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+25/12/15 17:36:00 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+25/12/15 17:36:00 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+25/12/15 17:36:00 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-66f639ce-6b3f-4174-a008-fee6c054ed25
+25/12/15 17:36:00 INFO MemoryStore: MemoryStore started with capacity 2.2 GiB
+25/12/15 17:36:00 INFO SparkEnv: Registering OutputCommitCoordinator
+25/12/15 17:36:01 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+25/12/15 17:36:01 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+25/12/15 17:36:01 INFO Executor: Starting executor ID driver on host 10.110.50.201
+25/12/15 17:36:01 INFO Executor: OS info Linux, 6.8.0-88-generic, amd64
+25/12/15 17:36:01 INFO Executor: Java version 21.0.9
+25/12/15 17:36:01 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+25/12/15 17:36:01 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@71d1a4d for default.
+25/12/15 17:36:01 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 46587.
+25/12/15 17:36:01 INFO NettyBlockTransferService: Server created on 10.110.50.201:46587
+25/12/15 17:36:01 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+25/12/15 17:36:01 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 10.110.50.201, 46587, None)
+25/12/15 17:36:01 INFO BlockManagerMasterEndpoint: Registering block manager 10.110.50.201:46587 with 2.2 GiB RAM, BlockManagerId(driver, 10.110.50.201, 46587, None)
+25/12/15 17:36:01 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 10.110.50.201, 46587, None)
+25/12/15 17:36:01 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 10.110.50.201, 46587, None)
+2025-12-15 17:36:01,623 - INFO - ✓ Spark session with Hive support created
+2025-12-15 17:36:01,623 - INFO - Creating Hive database for batch views...
+25/12/15 17:36:03 WARN HiveConf: HiveConf of name hive.stats.jdbc.timeout does not exist
+25/12/15 17:36:03 WARN HiveConf: HiveConf of name hive.stats.retries.wait does not exist
+Mon Dec 15 17:36:04 CET 2025 Thread[#38,Thread-4,5,main] java.io.FileNotFoundException: derby.log (Permission non accordée)
+----------------------------------------------------------------
+Mon Dec 15 17:36:04 CET 2025:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-019b-22de-7a36-0000015efd90 
+on database directory /home/top/bigData/remote-satellite-lambda-pipeline/metastore_db with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@c387f44 
+Loaded from file:/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/jars/derby-10.14.2.0.jar
+java.vendor=Ubuntu
+java.runtime.version=21.0.9+10-Ubuntu-124.04
+user.dir=/home/top/bigData/remote-satellite-lambda-pipeline
+os.name=Linux
+os.arch=amd64
+os.version=6.8.0-88-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+25/12/15 17:36:05 WARN ObjectStore: Version information not found in metastore. hive.metastore.schema.verification is not enabled so recording the schema version 2.3.0
+25/12/15 17:36:05 WARN ObjectStore: setMetaStoreSchemaVersion called but recording version is disabled: version = 2.3.0, comment = Set by MetaStore top@127.0.1.1
+25/12/15 17:36:05 WARN ObjectStore: Failed to get database global_temp, returning NoSuchObjectException
+2025-12-15 17:36:05,930 - INFO - ✓ Hive database 'batch_views' ready
+2025-12-15 17:36:05,931 - INFO - ================================================================================
+2025-12-15 17:36:05,931 - INFO - READING SOURCE DATA FROM HDFS
+2025-12-15 17:36:05,931 - INFO - ================================================================================
+2025-12-15 17:36:05,931 - INFO - Reading: hdfs://localhost:8020/data/processed/processed_images.parquet
+2025-12-15 17:36:08,451 - INFO - ✓ Loaded 27000 processed images
+2025-12-15 17:36:08,451 - INFO - Reading: hdfs://localhost:8020/data/processed/texture/texture_features.parquet
+2025-12-15 17:36:12,404 - INFO - ✓ Loaded 27000 texture features
+2025-12-15 17:36:12,404 - INFO - Joining datasets...
+25/12/15 17:36:14 WARN GarbageCollectionMetrics: To enable non-built-in garbage collector(s) List(G1 Concurrent GC), users should configure it(them) to spark.eventLog.gcMetrics.youngGenerationGarbageCollectors or spark.eventLog.gcMetrics.oldGenerationGarbageCollectors
+2025-12-15 17:36:17,341 - INFO - ✓ Enriched dataset: 27000 records
+2025-12-15 17:36:17,341 - INFO - ================================================================================
+2025-12-15 17:36:17,341 - INFO - COMPUTING CLASS STATISTICS (Batch View)
+2025-12-15 17:36:17,341 - INFO - ================================================================================
+2025-12-15 17:36:19,224 - INFO - ✓ Computed statistics for 10 classes
+2025-12-15 17:36:19,224 - INFO - Saving to Hive table: batch_views.class_statistics
+25/12/15 17:36:19 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+2025-12-15 17:36:19,392 - ERROR - Batch processing failed: [LOCATION_ALREADY_EXISTS] Cannot name the managed table as `spark_catalog`.`batch_views`.`class_statistics`, as its associated location 'hdfs://localhost:8020/user/hive/warehouse/batch_views.db/class_statistics' already exists. Please pick a different table name, or remove the existing location first.
+Traceback (most recent call last):
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/src/batch_layer/spark_batch_processor.py", line 308, in main
+    class_stats = compute_class_statistics(spark, enriched_df)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/src/batch_layer/spark_batch_processor.py", line 128, in compute_class_statistics
+    .saveAsTable("batch_views.class_statistics")
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 1586, in saveAsTable
+    self._jwrite.saveAsTable(name)
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+                   ^^^^^^^^^^^^^^^^^
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 185, in deco
+    raise converted from None
+pyspark.errors.exceptions.captured.SparkRuntimeException: [LOCATION_ALREADY_EXISTS] Cannot name the managed table as `spark_catalog`.`batch_views`.`class_statistics`, as its associated location 'hdfs://localhost:8020/user/hive/warehouse/batch_views.db/class_statistics' already exists. Please pick a different table name, or remove the existing location first.
+Traceback (most recent call last):
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/src/batch_layer/spark_batch_processor.py", line 325, in <module>
+    main()
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/src/batch_layer/spark_batch_processor.py", line 308, in main
+    class_stats = compute_class_statistics(spark, enriched_df)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/src/batch_layer/spark_batch_processor.py", line 128, in compute_class_statistics
+    .saveAsTable("batch_views.class_statistics")
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 1586, in saveAsTable
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1322, in __call__
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 185, in deco
+pyspark.errors.exceptions.captured.SparkRuntimeException: [LOCATION_ALREADY_EXISTS] Cannot name the managed table as `spark_catalog`.`batch_views`.`class_statistics`, as its associated location 'hdfs://localhost:8020/user/hive/warehouse/batch_views.db/class_statistics' already exists. Please pick a different table name, or remove the existing location first.
+2025-12-15 17:36:19,401 - INFO - Closing down clientserver connection
+25/12/15 17:36:48 WARN Utils: Your hostname, top-IdeaPad-Gaming-3-15IAH7 resolves to a loopback address: 127.0.1.1; using 10.110.50.201 instead (on interface wlp47s0)
+25/12/15 17:36:48 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+2025-12-15 17:36:49,852 - INFO - Initializing Spark session with Hive support...
+25/12/15 17:36:49 INFO SparkContext: Running Spark version 3.5.1
+25/12/15 17:36:49 INFO SparkContext: OS info Linux, 6.8.0-88-generic, amd64
+25/12/15 17:36:49 INFO SparkContext: Java version 21.0.9
+25/12/15 17:36:49 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/12/15 17:36:50 INFO ResourceUtils: ==============================================================
+25/12/15 17:36:50 INFO ResourceUtils: No custom resources configured for spark.driver.
+25/12/15 17:36:50 INFO ResourceUtils: ==============================================================
+25/12/15 17:36:50 INFO SparkContext: Submitted application: BatchProcessingLayer
+25/12/15 17:36:50 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 4096, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+25/12/15 17:36:50 INFO ResourceProfile: Limiting resource is cpu
+25/12/15 17:36:50 INFO ResourceProfileManager: Added ResourceProfile id: 0
+25/12/15 17:36:50 INFO SecurityManager: Changing view acls to: top
+25/12/15 17:36:50 INFO SecurityManager: Changing modify acls to: top
+25/12/15 17:36:50 INFO SecurityManager: Changing view acls groups to: 
+25/12/15 17:36:50 INFO SecurityManager: Changing modify acls groups to: 
+25/12/15 17:36:50 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: top; groups with view permissions: EMPTY; users with modify permissions: top; groups with modify permissions: EMPTY
+25/12/15 17:36:50 INFO Utils: Successfully started service 'sparkDriver' on port 40021.
+25/12/15 17:36:50 INFO SparkEnv: Registering MapOutputTracker
+25/12/15 17:36:50 INFO SparkEnv: Registering BlockManagerMaster
+25/12/15 17:36:50 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+25/12/15 17:36:50 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+25/12/15 17:36:50 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+25/12/15 17:36:50 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-08563084-b89c-4331-9c2c-52586be6f556
+25/12/15 17:36:50 INFO MemoryStore: MemoryStore started with capacity 2.2 GiB
+25/12/15 17:36:50 INFO SparkEnv: Registering OutputCommitCoordinator
+25/12/15 17:36:50 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+25/12/15 17:36:50 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+25/12/15 17:36:50 INFO Executor: Starting executor ID driver on host 10.110.50.201
+25/12/15 17:36:50 INFO Executor: OS info Linux, 6.8.0-88-generic, amd64
+25/12/15 17:36:50 INFO Executor: Java version 21.0.9
+25/12/15 17:36:50 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+25/12/15 17:36:50 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@71d1a4d for default.
+25/12/15 17:36:50 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 42159.
+25/12/15 17:36:50 INFO NettyBlockTransferService: Server created on 10.110.50.201:42159
+25/12/15 17:36:50 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+25/12/15 17:36:50 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 10.110.50.201, 42159, None)
+25/12/15 17:36:50 INFO BlockManagerMasterEndpoint: Registering block manager 10.110.50.201:42159 with 2.2 GiB RAM, BlockManagerId(driver, 10.110.50.201, 42159, None)
+25/12/15 17:36:50 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 10.110.50.201, 42159, None)
+25/12/15 17:36:50 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 10.110.50.201, 42159, None)
+2025-12-15 17:36:51,272 - INFO - ✓ Spark session with Hive support created
+2025-12-15 17:36:51,272 - INFO - Creating Hive database for batch views...
+25/12/15 17:36:53 WARN HiveConf: HiveConf of name hive.stats.jdbc.timeout does not exist
+25/12/15 17:36:53 WARN HiveConf: HiveConf of name hive.stats.retries.wait does not exist
+Mon Dec 15 17:36:54 CET 2025 Thread[#38,Thread-4,5,main] java.io.FileNotFoundException: derby.log (Permission non accordée)
+----------------------------------------------------------------
+Mon Dec 15 17:36:54 CET 2025:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-019b-22df-3df1-000003720eb0 
+on database directory /home/top/bigData/remote-satellite-lambda-pipeline/metastore_db with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@c387f44 
+Loaded from file:/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/jars/derby-10.14.2.0.jar
+java.vendor=Ubuntu
+java.runtime.version=21.0.9+10-Ubuntu-124.04
+user.dir=/home/top/bigData/remote-satellite-lambda-pipeline
+os.name=Linux
+os.arch=amd64
+os.version=6.8.0-88-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+25/12/15 17:36:56 WARN ObjectStore: Version information not found in metastore. hive.metastore.schema.verification is not enabled so recording the schema version 2.3.0
+25/12/15 17:36:56 WARN ObjectStore: setMetaStoreSchemaVersion called but recording version is disabled: version = 2.3.0, comment = Set by MetaStore top@127.0.1.1
+25/12/15 17:36:56 WARN ObjectStore: Failed to get database global_temp, returning NoSuchObjectException
+2025-12-15 17:36:56,273 - INFO - ✓ Hive database 'batch_views' ready
+2025-12-15 17:36:56,274 - INFO - ================================================================================
+2025-12-15 17:36:56,274 - INFO - READING SOURCE DATA FROM HDFS
+2025-12-15 17:36:56,274 - INFO - ================================================================================
+2025-12-15 17:36:56,274 - INFO - Reading: hdfs://localhost:8020/data/processed/processed_images.parquet
+2025-12-15 17:36:59,211 - INFO - ✓ Loaded 27000 processed images
+2025-12-15 17:36:59,211 - INFO - Reading: hdfs://localhost:8020/data/processed/texture/texture_features.parquet
+2025-12-15 17:37:03,014 - INFO - ✓ Loaded 27000 texture features
+2025-12-15 17:37:03,014 - INFO - Joining datasets...
+25/12/15 17:37:05 WARN GarbageCollectionMetrics: To enable non-built-in garbage collector(s) List(G1 Concurrent GC), users should configure it(them) to spark.eventLog.gcMetrics.youngGenerationGarbageCollectors or spark.eventLog.gcMetrics.oldGenerationGarbageCollectors
+2025-12-15 17:37:08,219 - INFO - ✓ Enriched dataset: 27000 records
+2025-12-15 17:37:08,219 - INFO - ================================================================================
+2025-12-15 17:37:08,219 - INFO - COMPUTING CLASS STATISTICS (Batch View)
+2025-12-15 17:37:08,219 - INFO - ================================================================================
+2025-12-15 17:37:10,251 - INFO - ✓ Computed statistics for 10 classes
+2025-12-15 17:37:10,251 - INFO - Saving to Hive table: batch_views.class_statistics
+25/12/15 17:37:10 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+25/12/15 17:37:16 WARN SessionState: METASTORE_FILTER_HOOK will be ignored, since hive.security.authorization.manager is set to instance of HiveAuthorizerFactory.
+25/12/15 17:37:16 WARN HiveConf: HiveConf of name hive.internal.ss.authz.settings.applied.marker does not exist
+25/12/15 17:37:16 WARN HiveConf: HiveConf of name hive.stats.jdbc.timeout does not exist
+25/12/15 17:37:16 WARN HiveConf: HiveConf of name hive.stats.retries.wait does not exist
+2025-12-15 17:37:17,247 - INFO - ✓ Class statistics saved to Hive
+2025-12-15 17:37:17,247 - INFO - ================================================================================
+2025-12-15 17:37:17,247 - INFO - COMPUTING TEMPORAL TRENDS (Batch View)
+2025-12-15 17:37:17,247 - INFO - ================================================================================
+2025-12-15 17:37:17,908 - INFO - ✓ Computed trends for 10 periods
+2025-12-15 17:37:17,908 - INFO - Saving to Hive table: batch_views.temporal_trends
+2025-12-15 17:37:22,540 - INFO - ✓ Temporal trends saved to Hive
+2025-12-15 17:37:22,540 - INFO - ================================================================================
+2025-12-15 17:37:22,540 - INFO - COMPUTING CLASS SEPARABILITY (Batch View)
+2025-12-15 17:37:22,540 - INFO - ================================================================================
+2025-12-15 17:37:25,829 - INFO - ✓ Computed separability for 45 class pairs
+2025-12-15 17:37:25,830 - INFO - Saving to Hive table: batch_views.class_separability
+2025-12-15 17:37:30,178 - INFO - ✓ Class separability saved to Hive
+2025-12-15 17:37:30,178 - INFO - ================================================================================
+2025-12-15 17:37:30,178 - INFO - COMPUTING FEATURE CORRELATIONS (Batch View)
+2025-12-15 17:37:30,178 - INFO - ================================================================================
+2025-12-15 17:38:43,268 - INFO - ✓ Computed 45 feature correlations
+2025-12-15 17:38:43,269 - INFO - Saving to Hive table: batch_views.feature_correlations
+2025-12-15 17:38:44,052 - INFO - ✓ Feature correlations saved to Hive
+2025-12-15 17:38:44,052 - INFO - ================================================================================
+2025-12-15 17:38:44,052 - INFO - BATCH PROCESSING SUMMARY
+2025-12-15 17:38:44,052 - INFO - ================================================================================
+
+📊 CLASS STATISTICS (First 5 rows):
++--------------------+-------------+-------------------+------------------+
+|          class_name|total_samples|           avg_ndvi|    avg_brightness|
++--------------------+-------------+-------------------+------------------+
+|          AnnualCrop|         2500|0.32736023999999986| 894.0287880000019|
+|              Forest|         3000|0.37640980000000007|1316.4610466666654|
+|HerbaceousVegetation|         2500| 0.4462315599999997|1031.4982240000013|
+|             Highway|         2000| 0.6537812999999996| 871.6235749999981|
+|          Industrial|         2500|0.37204840000000095|1261.6554720000004|
++--------------------+-------------+-------------------+------------------+
+only showing top 5 rows
+
+
+📈 TEMPORAL TRENDS (First 5 rows):
++-------+--------------------+-------------------+----------------------+
+| period|          class_name|           avg_ndvi|avg_texture_complexity|
++-------+--------------------+-------------------+----------------------+
+|Month_1|          AnnualCrop|0.32736023999999986|                  NULL|
+|Month_2|              Forest|0.37640980000000007|                  NULL|
+|Month_3|HerbaceousVegetation| 0.4462315599999997|                  NULL|
+|Month_4|             Highway| 0.6537812999999996|                  NULL|
+|Month_5|          Industrial|0.37204840000000095|                  NULL|
++-------+--------------------+-------------------+----------------------+
+only showing top 5 rows
+
+
+⚖️ CLASS SEPARABILITY (Top 5 most separable pairs):
++------------+-------------+------------------+
+|class_name_1| class_name_2|euclidean_distance|
++------------+-------------+------------------+
+|  Industrial|      SeaLake|              NULL|
+|  Industrial|PermanentCrop|              NULL|
+|  Industrial|        River|              NULL|
+|  Industrial|  Residential|              NULL|
+|  Industrial|      Pasture|              NULL|
++------------+-------------+------------------+
+only showing top 5 rows
+
+
+🔗 FEATURE CORRELATIONS (Top 5 strongest):
++----------+----------------+-----------+
+| feature_1|       feature_2|correlation|
++----------+----------------+-----------+
+| ndvi_mean|   glcm_contrast|        NaN|
+|  nir_mean|glcm_homogeneity|        NaN|
+|green_mean|glcm_homogeneity|        NaN|
+|  nir_mean|     glcm_energy|        NaN|
+|  red_mean|   glcm_contrast|        NaN|
++----------+----------------+-----------+
+only showing top 5 rows
+
+2025-12-15 17:38:51,046 - INFO - ================================================================================
+2025-12-15 17:38:51,047 - INFO - ✓ BATCH PROCESSING COMPLETE
+2025-12-15 17:38:51,047 - INFO - ================================================================================
+2025-12-15 17:38:51,047 - INFO - Batch views stored in Hive database: batch_views
+2025-12-15 17:38:51,047 - INFO - Tables created:
+2025-12-15 17:38:51,047 - INFO -   • batch_views.class_statistics
+2025-12-15 17:38:51,047 - INFO -   • batch_views.temporal_trends
+2025-12-15 17:38:51,047 - INFO -   • batch_views.class_separability
+2025-12-15 17:38:51,047 - INFO -   • batch_views.feature_correlations
+2025-12-15 17:38:51,047 - INFO - ================================================================================
+2025-12-15 17:38:52,025 - INFO - ✓ Batch processing finished successfully!
+2025-12-15 17:38:52,025 - INFO - Closing down clientserver connection
+25/12/15 17:40:12 WARN Utils: Your hostname, top-IdeaPad-Gaming-3-15IAH7 resolves to a loopback address: 127.0.1.1; using 10.110.50.201 instead (on interface wlp47s0)
+25/12/15 17:40:12 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+2025-12-15 17:40:12,963 - INFO - Initializing Spark session with Hive support...
+25/12/15 17:40:13 INFO SparkContext: Running Spark version 3.5.1
+25/12/15 17:40:13 INFO SparkContext: OS info Linux, 6.8.0-88-generic, amd64
+25/12/15 17:40:13 INFO SparkContext: Java version 21.0.9
+25/12/15 17:40:13 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/12/15 17:40:13 INFO ResourceUtils: ==============================================================
+25/12/15 17:40:13 INFO ResourceUtils: No custom resources configured for spark.driver.
+25/12/15 17:40:13 INFO ResourceUtils: ==============================================================
+25/12/15 17:40:13 INFO SparkContext: Submitted application: BatchProcessingLayer
+25/12/15 17:40:13 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 4096, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+25/12/15 17:40:13 INFO ResourceProfile: Limiting resource is cpu
+25/12/15 17:40:13 INFO ResourceProfileManager: Added ResourceProfile id: 0
+25/12/15 17:40:13 INFO SecurityManager: Changing view acls to: top
+25/12/15 17:40:13 INFO SecurityManager: Changing modify acls to: top
+25/12/15 17:40:13 INFO SecurityManager: Changing view acls groups to: 
+25/12/15 17:40:13 INFO SecurityManager: Changing modify acls groups to: 
+25/12/15 17:40:13 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: top; groups with view permissions: EMPTY; users with modify permissions: top; groups with modify permissions: EMPTY
+25/12/15 17:40:13 INFO Utils: Successfully started service 'sparkDriver' on port 35711.
+25/12/15 17:40:13 INFO SparkEnv: Registering MapOutputTracker
+25/12/15 17:40:13 INFO SparkEnv: Registering BlockManagerMaster
+25/12/15 17:40:13 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+25/12/15 17:40:13 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+25/12/15 17:40:13 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+25/12/15 17:40:13 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-913ce52e-c20e-43bd-9093-e45bb17bf4e1
+25/12/15 17:40:13 INFO MemoryStore: MemoryStore started with capacity 2.2 GiB
+25/12/15 17:40:13 INFO SparkEnv: Registering OutputCommitCoordinator
+25/12/15 17:40:13 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+25/12/15 17:40:13 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+25/12/15 17:40:13 INFO Executor: Starting executor ID driver on host 10.110.50.201
+25/12/15 17:40:13 INFO Executor: OS info Linux, 6.8.0-88-generic, amd64
+25/12/15 17:40:13 INFO Executor: Java version 21.0.9
+25/12/15 17:40:13 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+25/12/15 17:40:13 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@3afcba4e for default.
+25/12/15 17:40:13 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 41125.
+25/12/15 17:40:13 INFO NettyBlockTransferService: Server created on 10.110.50.201:41125
+25/12/15 17:40:13 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+25/12/15 17:40:13 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 10.110.50.201, 41125, None)
+25/12/15 17:40:13 INFO BlockManagerMasterEndpoint: Registering block manager 10.110.50.201:41125 with 2.2 GiB RAM, BlockManagerId(driver, 10.110.50.201, 41125, None)
+25/12/15 17:40:13 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 10.110.50.201, 41125, None)
+25/12/15 17:40:13 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 10.110.50.201, 41125, None)
+2025-12-15 17:40:13,920 - INFO - ✓ Spark session with Hive support created
+2025-12-15 17:40:13,920 - INFO - Creating Hive database for batch views...
+25/12/15 17:40:15 WARN HiveConf: HiveConf of name hive.stats.jdbc.timeout does not exist
+25/12/15 17:40:15 WARN HiveConf: HiveConf of name hive.stats.retries.wait does not exist
+Mon Dec 15 17:40:15 CET 2025 Thread[#38,Thread-4,5,main] java.io.FileNotFoundException: derby.log (Permission non accordée)
+----------------------------------------------------------------
+Mon Dec 15 17:40:15 CET 2025:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-019b-22e2-4fa2-000001636e20 
+on database directory /home/top/bigData/remote-satellite-lambda-pipeline/metastore_db with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@c387f44 
+Loaded from file:/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/jars/derby-10.14.2.0.jar
+java.vendor=Ubuntu
+java.runtime.version=21.0.9+10-Ubuntu-124.04
+user.dir=/home/top/bigData/remote-satellite-lambda-pipeline
+os.name=Linux
+os.arch=amd64
+os.version=6.8.0-88-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+25/12/15 17:40:16 WARN ObjectStore: Version information not found in metastore. hive.metastore.schema.verification is not enabled so recording the schema version 2.3.0
+25/12/15 17:40:16 WARN ObjectStore: setMetaStoreSchemaVersion called but recording version is disabled: version = 2.3.0, comment = Set by MetaStore top@127.0.1.1
+25/12/15 17:40:16 WARN ObjectStore: Failed to get database global_temp, returning NoSuchObjectException
+2025-12-15 17:40:16,464 - INFO - ✓ Hive database 'batch_views' ready
+2025-12-15 17:40:16,464 - INFO - ================================================================================
+2025-12-15 17:40:16,464 - INFO - READING SOURCE DATA FROM HDFS
+2025-12-15 17:40:16,464 - INFO - ================================================================================
+2025-12-15 17:40:16,464 - INFO - Reading: hdfs://localhost:8020/data/processed/processed_images.parquet
+2025-12-15 17:40:17,792 - INFO - ✓ Loaded 27000 processed images
+2025-12-15 17:40:17,792 - INFO - Reading: hdfs://localhost:8020/data/processed/texture/texture_features.parquet
+2025-12-15 17:40:19,375 - INFO - ✓ Loaded 27000 texture features
+2025-12-15 17:40:19,375 - INFO - Joining datasets...
+2025-12-15 17:40:21,833 - INFO - ✓ Enriched dataset: 27000 records
+2025-12-15 17:40:21,833 - INFO - ================================================================================
+2025-12-15 17:40:21,833 - INFO - COMPUTING CLASS STATISTICS (Batch View)
+2025-12-15 17:40:21,833 - INFO - ================================================================================
+2025-12-15 17:40:22,968 - INFO - ✓ Computed statistics for 10 classes
+2025-12-15 17:40:22,968 - INFO - Saving to Hive table: batch_views.class_statistics
+25/12/15 17:40:23 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+25/12/15 17:40:25 WARN GarbageCollectionMetrics: To enable non-built-in garbage collector(s) List(G1 Concurrent GC), users should configure it(them) to spark.eventLog.gcMetrics.youngGenerationGarbageCollectors or spark.eventLog.gcMetrics.oldGenerationGarbageCollectors
+25/12/15 17:40:27 WARN SessionState: METASTORE_FILTER_HOOK will be ignored, since hive.security.authorization.manager is set to instance of HiveAuthorizerFactory.
+25/12/15 17:40:27 WARN HiveConf: HiveConf of name hive.internal.ss.authz.settings.applied.marker does not exist
+25/12/15 17:40:27 WARN HiveConf: HiveConf of name hive.stats.jdbc.timeout does not exist
+25/12/15 17:40:27 WARN HiveConf: HiveConf of name hive.stats.retries.wait does not exist
+2025-12-15 17:40:27,228 - INFO - ✓ Class statistics saved to Hive
+2025-12-15 17:40:27,228 - INFO - ================================================================================
+2025-12-15 17:40:27,228 - INFO - COMPUTING TEMPORAL TRENDS (Batch View)
+2025-12-15 17:40:27,228 - INFO - ================================================================================
+2025-12-15 17:40:27,536 - INFO - ✓ Computed trends for 10 periods
+2025-12-15 17:40:27,536 - INFO - Saving to Hive table: batch_views.temporal_trends
+2025-12-15 17:40:30,225 - INFO - ✓ Temporal trends saved to Hive
+2025-12-15 17:40:30,225 - INFO - ================================================================================
+2025-12-15 17:40:30,225 - INFO - COMPUTING CLASS SEPARABILITY (Batch View)
+2025-12-15 17:40:30,225 - INFO - ================================================================================
+2025-12-15 17:40:32,064 - INFO - ✓ Computed separability for 45 class pairs
+2025-12-15 17:40:32,065 - INFO - Saving to Hive table: batch_views.class_separability
+2025-12-15 17:40:34,548 - INFO - ✓ Class separability saved to Hive
+2025-12-15 17:40:34,548 - INFO - ================================================================================
+2025-12-15 17:40:34,548 - INFO - COMPUTING FEATURE CORRELATIONS (Batch View)
+2025-12-15 17:40:34,548 - INFO - ================================================================================
+25/12/15 22:39:53 WARN Utils: Your hostname, top-IdeaPad-Gaming-3-15IAH7 resolves to a loopback address: 127.0.1.1; using 192.168.1.10 instead (on interface wlp47s0)
+25/12/15 22:39:53 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+2025-12-15 22:39:53,725 - INFO - Initializing Spark session with Hive support...
+25/12/15 22:39:53 INFO SparkContext: Running Spark version 3.5.1
+25/12/15 22:39:53 INFO SparkContext: OS info Linux, 6.8.0-88-generic, amd64
+25/12/15 22:39:53 INFO SparkContext: Java version 21.0.9
+25/12/15 22:39:53 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/12/15 22:39:53 INFO ResourceUtils: ==============================================================
+25/12/15 22:39:53 INFO ResourceUtils: No custom resources configured for spark.driver.
+25/12/15 22:39:53 INFO ResourceUtils: ==============================================================
+25/12/15 22:39:53 INFO SparkContext: Submitted application: BatchProcessingLayer
+25/12/15 22:39:53 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 4096, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+25/12/15 22:39:53 INFO ResourceProfile: Limiting resource is cpu
+25/12/15 22:39:53 INFO ResourceProfileManager: Added ResourceProfile id: 0
+25/12/15 22:39:53 INFO SecurityManager: Changing view acls to: top
+25/12/15 22:39:53 INFO SecurityManager: Changing modify acls to: top
+25/12/15 22:39:53 INFO SecurityManager: Changing view acls groups to: 
+25/12/15 22:39:53 INFO SecurityManager: Changing modify acls groups to: 
+25/12/15 22:39:53 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: top; groups with view permissions: EMPTY; users with modify permissions: top; groups with modify permissions: EMPTY
+25/12/15 22:39:54 INFO Utils: Successfully started service 'sparkDriver' on port 35059.
+25/12/15 22:39:54 INFO SparkEnv: Registering MapOutputTracker
+25/12/15 22:39:54 INFO SparkEnv: Registering BlockManagerMaster
+25/12/15 22:39:54 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+25/12/15 22:39:54 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+25/12/15 22:39:54 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+25/12/15 22:39:54 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-b427920f-dfee-4a51-a05c-232d39e0c507
+25/12/15 22:39:54 INFO MemoryStore: MemoryStore started with capacity 2.2 GiB
+25/12/15 22:39:54 INFO SparkEnv: Registering OutputCommitCoordinator
+25/12/15 22:39:54 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+25/12/15 22:39:54 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+25/12/15 22:39:54 INFO Executor: Starting executor ID driver on host 192.168.1.10
+25/12/15 22:39:54 INFO Executor: OS info Linux, 6.8.0-88-generic, amd64
+25/12/15 22:39:54 INFO Executor: Java version 21.0.9
+25/12/15 22:39:54 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+25/12/15 22:39:54 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@2405cae8 for default.
+25/12/15 22:39:54 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 33387.
+25/12/15 22:39:54 INFO NettyBlockTransferService: Server created on 192.168.1.10:33387
+25/12/15 22:39:54 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+25/12/15 22:39:54 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 192.168.1.10, 33387, None)
+25/12/15 22:39:54 INFO BlockManagerMasterEndpoint: Registering block manager 192.168.1.10:33387 with 2.2 GiB RAM, BlockManagerId(driver, 192.168.1.10, 33387, None)
+25/12/15 22:39:54 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 192.168.1.10, 33387, None)
+25/12/15 22:39:54 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 192.168.1.10, 33387, None)
+2025-12-15 22:39:54,651 - INFO - ✓ Spark session with Hive support created
+2025-12-15 22:39:54,651 - INFO - Creating Hive database for batch views...
+25/12/15 22:39:56 WARN HiveConf: HiveConf of name hive.stats.jdbc.timeout does not exist
+25/12/15 22:39:56 WARN HiveConf: HiveConf of name hive.stats.retries.wait does not exist
+Mon Dec 15 22:39:56 CET 2025 Thread[#38,Thread-4,5,main] java.io.FileNotFoundException: derby.log (Permission non accordée)
+----------------------------------------------------------------
+Mon Dec 15 22:39:56 CET 2025:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-019b-23f4-ace3-0000045a27e8 
+on database directory /home/top/bigData/remote-satellite-lambda-pipeline/metastore_db with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@c387f44 
+Loaded from file:/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/jars/derby-10.14.2.0.jar
+java.vendor=Ubuntu
+java.runtime.version=21.0.9+10-Ubuntu-124.04
+user.dir=/home/top/bigData/remote-satellite-lambda-pipeline
+os.name=Linux
+os.arch=amd64
+os.version=6.8.0-88-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+25/12/15 22:39:57 WARN ObjectStore: Version information not found in metastore. hive.metastore.schema.verification is not enabled so recording the schema version 2.3.0
+25/12/15 22:39:57 WARN ObjectStore: setMetaStoreSchemaVersion called but recording version is disabled: version = 2.3.0, comment = Set by MetaStore top@127.0.1.1
+25/12/15 22:39:57 WARN ObjectStore: Failed to get database global_temp, returning NoSuchObjectException
+2025-12-15 22:39:57,198 - INFO - ✓ Hive database 'batch_views' ready
+2025-12-15 22:39:57,198 - INFO - ================================================================================
+2025-12-15 22:39:57,198 - INFO - READING SOURCE DATA FROM HDFS
+2025-12-15 22:39:57,198 - INFO - ================================================================================
+2025-12-15 22:39:57,198 - INFO - Reading: hdfs://localhost:8020/data/processed/processed_images.parquet
+2025-12-15 22:39:58,464 - INFO - ✓ Loaded 27000 processed images
+2025-12-15 22:39:58,464 - INFO - Reading: hdfs://localhost:8020/data/processed/texture/texture_features.parquet
+2025-12-15 22:40:00,270 - INFO - ✓ Loaded 27000 texture features
+2025-12-15 22:40:00,271 - INFO - Joining datasets...
+2025-12-15 22:40:02,463 - INFO - ✓ Enriched dataset: 27000 records
+2025-12-15 22:40:02,463 - INFO - ================================================================================
+2025-12-15 22:40:02,463 - INFO - COMPUTING CLASS STATISTICS (Batch View)
+2025-12-15 22:40:02,463 - INFO - ================================================================================
+2025-12-15 22:40:03,421 - INFO - ✓ Computed statistics for 10 classes
+2025-12-15 22:40:03,421 - INFO - Saving to Hive table: batch_views.class_statistics
+25/12/15 22:40:03 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+25/12/15 22:40:06 WARN GarbageCollectionMetrics: To enable non-built-in garbage collector(s) List(G1 Concurrent GC), users should configure it(them) to spark.eventLog.gcMetrics.youngGenerationGarbageCollectors or spark.eventLog.gcMetrics.oldGenerationGarbageCollectors
+25/12/15 22:40:06 WARN SessionState: METASTORE_FILTER_HOOK will be ignored, since hive.security.authorization.manager is set to instance of HiveAuthorizerFactory.
+25/12/15 22:40:06 WARN HiveConf: HiveConf of name hive.internal.ss.authz.settings.applied.marker does not exist
+25/12/15 22:40:06 WARN HiveConf: HiveConf of name hive.stats.jdbc.timeout does not exist
+25/12/15 22:40:06 WARN HiveConf: HiveConf of name hive.stats.retries.wait does not exist
+2025-12-15 22:40:06,952 - INFO - ✓ Class statistics saved to Hive
+2025-12-15 22:40:06,953 - INFO - ================================================================================
+2025-12-15 22:40:06,953 - INFO - COMPUTING TEMPORAL TRENDS (Batch View)
+2025-12-15 22:40:06,953 - INFO - ================================================================================
+2025-12-15 22:40:07,205 - INFO - ✓ Computed trends for 10 periods
+2025-12-15 22:40:07,205 - INFO - Saving to Hive table: batch_views.temporal_trends
+2025-12-15 22:40:09,605 - INFO - ✓ Temporal trends saved to Hive
+2025-12-15 22:40:09,605 - INFO - ================================================================================
+2025-12-15 22:40:09,605 - INFO - COMPUTING CLASS SEPARABILITY (Batch View)
+2025-12-15 22:40:09,605 - INFO - ================================================================================
+2025-12-15 22:40:11,365 - INFO - ✓ Computed separability for 45 class pairs
+2025-12-15 22:40:11,365 - INFO - Saving to Hive table: batch_views.class_separability
+2025-12-15 22:40:13,419 - INFO - ✓ Class separability saved to Hive
+2025-12-15 22:40:13,419 - INFO - ================================================================================
+2025-12-15 22:40:13,419 - INFO - COMPUTING FEATURE CORRELATIONS (Batch View)
+2025-12-15 22:40:13,419 - INFO - ================================================================================
+2025-12-15 22:40:54,281 - INFO - ✓ Computed 45 feature correlations
+2025-12-15 22:40:54,281 - INFO - Saving to Hive table: batch_views.feature_correlations
+2025-12-15 22:40:54,924 - INFO - ✓ Feature correlations saved to Hive
+2025-12-15 22:40:54,924 - INFO - ================================================================================
+2025-12-15 22:40:54,924 - INFO - BATCH PROCESSING SUMMARY
+2025-12-15 22:40:54,924 - INFO - ================================================================================
+
+📊 CLASS STATISTICS (First 5 rows):
++--------------------+-------------+-------------------+------------------+
+|          class_name|total_samples|           avg_ndvi|    avg_brightness|
++--------------------+-------------+-------------------+------------------+
+|          AnnualCrop|         2500|0.32736023999999986| 894.0287880000019|
+|              Forest|         3000|0.37640980000000007|1316.4610466666654|
+|HerbaceousVegetation|         2500| 0.4462315599999997|1031.4982240000013|
+|             Highway|         2000| 0.6537812999999996| 871.6235749999981|
+|          Industrial|         2500|0.37204840000000095|1261.6554720000004|
++--------------------+-------------+-------------------+------------------+
+only showing top 5 rows
+
+
+📈 TEMPORAL TRENDS (First 5 rows):
++-------+--------------------+-------------------+----------------------+
+| period|          class_name|           avg_ndvi|avg_texture_complexity|
++-------+--------------------+-------------------+----------------------+
+|Month_1|          AnnualCrop|0.32736023999999986|                  NULL|
+|Month_2|              Forest|0.37640980000000007|                  NULL|
+|Month_3|HerbaceousVegetation| 0.4462315599999997|                  NULL|
+|Month_4|             Highway| 0.6537812999999996|                  NULL|
+|Month_5|          Industrial|0.37204840000000095|                  NULL|
++-------+--------------------+-------------------+----------------------+
+only showing top 5 rows
+
+
+⚖️ CLASS SEPARABILITY (Top 5 most separable pairs):
++------------+-------------+------------------+
+|class_name_1| class_name_2|euclidean_distance|
++------------+-------------+------------------+
+|  Industrial|      SeaLake|              NULL|
+|  Industrial|PermanentCrop|              NULL|
+|  Industrial|        River|              NULL|
+|  Industrial|  Residential|              NULL|
+|  Industrial|      Pasture|              NULL|
++------------+-------------+------------------+
+only showing top 5 rows
+
+
+🔗 FEATURE CORRELATIONS (Top 5 strongest):
++----------+----------------+-----------+
+| feature_1|       feature_2|correlation|
++----------+----------------+-----------+
+|green_mean|glcm_homogeneity|        NaN|
+|  red_mean|   glcm_contrast|        NaN|
+| ndvi_mean|   glcm_contrast|        NaN|
+|  red_mean|glcm_homogeneity|        NaN|
+|  nir_mean|glcm_homogeneity|        NaN|
++----------+----------------+-----------+
+only showing top 5 rows
+
+2025-12-15 22:40:58,705 - INFO - ================================================================================
+2025-12-15 22:40:58,705 - INFO - ✓ BATCH PROCESSING COMPLETE
+2025-12-15 22:40:58,705 - INFO - ================================================================================
+2025-12-15 22:40:58,705 - INFO - Batch views stored in Hive database: batch_views
+2025-12-15 22:40:58,705 - INFO - Tables created:
+2025-12-15 22:40:58,706 - INFO -   • batch_views.class_statistics
+2025-12-15 22:40:58,706 - INFO -   • batch_views.temporal_trends
+2025-12-15 22:40:58,706 - INFO -   • batch_views.class_separability
+2025-12-15 22:40:58,706 - INFO -   • batch_views.feature_correlations
+2025-12-15 22:40:58,706 - INFO - ================================================================================
+2025-12-15 22:40:59,699 - INFO - ✓ Batch processing finished successfully!
+2025-12-15 22:40:59,699 - INFO - Closing down clientserver connection

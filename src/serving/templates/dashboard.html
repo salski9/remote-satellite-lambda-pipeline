@@ -284,6 +284,7 @@
             <p class="subtitle">Real-time Satellite Land Cover Analysis | CSV + RGB + Texture + ML Features</p>
             <div class="system-info">
                 <span class="system-badge">Pre-Ingestion Integration</span>
+                <span class="system-badge">Batch Processing (Every 2h)</span>
                 <span class="system-badge">Spark Streaming</span>
                 <span class="system-badge">Cassandra DB</span>
                 <span class="system-badge">Real-time Analytics</span>
@@ -318,6 +319,11 @@
                 <div class="stat-label">Anomalies</div>
                 <div class="stat-value" id="anomalyCount">-</div>
                 <div class="stat-sublabel">Multimodal fusion</div>
+            </div>
+            <div class="stat-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                <div class="stat-label" style="color: white;">Batch Processing</div>
+                <div class="stat-value" style="color: white;" id="batchSchedule">Every 2h</div>
+                <div class="stat-sublabel" style="color: rgba(255,255,255,0.9);" id="nextBatchRun">Next: Calculating...</div>
             </div>
         </div>
         
@@ -1058,11 +1064,50 @@
             }
         }
         
+        // Calculate next batch processing time (every 2 hours at :00)
+        function updateNextBatchTime() {
+            const now = new Date();
+            const currentHour = now.getHours();
+            const currentMinute = now.getMinutes();
+            
+            // Batch runs at: 00:00, 02:00, 04:00, 06:00, 08:00, 10:00, 12:00, 14:00, 16:00, 18:00, 20:00, 22:00
+            const nextHour = Math.ceil(currentHour / 2) * 2;
+            const nextBatch = new Date(now);
+            
+            if (nextHour >= 24) {
+                // Next run is tomorrow at 00:00
+                nextBatch.setDate(nextBatch.getDate() + 1);
+                nextBatch.setHours(0, 0, 0, 0);
+            } else if (currentMinute === 0 && currentHour % 2 === 0) {
+                // Currently running (if we're at an even hour and minute 0)
+                document.getElementById('nextBatchRun').textContent = '⚡ Running now...';
+                return;
+            } else {
+                nextBatch.setHours(nextHour, 0, 0, 0);
+            }
+            
+            // Calculate time difference
+            const diff = nextBatch - now;
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            
+            const timeStr = nextBatch.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+            
+            if (hours === 0 && minutes < 5) {
+                document.getElementById('nextBatchRun').textContent = `⚡ Starting soon...`;
+            } else if (hours === 0) {
+                document.getElementById('nextBatchRun').textContent = `Next: ${timeStr} (${minutes}m)`;
+            } else {
+                document.getElementById('nextBatchRun').textContent = `Next: ${timeStr} (${hours}h ${minutes}m)`;
+            }
+        }
+        
         // Refresh all data
         function refreshAllData() {
             const activeTab = document.querySelector('.tab.active').textContent.trim().split(' ')[1].toLowerCase();
             loadTabData(activeTab);
             document.getElementById('lastUpdate').textContent = `Last updated: ${new Date().toLocaleString()}`;
+            updateNextBatchTime();
         }
         
         // Initialize on page load
@@ -1072,6 +1117,9 @@
             
             // Auto-refresh every 30 seconds
             setInterval(refreshAllData, 30000);
+            
+            // Update batch time every minute
+            setInterval(updateNextBatchTime, 60000);
         });
     </script>
 </body>

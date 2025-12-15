@@ -491,7 +491,7 @@ sudo docker compose ps
 
 **When to run**:
 
-- Daily (scheduled via cron at 2 AM)
+- Every 2 hours (scheduled via cron: 00:00, 02:00, 04:00, ..., 22:00)
 - After new data ingestion
 - After schema changes requiring recomputation
 
@@ -615,6 +615,46 @@ AnnualCrop      2500    0.3274
 Forest          3000    0.3764
 Industrial      2500    0.3720
 ...
+```
+
+#### **Test 1b: Schedule Automatic Batch Processing (Every 2 Hours)**
+
+```bash
+# Setup cron job to run batch processing every 2 hours
+cd /home/top/bigData/remote-satellite-lambda-pipeline
+./scripts/setup_batch_cron.sh
+
+# Expected output:
+# ✓ Cron script is executable
+# ✓ Cron job installed successfully!
+# Schedule: 00:00, 02:00, 04:00, 06:00, 08:00, 10:00, 12:00, 14:00, 16:00, 18:00, 20:00, 22:00
+```
+
+**Verification**:
+
+```bash
+# View installed cron jobs
+crontab -l
+
+# Expected:
+# 0 */2 * * * /home/top/bigData/remote-satellite-lambda-pipeline/scripts/cron_batch_job.sh
+
+# Test cron script manually
+./scripts/cron_batch_job.sh
+
+# Monitor cron logs
+ls -lth logs/batch_cron_*.log
+tail -f logs/batch_cron_*.log
+```
+
+**Remove cron job** (if needed):
+
+```bash
+# Remove the cron job
+crontab -l | grep -v 'cron_batch_job.sh' | crontab -
+
+# Verify removal
+crontab -l
 ```
 
 #### **Test 2: Verify HDFS Storage**
@@ -1194,6 +1234,25 @@ kill <SPARK_PID> <FLASK_PID>
 - **HDFS Data**: `hdfs://localhost:8020/data/processed/`
 - **Hive Warehouse**: `hdfs://localhost:8020/user/hive/warehouse/batch_views.db/`
 - **Spark JARs**: `spark_jars/`
+
+### **Batch Processing Schedule**
+
+```bash
+# Setup automatic batch processing (every 2 hours)
+./scripts/setup_batch_cron.sh
+
+# View cron schedule
+crontab -l
+
+# Remove cron job
+crontab -l | grep -v 'cron_batch_job.sh' | crontab -
+
+# Run batch processing manually
+./scripts/run_batch_job.sh
+
+# Monitor cron logs
+tail -f logs/batch_cron_*.log
+```
 
 ### **Useful Commands**
 

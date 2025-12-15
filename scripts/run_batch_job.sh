@@ -7,8 +7,14 @@
 
 set -e
 
+# Get the script directory
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-cd "$SCRIPT_DIR"
+
+# Change to project root (parent of scripts directory)
+PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
+cd "$PROJECT_ROOT"
+
+echo "Working directory: $PROJECT_ROOT"
 
 LOG_DIR="logs"
 mkdir -p "$LOG_DIR"
@@ -29,6 +35,13 @@ if [ -d "venv" ]; then
     echo "✓ Virtual environment activated"
 else
     echo "⚠ No virtual environment found, using system Python"
+fi
+
+# Clean up Derby metastore lock files if they exist
+if [ -f "metastore_db/db.lck" ] || [ -f "metastore_db/dbex.lck" ]; then
+    echo "Cleaning up Derby metastore lock files..."
+    rm -f metastore_db/*.lck
+    echo "✓ Lock files removed"
 fi
 
 # Run batch processing
