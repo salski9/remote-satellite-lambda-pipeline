@@ -56,24 +56,18 @@ def read_source_data(spark):
     logger.info("READING SOURCE DATA FROM HDFS")
     logger.info("=" * 80)
     
-    # Read processed images
+    # Read processed images (contains all spectral features)
     processed_path = "hdfs://localhost:8020/data/processed/processed_images.parquet"
     logger.info(f"Reading: {processed_path}")
     processed_df = spark.read.parquet(processed_path)
     logger.info(f"✓ Loaded {processed_df.count()} processed images")
     
-    # Read texture features
-    texture_path = "hdfs://localhost:8020/data/processed/texture/texture_features.parquet"
-    logger.info(f"Reading: {texture_path}")
-    texture_df = spark.read.parquet(texture_path)
-    logger.info(f"✓ Loaded {texture_df.count()} texture features")
+    # NOTE: Texture features are not joined due to image_id mismatch
+    # processed_images uses IMG_000001 format
+    # texture_features uses SeaLake_1678 format
+    # This would require a proper ID mapping from the pre-ingestion phase
     
-    # Join on image_id
-    logger.info("Joining datasets...")
-    enriched_df = processed_df.join(texture_df, on="image_id", how="left")
-    logger.info(f"✓ Enriched dataset: {enriched_df.count()} records")
-    
-    return enriched_df
+    return processed_df
 
 def compute_class_statistics(spark, enriched_df):
     """Compute comprehensive class-level statistics"""
@@ -101,18 +95,7 @@ def compute_class_statistics(spark, enriched_df):
         avg("green_mean").alias("avg_green"),
         avg("blue_mean").alias("avg_blue"),
         avg("nir_mean").alias("avg_nir"),
-        avg("brightness_mean").alias("avg_brightness"),
-        
-        # Texture - GLCM
-        avg("glcm_contrast").alias("avg_glcm_contrast"),
-        avg("glcm_homogeneity").alias("avg_glcm_homogeneity"),
-        avg("glcm_energy").alias("avg_glcm_energy"),
-        avg("glcm_correlation").alias("avg_glcm_correlation"),
-        
-        # Texture - LBP entropy (sum of histogram bins for diversity measure)
-        avg(col("lbp_hist_0") + col("lbp_hist_1") + col("lbp_hist_2") + 
-            col("lbp_hist_3") + col("lbp_hist_4") + col("lbp_hist_5") + 
-            col("lbp_hist_6") + col("lbp_hist_7")).alias("avg_lbp_entropy")
+        avg("brightness_mean").alias("avg_brightness")
     ).orderBy("class_id")
     
     # Add timestamp
@@ -146,7 +129,9 @@ def compute_temporal_trends(spark, enriched_df):
         count("*").alias("samples"),
         avg("ndvi_mean").alias("avg_ndvi"),
         avg("brightness_mean").alias("avg_brightness"),
-        avg("glcm_contrast").alias("avg_texture_complexity")
+        avg("red_mean").alias("avg_red"),
+        avg("green_mean").alias("avg_green"),
+        avg("blue_mean").alias("avg_blue")
     ).orderBy("class_id")
     
     # Add metadata
@@ -176,12 +161,14 @@ def compute_class_separability(spark, enriched_df):
     class_name_udf = udf(lambda x: CLASS_NAMES.get(x, f"Unknown_{x}"), StringType())
     enriched_df = enriched_df.withColumn("class_name", class_name_udf(col("class_id")))
     
-    # Compute class centroids
+    # Compute class centroids (using spectral features only)
     centroids = enriched_df.groupBy("class_id", "class_name").agg(
         avg("ndvi_mean").alias("centroid_ndvi"),
-        avg("brightness_mean").alias("centroid_brightness"),
-        avg("glcm_contrast").alias("centroid_glcm_contrast"),
-        avg("glcm_energy").alias("centroid_glcm_energy")
+        avg("red_mean").alias("centroid_red"),
+        avg("green_mean").alias("centroid_green"),
+        avg("blue_mean").alias("centroid_blue"),
+        avg("nir_mean").alias("centroid_nir"),
+        avg("brightness_mean").alias("centroid_brightness")
     )
     
     # Self-join to compute all pairs
@@ -193,7 +180,7 @@ def compute_class_separability(spark, enriched_df):
         col("a.class_id") < col("b.class_id")
     )
     
-    # Compute Euclidean distance
+    # Compute Euclidean distance (using 6 spectral features)
     separability = pairs.select(
         col("a.class_id").alias("class_id_1"),
         col("a.class_name").alias("class_name_1"),
@@ -201,9 +188,11 @@ def compute_class_separability(spark, enriched_df):
         col("b.class_name").alias("class_name_2"),
         sqrt(
             pow(col("a.centroid_ndvi") - col("b.centroid_ndvi"), 2) +
-            pow(col("a.centroid_brightness") - col("b.centroid_brightness"), 2) +
-            pow(col("a.centroid_glcm_contrast") - col("b.centroid_glcm_contrast"), 2) +
-            pow(col("a.centroid_glcm_energy") - col("b.centroid_glcm_energy"), 2)
+            pow(col("a.centroid_red") - col("b.centroid_red"), 2) +
+            pow(col("a.centroid_green") - col("b.centroid_green"), 2) +
+            pow(col("a.centroid_blue") - col("b.centroid_blue"), 2) +
+            pow(col("a.centroid_nir") - col("b.centroid_nir"), 2) +
+            pow(col("a.centroid_brightness") - col("b.centroid_brightness"), 2)
         ).alias("euclidean_distance"),
         lit(datetime.now().isoformat()).alias("batch_timestamp")
     ).orderBy(desc("euclidean_distance"))
@@ -227,11 +216,10 @@ def compute_feature_correlations(spark, enriched_df):
     logger.info("COMPUTING FEATURE CORRELATIONS (Batch View)")
     logger.info("=" * 80)
     
-    # Select numeric features
+    # Select numeric features (spectral only - texture features have mismatched image_ids)
     feature_cols = [
         "ndvi_mean", "red_mean", "green_mean", "blue_mean", 
-        "nir_mean", "brightness_mean",
-        "glcm_contrast", "glcm_homogeneity", "glcm_energy"
+        "nir_mean", "brightness_mean"
     ]
     
     correlations = []
@@ -271,7 +259,7 @@ def display_summary(class_stats, trends, separability, correlations):
     class_stats.select("class_name", "total_samples", "avg_ndvi", "avg_brightness").show(5)
     
     print("\n📈 TEMPORAL TRENDS (First 5 rows):")
-    trends.select("period", "class_name", "avg_ndvi", "avg_texture_complexity").show(5)
+    trends.select("period", "class_name", "avg_ndvi", "avg_red", "avg_brightness").show(5)
     
     print("\n⚖️ CLASS SEPARABILITY (Top 5 most separable pairs):")
     separability.select("class_name_1", "class_name_2", "euclidean_distance").show(5)

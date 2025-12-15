@@ -1713,3 +1713,626 @@ only showing top 5 rows
 2025-12-15 22:40:58,706 - INFO - ================================================================================
 2025-12-15 22:40:59,699 - INFO - ✓ Batch processing finished successfully!
 2025-12-15 22:40:59,699 - INFO - Closing down clientserver connection
+25/12/15 23:34:24 WARN Utils: Your hostname, top-IdeaPad-Gaming-3-15IAH7 resolves to a loopback address: 127.0.1.1; using 192.168.1.10 instead (on interface wlp47s0)
+25/12/15 23:34:24 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+2025-12-15 23:34:26,141 - INFO - Initializing Spark session with Hive support...
+25/12/15 23:34:26 INFO SparkContext: Running Spark version 3.5.1
+25/12/15 23:34:26 INFO SparkContext: OS info Linux, 6.8.0-88-generic, amd64
+25/12/15 23:34:26 INFO SparkContext: Java version 21.0.9
+25/12/15 23:34:26 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/12/15 23:34:26 INFO ResourceUtils: ==============================================================
+25/12/15 23:34:26 INFO ResourceUtils: No custom resources configured for spark.driver.
+25/12/15 23:34:26 INFO ResourceUtils: ==============================================================
+25/12/15 23:34:26 INFO SparkContext: Submitted application: BatchProcessingLayer
+25/12/15 23:34:26 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 4096, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+25/12/15 23:34:26 INFO ResourceProfile: Limiting resource is cpu
+25/12/15 23:34:26 INFO ResourceProfileManager: Added ResourceProfile id: 0
+25/12/15 23:34:26 INFO SecurityManager: Changing view acls to: top
+25/12/15 23:34:26 INFO SecurityManager: Changing modify acls to: top
+25/12/15 23:34:26 INFO SecurityManager: Changing view acls groups to: 
+25/12/15 23:34:26 INFO SecurityManager: Changing modify acls groups to: 
+25/12/15 23:34:26 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: top; groups with view permissions: EMPTY; users with modify permissions: top; groups with modify permissions: EMPTY
+25/12/15 23:34:26 INFO Utils: Successfully started service 'sparkDriver' on port 38461.
+25/12/15 23:34:26 INFO SparkEnv: Registering MapOutputTracker
+25/12/15 23:34:27 INFO SparkEnv: Registering BlockManagerMaster
+25/12/15 23:34:27 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+25/12/15 23:34:27 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+25/12/15 23:34:27 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+25/12/15 23:34:27 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-c54ae3bb-af7d-44f6-909d-0db1018f83ed
+25/12/15 23:34:27 INFO MemoryStore: MemoryStore started with capacity 2.2 GiB
+25/12/15 23:34:27 INFO SparkEnv: Registering OutputCommitCoordinator
+25/12/15 23:34:27 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+25/12/15 23:34:27 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+25/12/15 23:34:27 INFO Executor: Starting executor ID driver on host 192.168.1.10
+25/12/15 23:34:27 INFO Executor: OS info Linux, 6.8.0-88-generic, amd64
+25/12/15 23:34:27 INFO Executor: Java version 21.0.9
+25/12/15 23:34:27 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+25/12/15 23:34:27 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@2405cae8 for default.
+25/12/15 23:34:27 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 37755.
+25/12/15 23:34:27 INFO NettyBlockTransferService: Server created on 192.168.1.10:37755
+25/12/15 23:34:27 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+25/12/15 23:34:27 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 192.168.1.10, 37755, None)
+25/12/15 23:34:27 INFO BlockManagerMasterEndpoint: Registering block manager 192.168.1.10:37755 with 2.2 GiB RAM, BlockManagerId(driver, 192.168.1.10, 37755, None)
+25/12/15 23:34:27 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 192.168.1.10, 37755, None)
+25/12/15 23:34:27 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 192.168.1.10, 37755, None)
+2025-12-15 23:34:28,438 - INFO - ✓ Spark session with Hive support created
+2025-12-15 23:34:28,439 - INFO - Creating Hive database for batch views...
+25/12/15 23:34:32 WARN HiveConf: HiveConf of name hive.stats.jdbc.timeout does not exist
+25/12/15 23:34:32 WARN HiveConf: HiveConf of name hive.stats.retries.wait does not exist
+Mon Dec 15 23:34:32 CET 2025 Thread[#38,Thread-4,5,main] java.io.FileNotFoundException: derby.log (Permission non accordée)
+----------------------------------------------------------------
+Mon Dec 15 23:34:33 CET 2025:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-019b-2426-ac50-000001938538 
+on database directory /home/top/bigData/remote-satellite-lambda-pipeline/metastore_db with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@c387f44 
+Loaded from file:/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/jars/derby-10.14.2.0.jar
+java.vendor=Ubuntu
+java.runtime.version=21.0.9+10-Ubuntu-124.04
+user.dir=/home/top/bigData/remote-satellite-lambda-pipeline
+os.name=Linux
+os.arch=amd64
+os.version=6.8.0-88-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+25/12/15 23:34:35 WARN ObjectStore: Version information not found in metastore. hive.metastore.schema.verification is not enabled so recording the schema version 2.3.0
+25/12/15 23:34:35 WARN ObjectStore: setMetaStoreSchemaVersion called but recording version is disabled: version = 2.3.0, comment = Set by MetaStore top@127.0.1.1
+25/12/15 23:34:35 WARN ObjectStore: Failed to get database global_temp, returning NoSuchObjectException
+2025-12-15 23:34:35,776 - INFO - ✓ Hive database 'batch_views' ready
+2025-12-15 23:34:35,776 - INFO - ================================================================================
+2025-12-15 23:34:35,776 - INFO - READING SOURCE DATA FROM HDFS
+2025-12-15 23:34:35,776 - INFO - ================================================================================
+2025-12-15 23:34:35,776 - INFO - Reading: hdfs://localhost:8020/data/processed/processed_images.parquet
+2025-12-15 23:34:39,325 - INFO - ✓ Loaded 27000 processed images
+2025-12-15 23:34:39,326 - INFO - ================================================================================
+2025-12-15 23:34:39,326 - INFO - COMPUTING CLASS STATISTICS (Batch View)
+2025-12-15 23:34:39,326 - INFO - ================================================================================
+25/12/15 23:34:39 WARN GarbageCollectionMetrics: To enable non-built-in garbage collector(s) List(G1 Concurrent GC), users should configure it(them) to spark.eventLog.gcMetrics.youngGenerationGarbageCollectors or spark.eventLog.gcMetrics.oldGenerationGarbageCollectors
+2025-12-15 23:34:42,492 - INFO - ✓ Computed statistics for 10 classes
+2025-12-15 23:34:42,492 - INFO - Saving to Hive table: batch_views.class_statistics
+25/12/15 23:34:45 WARN SessionState: METASTORE_FILTER_HOOK will be ignored, since hive.security.authorization.manager is set to instance of HiveAuthorizerFactory.
+25/12/15 23:34:45 WARN HiveConf: HiveConf of name hive.internal.ss.authz.settings.applied.marker does not exist
+25/12/15 23:34:45 WARN HiveConf: HiveConf of name hive.stats.jdbc.timeout does not exist
+25/12/15 23:34:45 WARN HiveConf: HiveConf of name hive.stats.retries.wait does not exist
+2025-12-15 23:34:45,714 - INFO - ✓ Class statistics saved to Hive
+2025-12-15 23:34:45,714 - INFO - ================================================================================
+2025-12-15 23:34:45,714 - INFO - COMPUTING TEMPORAL TRENDS (Batch View)
+2025-12-15 23:34:45,714 - INFO - ================================================================================
+2025-12-15 23:34:45,860 - ERROR - Batch processing failed: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `glcm_contrast` cannot be resolved. Did you mean one of the following? [`num_bands`, `raw_features`, `blue_mean`, `nir_mean`, `red_mean`].;
+'Aggregate [class_id#2, class_name#345], [class_id#2, class_name#345, count(1) AS samples#391L, avg(ndvi_mean#7) AS avg_ndvi#393, avg(brightness_mean#16) AS avg_brightness#395, avg('glcm_contrast) AS avg_texture_complexity#397]
++- Project [image_id#0, image_filename#1, class_id#2, file_size_kb#3, width#4, height#5, num_bands#6, ndvi_mean#7, ndvi_std#8, ndvi_min#9, ndvi_max#10, vegetation_index#11, red_mean#12, green_mean#13, blue_mean#14, nir_mean#15, brightness_mean#16, vegetation_index_indexed#17, vegetation_index_encoded#18, raw_features#19, final_features#20, <lambda>(class_id#2)#344 AS class_name#345]
+   +- Relation [image_id#0,image_filename#1,class_id#2,file_size_kb#3,width#4,height#5,num_bands#6,ndvi_mean#7,ndvi_std#8,ndvi_min#9,ndvi_max#10,vegetation_index#11,red_mean#12,green_mean#13,blue_mean#14,nir_mean#15,brightness_mean#16,vegetation_index_indexed#17,vegetation_index_encoded#18,raw_features#19,final_features#20] parquet
+Traceback (most recent call last):
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/src/batch_layer/spark_batch_processor.py", line 295, in main
+    trends = compute_temporal_trends(spark, enriched_df)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/src/batch_layer/spark_batch_processor.py", line 128, in compute_temporal_trends
+    trends = enriched_df.groupBy("class_id", "class_name").agg(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/pyspark.zip/pyspark/sql/group.py", line 186, in agg
+    jdf = self._jgd.agg(exprs[0]._jc, _to_seq(self.session._sc, [c._jc for c in exprs[1:]]))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+                   ^^^^^^^^^^^^^^^^^
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 185, in deco
+    raise converted from None
+pyspark.errors.exceptions.captured.AnalysisException: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `glcm_contrast` cannot be resolved. Did you mean one of the following? [`num_bands`, `raw_features`, `blue_mean`, `nir_mean`, `red_mean`].;
+'Aggregate [class_id#2, class_name#345], [class_id#2, class_name#345, count(1) AS samples#391L, avg(ndvi_mean#7) AS avg_ndvi#393, avg(brightness_mean#16) AS avg_brightness#395, avg('glcm_contrast) AS avg_texture_complexity#397]
++- Project [image_id#0, image_filename#1, class_id#2, file_size_kb#3, width#4, height#5, num_bands#6, ndvi_mean#7, ndvi_std#8, ndvi_min#9, ndvi_max#10, vegetation_index#11, red_mean#12, green_mean#13, blue_mean#14, nir_mean#15, brightness_mean#16, vegetation_index_indexed#17, vegetation_index_encoded#18, raw_features#19, final_features#20, <lambda>(class_id#2)#344 AS class_name#345]
+   +- Relation [image_id#0,image_filename#1,class_id#2,file_size_kb#3,width#4,height#5,num_bands#6,ndvi_mean#7,ndvi_std#8,ndvi_min#9,ndvi_max#10,vegetation_index#11,red_mean#12,green_mean#13,blue_mean#14,nir_mean#15,brightness_mean#16,vegetation_index_indexed#17,vegetation_index_encoded#18,raw_features#19,final_features#20] parquet
+
+Traceback (most recent call last):
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/src/batch_layer/spark_batch_processor.py", line 311, in <module>
+    main()
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/src/batch_layer/spark_batch_processor.py", line 295, in main
+    trends = compute_temporal_trends(spark, enriched_df)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/src/batch_layer/spark_batch_processor.py", line 128, in compute_temporal_trends
+    trends = enriched_df.groupBy("class_id", "class_name").agg(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/pyspark.zip/pyspark/sql/group.py", line 186, in agg
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1322, in __call__
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 185, in deco
+pyspark.errors.exceptions.captured.AnalysisException: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `glcm_contrast` cannot be resolved. Did you mean one of the following? [`num_bands`, `raw_features`, `blue_mean`, `nir_mean`, `red_mean`].;
+'Aggregate [class_id#2, class_name#345], [class_id#2, class_name#345, count(1) AS samples#391L, avg(ndvi_mean#7) AS avg_ndvi#393, avg(brightness_mean#16) AS avg_brightness#395, avg('glcm_contrast) AS avg_texture_complexity#397]
++- Project [image_id#0, image_filename#1, class_id#2, file_size_kb#3, width#4, height#5, num_bands#6, ndvi_mean#7, ndvi_std#8, ndvi_min#9, ndvi_max#10, vegetation_index#11, red_mean#12, green_mean#13, blue_mean#14, nir_mean#15, brightness_mean#16, vegetation_index_indexed#17, vegetation_index_encoded#18, raw_features#19, final_features#20, <lambda>(class_id#2)#344 AS class_name#345]
+   +- Relation [image_id#0,image_filename#1,class_id#2,file_size_kb#3,width#4,height#5,num_bands#6,ndvi_mean#7,ndvi_std#8,ndvi_min#9,ndvi_max#10,vegetation_index#11,red_mean#12,green_mean#13,blue_mean#14,nir_mean#15,brightness_mean#16,vegetation_index_indexed#17,vegetation_index_encoded#18,raw_features#19,final_features#20] parquet
+
+2025-12-15 23:34:45,873 - INFO - Closing down clientserver connection
+25/12/15 23:36:19 WARN Utils: Your hostname, top-IdeaPad-Gaming-3-15IAH7 resolves to a loopback address: 127.0.1.1; using 192.168.1.10 instead (on interface wlp47s0)
+25/12/15 23:36:19 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+2025-12-15 23:36:21,012 - INFO - Initializing Spark session with Hive support...
+25/12/15 23:36:21 INFO SparkContext: Running Spark version 3.5.1
+25/12/15 23:36:21 INFO SparkContext: OS info Linux, 6.8.0-88-generic, amd64
+25/12/15 23:36:21 INFO SparkContext: Java version 21.0.9
+25/12/15 23:36:21 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/12/15 23:36:21 INFO ResourceUtils: ==============================================================
+25/12/15 23:36:21 INFO ResourceUtils: No custom resources configured for spark.driver.
+25/12/15 23:36:21 INFO ResourceUtils: ==============================================================
+25/12/15 23:36:21 INFO SparkContext: Submitted application: BatchProcessingLayer
+25/12/15 23:36:21 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 4096, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+25/12/15 23:36:21 INFO ResourceProfile: Limiting resource is cpu
+25/12/15 23:36:21 INFO ResourceProfileManager: Added ResourceProfile id: 0
+25/12/15 23:36:21 INFO SecurityManager: Changing view acls to: top
+25/12/15 23:36:21 INFO SecurityManager: Changing modify acls to: top
+25/12/15 23:36:21 INFO SecurityManager: Changing view acls groups to: 
+25/12/15 23:36:21 INFO SecurityManager: Changing modify acls groups to: 
+25/12/15 23:36:21 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: top; groups with view permissions: EMPTY; users with modify permissions: top; groups with modify permissions: EMPTY
+25/12/15 23:36:22 INFO Utils: Successfully started service 'sparkDriver' on port 45875.
+25/12/15 23:36:22 INFO SparkEnv: Registering MapOutputTracker
+25/12/15 23:36:22 INFO SparkEnv: Registering BlockManagerMaster
+25/12/15 23:36:22 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+25/12/15 23:36:22 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+25/12/15 23:36:22 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+25/12/15 23:36:22 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-edecc2ac-5a1a-41c3-b69e-b6e5c4d92435
+25/12/15 23:36:22 INFO MemoryStore: MemoryStore started with capacity 2.2 GiB
+25/12/15 23:36:22 INFO SparkEnv: Registering OutputCommitCoordinator
+25/12/15 23:36:22 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+25/12/15 23:36:22 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+25/12/15 23:36:22 INFO Executor: Starting executor ID driver on host 192.168.1.10
+25/12/15 23:36:22 INFO Executor: OS info Linux, 6.8.0-88-generic, amd64
+25/12/15 23:36:22 INFO Executor: Java version 21.0.9
+25/12/15 23:36:22 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+25/12/15 23:36:22 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@478fdb43 for default.
+25/12/15 23:36:22 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 46253.
+25/12/15 23:36:22 INFO NettyBlockTransferService: Server created on 192.168.1.10:46253
+25/12/15 23:36:22 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+25/12/15 23:36:22 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 192.168.1.10, 46253, None)
+25/12/15 23:36:22 INFO BlockManagerMasterEndpoint: Registering block manager 192.168.1.10:46253 with 2.2 GiB RAM, BlockManagerId(driver, 192.168.1.10, 46253, None)
+25/12/15 23:36:22 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 192.168.1.10, 46253, None)
+25/12/15 23:36:22 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 192.168.1.10, 46253, None)
+2025-12-15 23:36:23,392 - INFO - ✓ Spark session with Hive support created
+2025-12-15 23:36:23,392 - INFO - Creating Hive database for batch views...
+25/12/15 23:36:27 WARN HiveConf: HiveConf of name hive.stats.jdbc.timeout does not exist
+25/12/15 23:36:27 WARN HiveConf: HiveConf of name hive.stats.retries.wait does not exist
+Mon Dec 15 23:36:27 CET 2025 Thread[#38,Thread-4,5,main] java.io.FileNotFoundException: derby.log (Permission non accordée)
+----------------------------------------------------------------
+Mon Dec 15 23:36:27 CET 2025:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-019b-2428-6c9f-000001527e38 
+on database directory /home/top/bigData/remote-satellite-lambda-pipeline/metastore_db with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@c387f44 
+Loaded from file:/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/jars/derby-10.14.2.0.jar
+java.vendor=Ubuntu
+java.runtime.version=21.0.9+10-Ubuntu-124.04
+user.dir=/home/top/bigData/remote-satellite-lambda-pipeline
+os.name=Linux
+os.arch=amd64
+os.version=6.8.0-88-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+25/12/15 23:36:29 WARN ObjectStore: Version information not found in metastore. hive.metastore.schema.verification is not enabled so recording the schema version 2.3.0
+25/12/15 23:36:29 WARN ObjectStore: setMetaStoreSchemaVersion called but recording version is disabled: version = 2.3.0, comment = Set by MetaStore top@127.0.1.1
+25/12/15 23:36:30 WARN ObjectStore: Failed to get database global_temp, returning NoSuchObjectException
+2025-12-15 23:36:30,212 - INFO - ✓ Hive database 'batch_views' ready
+2025-12-15 23:36:30,212 - INFO - ================================================================================
+2025-12-15 23:36:30,212 - INFO - READING SOURCE DATA FROM HDFS
+2025-12-15 23:36:30,212 - INFO - ================================================================================
+2025-12-15 23:36:30,212 - INFO - Reading: hdfs://localhost:8020/data/processed/processed_images.parquet
+2025-12-15 23:36:33,673 - INFO - ✓ Loaded 27000 processed images
+2025-12-15 23:36:33,673 - INFO - ================================================================================
+2025-12-15 23:36:33,673 - INFO - COMPUTING CLASS STATISTICS (Batch View)
+2025-12-15 23:36:33,673 - INFO - ================================================================================
+25/12/15 23:36:34 WARN GarbageCollectionMetrics: To enable non-built-in garbage collector(s) List(G1 Concurrent GC), users should configure it(them) to spark.eventLog.gcMetrics.youngGenerationGarbageCollectors or spark.eventLog.gcMetrics.oldGenerationGarbageCollectors
+2025-12-15 23:36:36,661 - INFO - ✓ Computed statistics for 10 classes
+2025-12-15 23:36:36,661 - INFO - Saving to Hive table: batch_views.class_statistics
+25/12/15 23:36:40 WARN SessionState: METASTORE_FILTER_HOOK will be ignored, since hive.security.authorization.manager is set to instance of HiveAuthorizerFactory.
+25/12/15 23:36:40 WARN HiveConf: HiveConf of name hive.internal.ss.authz.settings.applied.marker does not exist
+25/12/15 23:36:40 WARN HiveConf: HiveConf of name hive.stats.jdbc.timeout does not exist
+25/12/15 23:36:40 WARN HiveConf: HiveConf of name hive.stats.retries.wait does not exist
+2025-12-15 23:36:41,139 - INFO - ✓ Class statistics saved to Hive
+2025-12-15 23:36:41,139 - INFO - ================================================================================
+2025-12-15 23:36:41,139 - INFO - COMPUTING TEMPORAL TRENDS (Batch View)
+2025-12-15 23:36:41,139 - INFO - ================================================================================
+2025-12-15 23:36:41,776 - INFO - ✓ Computed trends for 10 periods
+2025-12-15 23:36:41,776 - INFO - Saving to Hive table: batch_views.temporal_trends
+2025-12-15 23:36:43,060 - INFO - ✓ Temporal trends saved to Hive
+2025-12-15 23:36:43,060 - INFO - ================================================================================
+2025-12-15 23:36:43,060 - INFO - COMPUTING CLASS SEPARABILITY (Batch View)
+2025-12-15 23:36:43,061 - INFO - ================================================================================
+2025-12-15 23:36:44,636 - INFO - ✓ Computed separability for 45 class pairs
+2025-12-15 23:36:44,637 - INFO - Saving to Hive table: batch_views.class_separability
+2025-12-15 23:36:46,255 - INFO - ✓ Class separability saved to Hive
+2025-12-15 23:36:46,256 - INFO - ================================================================================
+2025-12-15 23:36:46,256 - INFO - COMPUTING FEATURE CORRELATIONS (Batch View)
+2025-12-15 23:36:46,256 - INFO - ================================================================================
+2025-12-15 23:36:52,960 - INFO - ✓ Computed 21 feature correlations
+2025-12-15 23:36:52,960 - INFO - Saving to Hive table: batch_views.feature_correlations
+2025-12-15 23:36:53,630 - INFO - ✓ Feature correlations saved to Hive
+2025-12-15 23:36:53,630 - INFO - ================================================================================
+2025-12-15 23:36:53,630 - INFO - BATCH PROCESSING SUMMARY
+2025-12-15 23:36:53,630 - INFO - ================================================================================
+
+📊 CLASS STATISTICS (First 5 rows):
++--------------------+-------------+-------------------+------------------+
+|          class_name|total_samples|           avg_ndvi|    avg_brightness|
++--------------------+-------------+-------------------+------------------+
+|          AnnualCrop|         2500|0.32736023999999986| 894.0287880000019|
+|              Forest|         3000|0.37640980000000007|1316.4610466666654|
+|HerbaceousVegetation|         2500| 0.4462315599999997|1031.4982240000013|
+|             Highway|         2000| 0.6537812999999996| 871.6235749999981|
+|          Industrial|         2500|0.37204840000000095|1261.6554720000004|
++--------------------+-------------+-------------------+------------------+
+only showing top 5 rows
+
+
+📈 TEMPORAL TRENDS (First 5 rows):
+2025-12-15 23:36:55,417 - ERROR - Batch processing failed: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `avg_texture_complexity` cannot be resolved. Did you mean one of the following? [`avg_green`, `avg_blue`, `avg_brightness`, `avg_red`, `avg_ndvi`].;
+'Project [period#446, class_name#371, avg_ndvi#419, 'avg_texture_complexity]
++- Project [class_id#2, class_name#371, samples#417L, avg_ndvi#419, avg_brightness#421, avg_red#423, avg_green#425, avg_blue#427, batch_timestamp#436, concat(Month_, cast(class_id#2 as string)) AS period#446]
+   +- Project [class_id#2, class_name#371, samples#417L, avg_ndvi#419, avg_brightness#421, avg_red#423, avg_green#425, avg_blue#427, 2025-12-15T23:36:41.246646 AS batch_timestamp#436]
+      +- Sort [class_id#2 ASC NULLS FIRST], true
+         +- Aggregate [class_id#2, class_name#371], [class_id#2, class_name#371, count(1) AS samples#417L, avg(ndvi_mean#7) AS avg_ndvi#419, avg(brightness_mean#16) AS avg_brightness#421, avg(red_mean#12) AS avg_red#423, avg(green_mean#13) AS avg_green#425, avg(blue_mean#14) AS avg_blue#427]
+            +- Project [image_id#0, image_filename#1, class_id#2, file_size_kb#3, width#4, height#5, num_bands#6, ndvi_mean#7, ndvi_std#8, ndvi_min#9, ndvi_max#10, vegetation_index#11, red_mean#12, green_mean#13, blue_mean#14, nir_mean#15, brightness_mean#16, vegetation_index_indexed#17, vegetation_index_encoded#18, raw_features#19, final_features#20, <lambda>(class_id#2)#370 AS class_name#371]
+               +- Relation [image_id#0,image_filename#1,class_id#2,file_size_kb#3,width#4,height#5,num_bands#6,ndvi_mean#7,ndvi_std#8,ndvi_min#9,ndvi_max#10,vegetation_index#11,red_mean#12,green_mean#13,blue_mean#14,nir_mean#15,brightness_mean#16,vegetation_index_indexed#17,vegetation_index_encoded#18,raw_features#19,final_features#20] parquet
+Traceback (most recent call last):
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/src/batch_layer/spark_batch_processor.py", line 302, in main
+    display_summary(class_stats, trends, separability, correlations)
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/src/batch_layer/spark_batch_processor.py", line 262, in display_summary
+    trends.select("period", "class_name", "avg_ndvi", "avg_texture_complexity").show(5)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/pyspark.zip/pyspark/sql/dataframe.py", line 3227, in select
+    jdf = self._jdf.select(self._jcols(*cols))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+                   ^^^^^^^^^^^^^^^^^
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 185, in deco
+    raise converted from None
+pyspark.errors.exceptions.captured.AnalysisException: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `avg_texture_complexity` cannot be resolved. Did you mean one of the following? [`avg_green`, `avg_blue`, `avg_brightness`, `avg_red`, `avg_ndvi`].;
+'Project [period#446, class_name#371, avg_ndvi#419, 'avg_texture_complexity]
++- Project [class_id#2, class_name#371, samples#417L, avg_ndvi#419, avg_brightness#421, avg_red#423, avg_green#425, avg_blue#427, batch_timestamp#436, concat(Month_, cast(class_id#2 as string)) AS period#446]
+   +- Project [class_id#2, class_name#371, samples#417L, avg_ndvi#419, avg_brightness#421, avg_red#423, avg_green#425, avg_blue#427, 2025-12-15T23:36:41.246646 AS batch_timestamp#436]
+      +- Sort [class_id#2 ASC NULLS FIRST], true
+         +- Aggregate [class_id#2, class_name#371], [class_id#2, class_name#371, count(1) AS samples#417L, avg(ndvi_mean#7) AS avg_ndvi#419, avg(brightness_mean#16) AS avg_brightness#421, avg(red_mean#12) AS avg_red#423, avg(green_mean#13) AS avg_green#425, avg(blue_mean#14) AS avg_blue#427]
+            +- Project [image_id#0, image_filename#1, class_id#2, file_size_kb#3, width#4, height#5, num_bands#6, ndvi_mean#7, ndvi_std#8, ndvi_min#9, ndvi_max#10, vegetation_index#11, red_mean#12, green_mean#13, blue_mean#14, nir_mean#15, brightness_mean#16, vegetation_index_indexed#17, vegetation_index_encoded#18, raw_features#19, final_features#20, <lambda>(class_id#2)#370 AS class_name#371]
+               +- Relation [image_id#0,image_filename#1,class_id#2,file_size_kb#3,width#4,height#5,num_bands#6,ndvi_mean#7,ndvi_std#8,ndvi_min#9,ndvi_max#10,vegetation_index#11,red_mean#12,green_mean#13,blue_mean#14,nir_mean#15,brightness_mean#16,vegetation_index_indexed#17,vegetation_index_encoded#18,raw_features#19,final_features#20] parquet
+
+Traceback (most recent call last):
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/src/batch_layer/spark_batch_processor.py", line 313, in <module>
+    main()
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/src/batch_layer/spark_batch_processor.py", line 302, in main
+    display_summary(class_stats, trends, separability, correlations)
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/src/batch_layer/spark_batch_processor.py", line 262, in display_summary
+    trends.select("period", "class_name", "avg_ndvi", "avg_texture_complexity").show(5)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/pyspark.zip/pyspark/sql/dataframe.py", line 3227, in select
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1322, in __call__
+  File "/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 185, in deco
+pyspark.errors.exceptions.captured.AnalysisException: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `avg_texture_complexity` cannot be resolved. Did you mean one of the following? [`avg_green`, `avg_blue`, `avg_brightness`, `avg_red`, `avg_ndvi`].;
+'Project [period#446, class_name#371, avg_ndvi#419, 'avg_texture_complexity]
++- Project [class_id#2, class_name#371, samples#417L, avg_ndvi#419, avg_brightness#421, avg_red#423, avg_green#425, avg_blue#427, batch_timestamp#436, concat(Month_, cast(class_id#2 as string)) AS period#446]
+   +- Project [class_id#2, class_name#371, samples#417L, avg_ndvi#419, avg_brightness#421, avg_red#423, avg_green#425, avg_blue#427, 2025-12-15T23:36:41.246646 AS batch_timestamp#436]
+      +- Sort [class_id#2 ASC NULLS FIRST], true
+         +- Aggregate [class_id#2, class_name#371], [class_id#2, class_name#371, count(1) AS samples#417L, avg(ndvi_mean#7) AS avg_ndvi#419, avg(brightness_mean#16) AS avg_brightness#421, avg(red_mean#12) AS avg_red#423, avg(green_mean#13) AS avg_green#425, avg(blue_mean#14) AS avg_blue#427]
+            +- Project [image_id#0, image_filename#1, class_id#2, file_size_kb#3, width#4, height#5, num_bands#6, ndvi_mean#7, ndvi_std#8, ndvi_min#9, ndvi_max#10, vegetation_index#11, red_mean#12, green_mean#13, blue_mean#14, nir_mean#15, brightness_mean#16, vegetation_index_indexed#17, vegetation_index_encoded#18, raw_features#19, final_features#20, <lambda>(class_id#2)#370 AS class_name#371]
+               +- Relation [image_id#0,image_filename#1,class_id#2,file_size_kb#3,width#4,height#5,num_bands#6,ndvi_mean#7,ndvi_std#8,ndvi_min#9,ndvi_max#10,vegetation_index#11,red_mean#12,green_mean#13,blue_mean#14,nir_mean#15,brightness_mean#16,vegetation_index_indexed#17,vegetation_index_encoded#18,raw_features#19,final_features#20] parquet
+
+2025-12-15 23:36:55,434 - INFO - Closing down clientserver connection
+25/12/15 23:39:53 WARN Utils: Your hostname, top-IdeaPad-Gaming-3-15IAH7 resolves to a loopback address: 127.0.1.1; using 192.168.1.10 instead (on interface wlp47s0)
+25/12/15 23:39:53 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+2025-12-15 23:39:54,865 - INFO - Initializing Spark session with Hive support...
+25/12/15 23:39:54 INFO SparkContext: Running Spark version 3.5.1
+25/12/15 23:39:54 INFO SparkContext: OS info Linux, 6.8.0-88-generic, amd64
+25/12/15 23:39:54 INFO SparkContext: Java version 21.0.9
+25/12/15 23:39:55 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/12/15 23:39:55 INFO ResourceUtils: ==============================================================
+25/12/15 23:39:55 INFO ResourceUtils: No custom resources configured for spark.driver.
+25/12/15 23:39:55 INFO ResourceUtils: ==============================================================
+25/12/15 23:39:55 INFO SparkContext: Submitted application: BatchProcessingLayer
+25/12/15 23:39:55 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 4096, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+25/12/15 23:39:55 INFO ResourceProfile: Limiting resource is cpu
+25/12/15 23:39:55 INFO ResourceProfileManager: Added ResourceProfile id: 0
+25/12/15 23:39:55 INFO SecurityManager: Changing view acls to: top
+25/12/15 23:39:55 INFO SecurityManager: Changing modify acls to: top
+25/12/15 23:39:55 INFO SecurityManager: Changing view acls groups to: 
+25/12/15 23:39:55 INFO SecurityManager: Changing modify acls groups to: 
+25/12/15 23:39:55 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: top; groups with view permissions: EMPTY; users with modify permissions: top; groups with modify permissions: EMPTY
+25/12/15 23:39:55 INFO Utils: Successfully started service 'sparkDriver' on port 44027.
+25/12/15 23:39:55 INFO SparkEnv: Registering MapOutputTracker
+25/12/15 23:39:55 INFO SparkEnv: Registering BlockManagerMaster
+25/12/15 23:39:55 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+25/12/15 23:39:55 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+25/12/15 23:39:55 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+25/12/15 23:39:55 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-d8352b18-64ca-42c3-983e-453b1c062873
+25/12/15 23:39:55 INFO MemoryStore: MemoryStore started with capacity 2.2 GiB
+25/12/15 23:39:55 INFO SparkEnv: Registering OutputCommitCoordinator
+25/12/15 23:39:56 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+25/12/15 23:39:56 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+25/12/15 23:39:56 INFO Executor: Starting executor ID driver on host 192.168.1.10
+25/12/15 23:39:56 INFO Executor: OS info Linux, 6.8.0-88-generic, amd64
+25/12/15 23:39:56 INFO Executor: Java version 21.0.9
+25/12/15 23:39:56 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+25/12/15 23:39:56 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@3b816acb for default.
+25/12/15 23:39:56 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 42621.
+25/12/15 23:39:56 INFO NettyBlockTransferService: Server created on 192.168.1.10:42621
+25/12/15 23:39:56 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+25/12/15 23:39:56 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 192.168.1.10, 42621, None)
+25/12/15 23:39:56 INFO BlockManagerMasterEndpoint: Registering block manager 192.168.1.10:42621 with 2.2 GiB RAM, BlockManagerId(driver, 192.168.1.10, 42621, None)
+25/12/15 23:39:56 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 192.168.1.10, 42621, None)
+25/12/15 23:39:56 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 192.168.1.10, 42621, None)
+2025-12-15 23:39:57,046 - INFO - ✓ Spark session with Hive support created
+2025-12-15 23:39:57,046 - INFO - Creating Hive database for batch views...
+25/12/15 23:40:01 WARN HiveConf: HiveConf of name hive.stats.jdbc.timeout does not exist
+25/12/15 23:40:01 WARN HiveConf: HiveConf of name hive.stats.retries.wait does not exist
+Mon Dec 15 23:40:01 CET 2025 Thread[#38,Thread-4,5,main] java.io.FileNotFoundException: derby.log (Permission non accordée)
+----------------------------------------------------------------
+Mon Dec 15 23:40:01 CET 2025:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-019b-242b-b017-000003df2f10 
+on database directory /home/top/bigData/remote-satellite-lambda-pipeline/metastore_db with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@c387f44 
+Loaded from file:/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/jars/derby-10.14.2.0.jar
+java.vendor=Ubuntu
+java.runtime.version=21.0.9+10-Ubuntu-124.04
+user.dir=/home/top/bigData/remote-satellite-lambda-pipeline
+os.name=Linux
+os.arch=amd64
+os.version=6.8.0-88-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+25/12/15 23:40:03 WARN ObjectStore: Version information not found in metastore. hive.metastore.schema.verification is not enabled so recording the schema version 2.3.0
+25/12/15 23:40:03 WARN ObjectStore: setMetaStoreSchemaVersion called but recording version is disabled: version = 2.3.0, comment = Set by MetaStore top@127.0.1.1
+25/12/15 23:40:04 WARN ObjectStore: Failed to get database global_temp, returning NoSuchObjectException
+2025-12-15 23:40:04,192 - INFO - ✓ Hive database 'batch_views' ready
+2025-12-15 23:40:04,192 - INFO - ================================================================================
+2025-12-15 23:40:04,192 - INFO - READING SOURCE DATA FROM HDFS
+2025-12-15 23:40:04,192 - INFO - ================================================================================
+2025-12-15 23:40:04,192 - INFO - Reading: hdfs://localhost:8020/data/processed/processed_images.parquet
+2025-12-15 23:40:07,506 - INFO - ✓ Loaded 27000 processed images
+2025-12-15 23:40:07,506 - INFO - ================================================================================
+2025-12-15 23:40:07,506 - INFO - COMPUTING CLASS STATISTICS (Batch View)
+2025-12-15 23:40:07,506 - INFO - ================================================================================
+25/12/15 23:40:09 WARN GarbageCollectionMetrics: To enable non-built-in garbage collector(s) List(G1 Concurrent GC), users should configure it(them) to spark.eventLog.gcMetrics.youngGenerationGarbageCollectors or spark.eventLog.gcMetrics.oldGenerationGarbageCollectors
+2025-12-15 23:40:10,460 - INFO - ✓ Computed statistics for 10 classes
+2025-12-15 23:40:10,460 - INFO - Saving to Hive table: batch_views.class_statistics
+25/12/15 23:40:14 WARN SessionState: METASTORE_FILTER_HOOK will be ignored, since hive.security.authorization.manager is set to instance of HiveAuthorizerFactory.
+25/12/15 23:40:14 WARN HiveConf: HiveConf of name hive.internal.ss.authz.settings.applied.marker does not exist
+25/12/15 23:40:14 WARN HiveConf: HiveConf of name hive.stats.jdbc.timeout does not exist
+25/12/15 23:40:14 WARN HiveConf: HiveConf of name hive.stats.retries.wait does not exist
+2025-12-15 23:40:14,818 - INFO - ✓ Class statistics saved to Hive
+2025-12-15 23:40:14,818 - INFO - ================================================================================
+2025-12-15 23:40:14,818 - INFO - COMPUTING TEMPORAL TRENDS (Batch View)
+2025-12-15 23:40:14,818 - INFO - ================================================================================
+2025-12-15 23:40:15,549 - INFO - ✓ Computed trends for 10 periods
+2025-12-15 23:40:15,550 - INFO - Saving to Hive table: batch_views.temporal_trends
+2025-12-15 23:40:17,262 - INFO - ✓ Temporal trends saved to Hive
+2025-12-15 23:40:17,263 - INFO - ================================================================================
+2025-12-15 23:40:17,263 - INFO - COMPUTING CLASS SEPARABILITY (Batch View)
+2025-12-15 23:40:17,263 - INFO - ================================================================================
+2025-12-15 23:40:18,651 - INFO - ✓ Computed separability for 45 class pairs
+2025-12-15 23:40:18,652 - INFO - Saving to Hive table: batch_views.class_separability
+2025-12-15 23:40:20,353 - INFO - ✓ Class separability saved to Hive
+2025-12-15 23:40:20,353 - INFO - ================================================================================
+2025-12-15 23:40:20,353 - INFO - COMPUTING FEATURE CORRELATIONS (Batch View)
+2025-12-15 23:40:20,353 - INFO - ================================================================================
+2025-12-15 23:40:26,613 - INFO - ✓ Computed 21 feature correlations
+2025-12-15 23:40:26,613 - INFO - Saving to Hive table: batch_views.feature_correlations
+2025-12-15 23:40:27,677 - INFO - ✓ Feature correlations saved to Hive
+2025-12-15 23:40:27,677 - INFO - ================================================================================
+2025-12-15 23:40:27,677 - INFO - BATCH PROCESSING SUMMARY
+2025-12-15 23:40:27,677 - INFO - ================================================================================
+
+📊 CLASS STATISTICS (First 5 rows):
++--------------------+-------------+-------------------+------------------+
+|          class_name|total_samples|           avg_ndvi|    avg_brightness|
++--------------------+-------------+-------------------+------------------+
+|          AnnualCrop|         2500|0.32736023999999986| 894.0287880000019|
+|              Forest|         3000|0.37640980000000007|1316.4610466666654|
+|HerbaceousVegetation|         2500| 0.4462315599999997|1031.4982240000013|
+|             Highway|         2000| 0.6537812999999996| 871.6235749999981|
+|          Industrial|         2500|0.37204840000000095|1261.6554720000004|
++--------------------+-------------+-------------------+------------------+
+only showing top 5 rows
+
+
+📈 TEMPORAL TRENDS (First 5 rows):
++-------+--------------------+-------------------+------------------+------------------+
+| period|          class_name|           avg_ndvi|           avg_red|    avg_brightness|
++-------+--------------------+-------------------+------------------+------------------+
+|Month_1|          AnnualCrop|0.32736023999999986| 716.0066120000007| 894.0287880000019|
+|Month_2|              Forest|0.37640980000000007|1403.1208533333352|1316.4610466666654|
+|Month_3|HerbaceousVegetation| 0.4462315599999997| 947.6592120000013|1031.4982240000013|
+|Month_4|             Highway| 0.6537812999999996| 659.8096399999993| 871.6235749999981|
+|Month_5|          Industrial|0.37204840000000095|1315.2908160000027|1261.6554720000004|
++-------+--------------------+-------------------+------------------+------------------+
+only showing top 5 rows
+
+
+⚖️ CLASS SEPARABILITY (Top 5 most separable pairs):
++--------------------+------------+------------------+
+|        class_name_1|class_name_2|euclidean_distance|
++--------------------+------------+------------------+
+|             Highway| Residential| 3073.398274617782|
+|              Forest| Residential| 3009.820655777357|
+|          Industrial| Residential| 2681.842693009008|
+|         Residential|     SeaLake|2313.7672010191695|
+|HerbaceousVegetation| Residential| 2259.320225163161|
++--------------------+------------+------------------+
+only showing top 5 rows
+
+
+🔗 FEATURE CORRELATIONS (Top 5 strongest):
++----------+---------------+------------------+
+| feature_1|      feature_2|       correlation|
++----------+---------------+------------------+
+|green_mean|brightness_mean|0.9885347114369614|
+|  red_mean|brightness_mean|0.9828035905071147|
+|  red_mean|     green_mean|0.9584868421169926|
+| blue_mean|brightness_mean|0.9525561362257229|
+|green_mean|      blue_mean|0.9384428555083135|
++----------+---------------+------------------+
+only showing top 5 rows
+
+2025-12-15 23:40:31,121 - INFO - ================================================================================
+2025-12-15 23:40:31,121 - INFO - ✓ BATCH PROCESSING COMPLETE
+2025-12-15 23:40:31,121 - INFO - ================================================================================
+2025-12-15 23:40:31,121 - INFO - Batch views stored in Hive database: batch_views
+2025-12-15 23:40:31,121 - INFO - Tables created:
+2025-12-15 23:40:31,121 - INFO -   • batch_views.class_statistics
+2025-12-15 23:40:31,121 - INFO -   • batch_views.temporal_trends
+2025-12-15 23:40:31,121 - INFO -   • batch_views.class_separability
+2025-12-15 23:40:31,121 - INFO -   • batch_views.feature_correlations
+2025-12-15 23:40:31,121 - INFO - ================================================================================
+2025-12-15 23:40:32,105 - INFO - ✓ Batch processing finished successfully!
+2025-12-15 23:40:32,106 - INFO - Closing down clientserver connection
+25/12/15 23:48:44 WARN Utils: Your hostname, top-IdeaPad-Gaming-3-15IAH7 resolves to a loopback address: 127.0.1.1; using 192.168.1.10 instead (on interface wlp47s0)
+25/12/15 23:48:44 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+2025-12-15 23:48:45,616 - INFO - Initializing Spark session with Hive support...
+25/12/15 23:48:45 INFO SparkContext: Running Spark version 3.5.1
+25/12/15 23:48:45 INFO SparkContext: OS info Linux, 6.8.0-88-generic, amd64
+25/12/15 23:48:45 INFO SparkContext: Java version 21.0.9
+25/12/15 23:48:45 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/12/15 23:48:45 INFO ResourceUtils: ==============================================================
+25/12/15 23:48:45 INFO ResourceUtils: No custom resources configured for spark.driver.
+25/12/15 23:48:45 INFO ResourceUtils: ==============================================================
+25/12/15 23:48:45 INFO SparkContext: Submitted application: BatchProcessingLayer
+25/12/15 23:48:45 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 4096, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+25/12/15 23:48:45 INFO ResourceProfile: Limiting resource is cpu
+25/12/15 23:48:45 INFO ResourceProfileManager: Added ResourceProfile id: 0
+25/12/15 23:48:45 INFO SecurityManager: Changing view acls to: top
+25/12/15 23:48:45 INFO SecurityManager: Changing modify acls to: top
+25/12/15 23:48:45 INFO SecurityManager: Changing view acls groups to: 
+25/12/15 23:48:45 INFO SecurityManager: Changing modify acls groups to: 
+25/12/15 23:48:45 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: top; groups with view permissions: EMPTY; users with modify permissions: top; groups with modify permissions: EMPTY
+25/12/15 23:48:46 INFO Utils: Successfully started service 'sparkDriver' on port 36521.
+25/12/15 23:48:46 INFO SparkEnv: Registering MapOutputTracker
+25/12/15 23:48:46 INFO SparkEnv: Registering BlockManagerMaster
+25/12/15 23:48:46 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+25/12/15 23:48:46 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+25/12/15 23:48:46 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+25/12/15 23:48:46 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-ac2a8570-d9da-4742-8aea-0afb43dcb538
+25/12/15 23:48:46 INFO MemoryStore: MemoryStore started with capacity 2.2 GiB
+25/12/15 23:48:46 INFO SparkEnv: Registering OutputCommitCoordinator
+25/12/15 23:48:46 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+25/12/15 23:48:46 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+25/12/15 23:48:46 INFO Executor: Starting executor ID driver on host 192.168.1.10
+25/12/15 23:48:46 INFO Executor: OS info Linux, 6.8.0-88-generic, amd64
+25/12/15 23:48:46 INFO Executor: Java version 21.0.9
+25/12/15 23:48:46 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+25/12/15 23:48:46 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@71d1a4d for default.
+25/12/15 23:48:46 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 41331.
+25/12/15 23:48:46 INFO NettyBlockTransferService: Server created on 192.168.1.10:41331
+25/12/15 23:48:46 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+25/12/15 23:48:46 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 192.168.1.10, 41331, None)
+25/12/15 23:48:46 INFO BlockManagerMasterEndpoint: Registering block manager 192.168.1.10:41331 with 2.2 GiB RAM, BlockManagerId(driver, 192.168.1.10, 41331, None)
+25/12/15 23:48:46 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 192.168.1.10, 41331, None)
+25/12/15 23:48:46 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 192.168.1.10, 41331, None)
+2025-12-15 23:48:47,005 - INFO - ✓ Spark session with Hive support created
+2025-12-15 23:48:47,005 - INFO - Creating Hive database for batch views...
+25/12/15 23:48:49 WARN HiveConf: HiveConf of name hive.stats.jdbc.timeout does not exist
+25/12/15 23:48:49 WARN HiveConf: HiveConf of name hive.stats.retries.wait does not exist
+Mon Dec 15 23:48:49 CET 2025 Thread[#38,Thread-4,5,main] java.io.FileNotFoundException: derby.log (Permission non accordée)
+----------------------------------------------------------------
+Mon Dec 15 23:48:49 CET 2025:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-019b-2433-bf5d-0000016dbd60 
+on database directory /home/top/bigData/remote-satellite-lambda-pipeline/metastore_db with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@c387f44 
+Loaded from file:/home/top/bigData/remote-satellite-lambda-pipeline/venv/lib/python3.12/site-packages/pyspark/jars/derby-10.14.2.0.jar
+java.vendor=Ubuntu
+java.runtime.version=21.0.9+10-Ubuntu-124.04
+user.dir=/home/top/bigData/remote-satellite-lambda-pipeline
+os.name=Linux
+os.arch=amd64
+os.version=6.8.0-88-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+25/12/15 23:48:50 WARN ObjectStore: Version information not found in metastore. hive.metastore.schema.verification is not enabled so recording the schema version 2.3.0
+25/12/15 23:48:50 WARN ObjectStore: setMetaStoreSchemaVersion called but recording version is disabled: version = 2.3.0, comment = Set by MetaStore top@127.0.1.1
+25/12/15 23:48:51 WARN ObjectStore: Failed to get database global_temp, returning NoSuchObjectException
+2025-12-15 23:48:51,050 - INFO - ✓ Hive database 'batch_views' ready
+2025-12-15 23:48:51,050 - INFO - ================================================================================
+2025-12-15 23:48:51,050 - INFO - READING SOURCE DATA FROM HDFS
+2025-12-15 23:48:51,050 - INFO - ================================================================================
+2025-12-15 23:48:51,050 - INFO - Reading: hdfs://localhost:8020/data/processed/processed_images.parquet
+2025-12-15 23:48:53,125 - INFO - ✓ Loaded 27000 processed images
+2025-12-15 23:48:53,125 - INFO - ================================================================================
+2025-12-15 23:48:53,125 - INFO - COMPUTING CLASS STATISTICS (Batch View)
+2025-12-15 23:48:53,126 - INFO - ================================================================================
+2025-12-15 23:48:54,873 - INFO - ✓ Computed statistics for 10 classes
+2025-12-15 23:48:54,873 - INFO - Saving to Hive table: batch_views.class_statistics
+25/12/15 23:48:56 WARN SessionState: METASTORE_FILTER_HOOK will be ignored, since hive.security.authorization.manager is set to instance of HiveAuthorizerFactory.
+25/12/15 23:48:56 WARN HiveConf: HiveConf of name hive.internal.ss.authz.settings.applied.marker does not exist
+25/12/15 23:48:56 WARN HiveConf: HiveConf of name hive.stats.jdbc.timeout does not exist
+25/12/15 23:48:56 WARN HiveConf: HiveConf of name hive.stats.retries.wait does not exist
+2025-12-15 23:48:56,889 - INFO - ✓ Class statistics saved to Hive
+2025-12-15 23:48:56,889 - INFO - ================================================================================
+2025-12-15 23:48:56,889 - INFO - COMPUTING TEMPORAL TRENDS (Batch View)
+2025-12-15 23:48:56,889 - INFO - ================================================================================
+2025-12-15 23:48:57,239 - INFO - ✓ Computed trends for 10 periods
+2025-12-15 23:48:57,239 - INFO - Saving to Hive table: batch_views.temporal_trends
+25/12/15 23:48:57 WARN GarbageCollectionMetrics: To enable non-built-in garbage collector(s) List(G1 Concurrent GC), users should configure it(them) to spark.eventLog.gcMetrics.youngGenerationGarbageCollectors or spark.eventLog.gcMetrics.oldGenerationGarbageCollectors
+2025-12-15 23:48:58,073 - INFO - ✓ Temporal trends saved to Hive
+2025-12-15 23:48:58,073 - INFO - ================================================================================
+2025-12-15 23:48:58,073 - INFO - COMPUTING CLASS SEPARABILITY (Batch View)
+2025-12-15 23:48:58,073 - INFO - ================================================================================
+2025-12-15 23:48:58,769 - INFO - ✓ Computed separability for 45 class pairs
+2025-12-15 23:48:58,769 - INFO - Saving to Hive table: batch_views.class_separability
+2025-12-15 23:48:59,764 - INFO - ✓ Class separability saved to Hive
+2025-12-15 23:48:59,764 - INFO - ================================================================================
+2025-12-15 23:48:59,764 - INFO - COMPUTING FEATURE CORRELATIONS (Batch View)
+2025-12-15 23:48:59,764 - INFO - ================================================================================
+2025-12-15 23:49:03,695 - INFO - ✓ Computed 21 feature correlations
+2025-12-15 23:49:03,695 - INFO - Saving to Hive table: batch_views.feature_correlations
+2025-12-15 23:49:04,470 - INFO - ✓ Feature correlations saved to Hive
+2025-12-15 23:49:04,470 - INFO - ================================================================================
+2025-12-15 23:49:04,470 - INFO - BATCH PROCESSING SUMMARY
+2025-12-15 23:49:04,470 - INFO - ================================================================================
+
+📊 CLASS STATISTICS (First 5 rows):
++--------------------+-------------+-------------------+------------------+
+|          class_name|total_samples|           avg_ndvi|    avg_brightness|
++--------------------+-------------+-------------------+------------------+
+|          AnnualCrop|         2500|0.32736023999999986| 894.0287880000019|
+|              Forest|         3000|0.37640980000000007|1316.4610466666654|
+|HerbaceousVegetation|         2500| 0.4462315599999997|1031.4982240000013|
+|             Highway|         2000| 0.6537812999999996| 871.6235749999981|
+|          Industrial|         2500|0.37204840000000095|1261.6554720000004|
++--------------------+-------------+-------------------+------------------+
+only showing top 5 rows
+
+
+📈 TEMPORAL TRENDS (First 5 rows):
++-------+--------------------+-------------------+------------------+------------------+
+| period|          class_name|           avg_ndvi|           avg_red|    avg_brightness|
++-------+--------------------+-------------------+------------------+------------------+
+|Month_1|          AnnualCrop|0.32736023999999986| 716.0066120000007| 894.0287880000019|
+|Month_2|              Forest|0.37640980000000007|1403.1208533333352|1316.4610466666654|
+|Month_3|HerbaceousVegetation| 0.4462315599999997| 947.6592120000013|1031.4982240000013|
+|Month_4|             Highway| 0.6537812999999996| 659.8096399999993| 871.6235749999981|
+|Month_5|          Industrial|0.37204840000000095|1315.2908160000027|1261.6554720000004|
++-------+--------------------+-------------------+------------------+------------------+
+only showing top 5 rows
+
+
+⚖️ CLASS SEPARABILITY (Top 5 most separable pairs):
++--------------------+------------+------------------+
+|        class_name_1|class_name_2|euclidean_distance|
++--------------------+------------+------------------+
+|             Highway| Residential| 3073.398274617782|
+|              Forest| Residential| 3009.820655777357|
+|          Industrial| Residential| 2681.842693009008|
+|         Residential|     SeaLake|2313.7672010191695|
+|HerbaceousVegetation| Residential| 2259.320225163161|
++--------------------+------------+------------------+
+only showing top 5 rows
+
+
+🔗 FEATURE CORRELATIONS (Top 5 strongest):
++----------+---------------+------------------+
+| feature_1|      feature_2|       correlation|
++----------+---------------+------------------+
+|green_mean|brightness_mean|0.9885347114369614|
+|  red_mean|brightness_mean|0.9828035905071147|
+|  red_mean|     green_mean|0.9584868421169926|
+| blue_mean|brightness_mean|0.9525561362257229|
+|green_mean|      blue_mean|0.9384428555083135|
++----------+---------------+------------------+
+only showing top 5 rows
+
+2025-12-15 23:49:06,339 - INFO - ================================================================================
+2025-12-15 23:49:06,339 - INFO - ✓ BATCH PROCESSING COMPLETE
+2025-12-15 23:49:06,339 - INFO - ================================================================================
+2025-12-15 23:49:06,339 - INFO - Batch views stored in Hive database: batch_views
+2025-12-15 23:49:06,339 - INFO - Tables created:
+2025-12-15 23:49:06,339 - INFO -   • batch_views.class_statistics
+2025-12-15 23:49:06,339 - INFO -   • batch_views.temporal_trends
+2025-12-15 23:49:06,339 - INFO -   • batch_views.class_separability
+2025-12-15 23:49:06,340 - INFO -   • batch_views.feature_correlations
+2025-12-15 23:49:06,340 - INFO - ================================================================================
+2025-12-15 23:49:07,334 - INFO - ✓ Batch processing finished successfully!
+2025-12-15 23:49:07,334 - INFO - Closing down clientserver connection
